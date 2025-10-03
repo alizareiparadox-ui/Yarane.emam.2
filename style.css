@@ -224,3 +224,15 @@ footer {
   transform: scale(1.02);
   filter: brightness(1.2) contrast(1.2);
                         }
+/* افکت محو و اسلاید برای تصویر */
+.imam-banner {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+/* وقتی صفحه لود شد، تصویر ظاهر بشه */
+.hero.loaded .imam-banner {
+  opacity: 1;
+  transform: translateY(0);
+}
