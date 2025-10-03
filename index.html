@@ -4,8 +4,204 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>فروشگاه مذهبی امام مهدی (عج)</title>
-  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      direction: rtl;
+      margin: 0;
+      padding: 0;
+      background-color: #eaf6ff;
+      color: #1a5276;
+    }
+
+    header {
+      background: linear-gradient(135deg, #2471a3, #2980b9);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .header-container {
+      max-width: 100%;
+      overflow: visible;
+      padding: 0 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #dff9fb;
+    }
+
+    /* تایپ خودکار عنوان */
+    .typewriter {
+      overflow: hidden;
+      border-right: .15em solid white;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: 2px;
+      animation: typing 3s steps(30, end), blink-caret .75s step-end infinite;
+      display: inline-block;
+      font-size: 26px;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: white }
+    }
+
+    .hero {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(to bottom, #d6eaf8, #f4f9ff);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* تصویر با افکت محو و اسلاید */
+    .imam-banner {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+      filter: brightness(1.05) contrast(1.1);
+      margin-bottom: 20px;
+    }
+
+    .hero.loaded .imam-banner {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    button {
+      background-color: #16a085;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #138d75;
+      transform: scale(1.05);
+    }
+
+    /* دکمه شیشه‌ای */
+    .glass-button {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      border: 2px solid #ffffff55;
+      box-shadow: 0 0 10px rgba(255,255,255,0.3);
+      font-weight: bold;
+    }
+
+    /* افکت لرزش دکمه */
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .about, .comments {
+      background-color: #ffffff;
+      padding: 40px 20px;
+      text-align: center;
+      border-top: 2px solid #3498db;
+    }
+
+    .about h2, .comments h2 {
+      color: #2c3e50;
+      margin-bottom: 15px;
+    }
+
+    .about p {
+      font-size: 16px;
+      color: #34495e;
+      line-height: 1.8;
+    }
+
+    /* فرم نظرات */
+    .comment-form {
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: right;
+    }
+
+    .comment-form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    .comment-form input,
+    .comment-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: inherit;
+    }
+
+    .comment-form button {
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 15px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .comment-form button:hover {
+      background-color: #2471a3;
+    }
+
+    footer {
+      background-color: #d6eaf8;
+      text-align: center;
+      padding: 10px;
+      color: #2c3e50;
+    } 
+  </style>
 </head>
 <body>
   <header>
@@ -52,5 +248,12 @@
   <footer>
     <p>© 2025 فروشگاه مذهبی. همه حقوق محفوظ است.</p>
   </footer>
+
+  <script>
+    // فعال‌سازی افکت محو و اسلاید برای تصویر
+    window.addEventListener('load', function () {
+      document.querySelector('.hero').classList.add('loaded');
+    });
+  </script>
 </body>
 </html>
