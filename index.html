@@ -15,7 +15,6 @@
         <li><a href="#home">خانه</a></li>
         <li><a href="#products">محصولات</a></li>
         <li><a href="#comments">نظرات</a></li>
-        <li><a href="#cart">سبد خرید</a></li>
       </ul>
     </nav>
   </header>
@@ -33,19 +32,19 @@
         <img src="https://via.placeholder.com/200" alt="کتاب دعا">
         <h3>کتاب دعا</h3>
         <p>۵۰٬۰۰۰ تومان</p>
-        <button>افزودن به سبد</button>
+        <button class="glass-button">افزودن به سبد</button>
       </div>
       <div class="product-card fade-text">
         <img src="https://via.placeholder.com/200" alt="تسبیح">
         <h3>تسبیح سنگی</h3>
         <p>۳۰٬۰۰۰ تومان</p>
-        <button>افزودن به سبد</button>
+        <button class="glass-button">افزودن به سبد</button>
       </div>
       <div class="product-card fade-text">
         <img src="https://via.placeholder.com/200" alt="جانماز">
         <h3>جانماز ترمه</h3>
         <p>۷۰٬۰۰۰ تومان</p>
-        <button>افزودن به سبد</button>
+        <button class="glass-button">افزودن به سبد</button>
       </div>
     </div>
   </section>
@@ -61,7 +60,7 @@
         <span class="icon">💬</span>
         <textarea id="message" name="message" rows="4" placeholder="نظر خود را بنویسید..." required></textarea>
       </div>
-      <button type="submit" class="modern-btn">ارسال نظر</button>
+      <button type="submit" class="glass-button">ارسال نظر</button>
     </form>
   </section>
 
@@ -70,12 +69,10 @@
   </footer>
 
   <script>
-    // فعال‌سازی افکت تصویر بنر
     window.addEventListener('load', function () {
       document.querySelector('.hero').classList.add('loaded');
     });
 
-    // فعال‌سازی افکت متن‌ها هنگام اسکرول
     const fadeTexts = document.querySelectorAll('.fade-text');
     function checkFade() {
       const triggerBottom = window.innerHeight * 0.85;
@@ -90,4 +87,4 @@
     window.addEventListener('load', checkFade);
   </script>
 </body>
-</html>
+  </html>
