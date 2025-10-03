@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- هدر -->
   <header>
     <h1 class="typewriter">فروشگاه مذهبی امام مهدی (عج)</h1>
     <nav>
@@ -15,16 +16,19 @@
         <li><a href="#home">خانه</a></li>
         <li><a href="#products">محصولات</a></li>
         <li><a href="#comments">نظرات</a></li>
+        <li><a href="#feedback">بازخورد</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- بنر -->
   <section id="home" class="hero">
     <img src="https://raw.githubusercontent.com/alizareiparadox-ui/Yarane.emam.2/refs/heads/main/nody-%D8%B9%DA%A9%D8%B3-%D8%A8%D8%AF%D9%88%D9%86-%D9%85%D8%AA%D9%86-%D8%AF%D8%B1-%D9%85%D9%88%D8%B1%D8%AF-%D8%A7%D9%85%D8%A7%D9%85-%D8%B2%D9%85%D8%A7%D9%86-1626023068.jpg" alt="بنر امام زمان (عج)" class="imam-banner">
     <h2 class="fade-text">با محصولات معنوی، طراحی محترمانه و الهام از نور ظهور</h2>
     <a href="#products"><button class="pulse glass-button fade-text">مشاهده محصولات</button></a>
   </section>
 
+  <!-- محصولات -->
   <section id="products" class="products">
     <h2 class="fade-text">محصولات ویژه</h2>
     <div class="product-grid">
@@ -49,6 +53,7 @@
     </div>
   </section>
 
+  <!-- فرم ارسال نظر -->
   <section id="comments" class="comments">
     <h2 class="fade-text">ارسال نظر شما</h2>
     <form class="comment-form fade-text">
@@ -64,10 +69,66 @@
     </form>
   </section>
 
+  <!-- بازخورد و امتیازدهی -->
+  <section id="feedback" class="feedback">
+    <div class="container">
+      <h2>امتیاز کاربران</h2>
+      <label for="input-1">نظر درباره کتاب دعا:</label>
+      <input id="input-1" class="rating" data-min="0" data-max="5" data-step="0.1" value="4">
+      <br>
+      <label for="input-2">نظر درباره تسبیح:</label>
+      <input id="input-2" class="rating" data-min="0" data-max="5" data-step="0.1" value="3.5">
+      <br>
+      <label for="input-3">نظر درباره جانماز:</label>
+      <input id="input-3" class="rating" data-min="0" data-max="5" data-step="0.1" value="5">
+    </div>
+
+    <div class="container">
+      <h2>میزان رضایت</h2>
+      <div class="progress"><div class="progress-bar" style="width: 20%">۲۰٪</div></div>
+      <div class="progress"><div class="progress-bar" style="width: 40%">۴۰٪</div></div>
+      <div class="progress"><div class="progress-bar" style="width: 60%">۶۰٪</div></div>
+      <div class="progress"><div class="progress-bar" style="width: 80%">۸۰٪</div></div>
+      <div class="progress"><div class="progress-bar" style="width: 100%">۱۰۰٪</div></div>
+    </div>
+
+    <div class="container">
+      <h2>نظرات کاربران</h2>
+      <div class="card-deck">
+        <div class="card">
+          <img src="https://via.placeholder.com/300x200" alt="نظر کاربر">
+          <div class="card-body">
+            <h5 class="card-title">کاربر ۱</h5>
+            <p class="card-text">کتاب دعا بسیار زیبا و با کیفیت بود. ممنون از فروشگاه امام مهدی (عج).</p>
+            <p class="card-text"><small>۳ دقیقه پیش</small></p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/300x200" alt="نظر کاربر">
+          <div class="card-body">
+            <h5 class="card-title">کاربر ۲</h5>
+            <p class="card-text">تسبیح سنگی خیلی خوش‌دست و خوش‌رنگ بود. بسته‌بندی عالی.</p>
+            <p class="card-text"><small>۵ دقیقه پیش</small></p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/300x200" alt="نظر کاربر">
+          <div class="card-body">
+            <h5 class="card-title">کاربر ۳</h5>
+            <p class="card-text">جانماز ترمه واقعاً زیباست. حس معنوی خاصی داره.</p>
+            <p class="card-text"><small>۱۰ دقیقه پیش</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- فوتر -->
   <footer>
     <p>© ۲۰۲۵ فروشگاه مذهبی. همه حقوق محفوظ است.</p>
   </footer>
 
+  <!-- اسکریپت افکت‌ها -->
   <script>
     window.addEventListener('load', function () {
       document.querySelector('.hero').classList.add('loaded');
@@ -87,4 +148,4 @@
     window.addEventListener('load', checkFade);
   </script>
 </body>
-  </html>
+</html>
