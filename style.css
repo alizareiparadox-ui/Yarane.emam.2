@@ -1,191 +1,82 @@
 body {
-  font-family: 'Vazir', sans-serif;
+  font-family: 'Vazirmatn', sans-serif;
   direction: rtl;
   margin: 0;
   padding: 0;
-  background-color: #eaf6ff;
-  color: #1a5276;
+  background: #f4f9ff;
+  color: #2c3e50;
 }
 
 header {
-  background: linear-gradient(90deg, #2980b9, #16a085);
+  background: linear-gradient(135deg, #2471a3, #2980b9);
   color: white;
   padding: 20px;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 nav ul {
   list-style: none;
-  padding: 0;
   display: flex;
   justify-content: center;
   gap: 20px;
+  padding: 0;
 }
 
 nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-nav a:hover {
-  color: #dff9fb;
-  transform: scale(1.1);
-}
-
-/* تایپ خودکار عنوان */
-.typewriter {
-  overflow: hidden;
-  border-right: .15em solid white;
-  white-space: nowrap;
-  margin: 0 auto;
-  letter-spacing: 2px;
-  animation: typing 3s steps(30, end), blink-caret .75s step-end infinite;
-}
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: white }
 }
 
 .hero {
   text-align: center;
   padding: 40px 20px;
-  background: linear-gradient(135deg, #d6eaf8, #ffffff);
-  position: relative;
-  overflow: hidden;
 }
 
-.imam-banner {
+.hero img {
   width: 100%;
   max-height: 400px;
   object-fit: cover;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
   margin-bottom: 20px;
-  transform: scale(1);
-  transition: transform 10s ease-in-out;
 }
 
-.hero:hover .imam-banner {
-  transform: scale(1.05);
-}
-
-button {
-  background-color: #16a085;
+.btn {
+  display: inline-block;
+  background: #16a085;
   color: white;
-  border: none;
   padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-radius: 8px;
+  text-decoration: none;
 }
 
-button:hover {
-  background-color: #138d75;
-  transform: scale(1.05);
-}
-
-/* افکت لرزش دکمه */
-.pulse {
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
-.about, .comments {
-  background-color: #ffffff;
+.products {
   padding: 40px 20px;
   text-align: center;
-  border-top: 2px solid #3498db;
-  box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
 }
 
-.about h2, .comments h2 {
-  color: #2c3e50;
-  margin-bottom: 15px;
-}
-
-.about p {
-  font-size: 16px;
-  color: #34495e;
-  line-height: 1.8;
-}
-
-/* فرم نظرات مدرن */
-.comment-form {
-  max-width: 500px;
-  margin: 0 auto;
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(10px);
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-  animation: fadeInUp 1.5s forwards;
-}
-
-.input-group {
+.product-grid {
   display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  background: #fff;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  width: 200px;
+}
+
+.product-card img {
+  width: 100%;
   border-radius: 8px;
+}
+
+footer {
+  background: #d6eaf8;
+  text-align: center;
   padding: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
-}
-
-.input-group:hover {
-  transform: translateY(-3px);
-}
-
-.icon {
-  margin-right: 10px;
-  font-size: 18px;
-  color: #2980b9;
-}
-
-.comment-form input,
-.comment-form textarea {
-  border: none;
-  outline: none;
-  width: 100%;
-  font-family: inherit;
-  font-size: 15px;
-  background: transparent;
-  resize: none;
-}
-
-.modern-btn {
-  background: linear-gradient(45deg, #2980b9, #16a085);
-  color: white;
-  border: none;
-  padding: 12px 25px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 30px;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.modern-btn::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: rgba(255,255,[43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/bangarangler/theremake/tree/fbd250b5618c54f61983ef448a3fbcb615203871/remake-client%2Fsrc%2Fprojects%2Fpluaris.md?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "1")
+  }
