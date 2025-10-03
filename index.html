@@ -38,11 +38,16 @@
     </section>
 
     <section id="comments" class="comments fade-in">
-      <h2>نظرات کاربران</h2>
-      <div class="comment-box">
-        <p>🌟 "محصولات بسیار باکیفیت و بسته‌بندی عالی بود. ممنون از شما!"</p>
-        <p>🌟 "ارسال سریع و پشتیبانی محترمانه. حتماً دوباره خرید می‌کنم."</p>
-      </div>
+      <h2>ارسال نظر شما</h2>
+      <form class="comment-form">
+        <label for="name">نام شما:</label>
+        <input type="text" id="name" name="name" placeholder="نام خود را وارد کنید" required>
+
+        <label for="message">نظر شما:</label>
+        <textarea id="message" name="message" rows="4" placeholder="نظر خود را بنویسید..." required></textarea>
+
+        <button type="submit">ارسال نظر</button>
+      </form>
     </section>
   </main>
 
