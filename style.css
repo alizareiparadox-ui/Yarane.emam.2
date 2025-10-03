@@ -183,3 +183,22 @@ footer {
   padding: 10px;
   color: #2c3e50;
 }
+/* دکمه شیشه‌ای با افکت نور */
+.glass-button {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 2px solid #ffffff55;
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+  color: #fff;
+  font-weight: bold;
+}
+
+/* افکت روشنایی روی تصویر */
+.imam-banner {
+  filter: brightness(1.05) contrast(1.1);
+  transition: filter 0.5s ease;
+}
+
+.hero:hover .imam-banner {
+  filter: brightness(1.2) contrast(1.2);
+}
