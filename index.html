@@ -4,210 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>فروشگاه مذهبی امام مهدی (عج)</title>
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <style>
-    body {
-      font-family: 'Vazirmatn', sans-serif;
-      direction: rtl;
-      margin: 0;
-      padding: 0;
-      background-color: #eaf6ff;
-      color: #1a5276;
+    html {
+      scroll-behavior: smooth;
     }
-
-    header {
-      background: linear-gradient(135deg, #2471a3, #2980b9);
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .header-container {
-      max-width: 100%;
-      overflow: visible;
-      padding: 0 20px;
-    }
-
-    nav ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #dff9fb;
-    }
-
-    /* تایپ خودکار عنوان */
-    .typewriter {
-      overflow: hidden;
-      border-right: .15em solid white;
-      white-space: nowrap;
-      margin: 0 auto;
-      letter-spacing: 2px;
-      animation: typing 3s steps(30, end), blink-caret .75s step-end infinite;
-      display: inline-block;
-      font-size: 26px;
-    }
-
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-
-    @keyframes blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: white }
-    }
-
-    .hero {
-      text-align: center;
-      padding: 40px 20px;
-      background: linear-gradient(to bottom, #d6eaf8, #f4f9ff);
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* تصویر با افکت محو و اسلاید */
-    .imam-banner {
-      width: 100%;
-      max-height: 500px;
-      object-fit: cover;
-      border-radius: 15px;
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 1.5s ease-out, transform 1.5s ease-out;
-      filter: brightness(1.05) contrast(1.1);
-      margin-bottom: 20px;
-    }
-
-    .hero.loaded .imam-banner {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .hero h2 {
-      font-size: 20px;
-      margin-bottom: 20px;
-      color: #2c3e50;
-    }
-
-    button {
-      background-color: #16a085;
-      color: white;
-      border: none;
-      padding: 12px 25px;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 8px;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #138d75;
-      transform: scale(1.05);
-    }
-
-    /* دکمه شیشه‌ای */
-    .glass-button {
-      background: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(10px);
-      border: 2px solid #ffffff55;
-      box-shadow: 0 0 10px rgba(255,255,255,0.3);
-      font-weight: bold;
-    }
-
-    /* افکت لرزش دکمه */
-    .pulse {
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
-
-    .about, .comments {
-      background-color: #ffffff;
-      padding: 40px 20px;
-      text-align: center;
-      border-top: 2px solid #3498db;
-    }
-
-    .about h2, .comments h2 {
-      color: #2c3e50;
-      margin-bottom: 15px;
-    }
-
-    .about p {
-      font-size: 16px;
-      color: #34495e;
-      line-height: 1.8;
-    }
-
-    /* فرم نظرات */
-    .comment-form {
-      max-width: 500px;
-      margin: 0 auto;
-      text-align: right;
-    }
-
-    .comment-form label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
-      color: #2c3e50;
-    }
-
-    .comment-form input,
-    .comment-form textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-family: inherit;
-    }
-
-    .comment-form button {
-      background-color: #2980b9;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 15px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-
-    .comment-form button:hover {
-      background-color: #2471a3;
-    }
-
-    footer {
-      background-color: #d6eaf8;
-      text-align: center;
-      padding: 10px;
-      color: #2c3e50;
-    } 
   </style>
 </head>
 <body>
   <header>
-    <div class="header-container">
-      <h1 class="typewriter">فروشگاه مذهبی امام مهدی (عج)</h1>
-    </div>
+    <h1 class="typewriter">فروشگاه مذهبی امام مهدی (عج)</h1>
     <nav>
       <ul>
         <li><a href="#home">خانه</a></li>
@@ -221,9 +27,10 @@
 
   <main id="home">
     <section class="hero fade-in">
-      <img src="https://github.com/alizareiparadox-ui/Yarane.emam.2/blob/main/nody-%D8%B9%DA%A9%D8%B3-%D8%A8%D8%AF%D9%88%D9%86-%D9%85%D8%AA%D9%86-%D8%AF%D8%B1-%D9%85%D9%88%D8%B1%D8%AF-%D8%A7%D9%85%D8%A7%D9%85-%D8%B2%D9%85%D8%A7%D9%86-1626023068.jpg?raw=true" alt="تصویر امام زمان (عج)" class="imam-banner">
+      <img src="https://raw.githubusercontent.com/alizareiparadox-ui/Yarane.emam.2/refs/heads/main/nody-%D8%B9%DA%A9%D8%B3-%D8%A8%D8%AF%D9%88%D9%86-%D9%85%D8%AA%D9%86-%D8%AF%D8%B1-%D9%85%D9%88%D8%B1%D8%AF-%D8%A7%D9%85%D8%A7%D9%85-%D8%B2%D9%85%D8%A7%D9%86-1626023068.jpg" 
+           alt="تصویر امام زمان (عج)" class="imam-banner">
       <h2 class="fade-delay">با محصولات معنوی، طراحی محترمانه، و الهام از نور ظهور</h2>
-      <a href="#products"><button class="pulse glass-button">مشاهده محصولات</button></a>
+      <button class="pulse">مشاهده محصولات</button>
     </section>
 
     <section id="about" class="about fade-in">
@@ -234,13 +41,17 @@
     <section id="comments" class="comments fade-in">
       <h2>ارسال نظر شما</h2>
       <form class="comment-form">
-        <label for="name">نام شما:</label>
-        <input type="text" id="name" name="name" placeholder="نام خود را وارد کنید" required>
+        <div class="input-group">
+          <span class="icon">👤</span>
+          <input type="text" id="name" name="name" placeholder="نام شما" required>
+        </div>
 
-        <label for="message">نظر شما:</label>
-        <textarea id="message" name="message" rows="4" placeholder="نظر خود را بنویسید..." required></textarea>
+        <div class="input-group">
+          <span class="icon">💬</span>
+          <textarea id="message" name="message" rows="4" placeholder="نظر خود را بنویسید..." required></textarea>
+        </div>
 
-        <button type="submit">ارسال نظر</button>
+        <button type="submit" class="modern-btn">ارسال نظر</button>
       </form>
     </section>
   </main>
@@ -248,8 +59,5 @@
   <footer>
     <p>© 2025 فروشگاه مذهبی. همه حقوق محفوظ است.</p>
   </footer>
-
-  <script>
-    // فعال‌سازی افکت محو و اسلاید برای تصویر
-    window.addEventListener('load', function () {
-      document.querySelector('.hero').class
+</body>
+</html>
