@@ -4,58 +4,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>فروشگاه مذهبی امام مهدی (عج)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
 </head>
 <body>
+  <!-- هدر -->
   <header>
-    <h1 class="typewriter">فروشگاه مذهبی امام مهدی (عج)</h1>
+    <h1>فروشگاه مذهبی امام مهدی (عج)</h1>
     <nav>
       <ul>
         <li><a href="#home">خانه</a></li>
         <li><a href="#products">محصولات</a></li>
         <li><a href="#about">درباره ما</a></li>
-        <li><a href="#comments">نظرات</a></li>
+        <li><a href="#contact">تماس با ما</a></li>
         <li><a href="#cart">سبد خرید</a></li>
       </ul>
     </nav>
   </header>
 
-  <main id="home">
-    <section class="hero fade-in">
-      <img src="https://raw.githubusercontent.com/alizareiparadox-ui/Yarane.emam.2/refs/heads/main/nody-%D8%B9%DA%A9%D8%B3-%D8%A8%D8%AF%D9%88%D9%86-%D9%85%D8%AA%D9%86-%D8%AF%D8%B1-%D9%85%D9%88%D8%B1%D8%AF-%D8%A7%D9%85%D8%A7%D9%85-%D8%B2%D9%85%D8%A7%D9%86-1626023068.jpg" 
-           alt="تصویر امام زمان (عج)" class="imam-banner">
-      <h2 class="fade-delay">با محصولات معنوی، طراحی محترمانه، و الهام از نور ظهور</h2>
-      <button class="pulse">مشاهده محصولات</button>
-    </section>
+  <!-- بنر اصلی -->
+  <section id="home" class="hero">
+    <img src="https://raw.githubusercontent.com/alizareiparadox-ui/Yarane.emam.2/refs/heads/main/nody-%D8%B9%DA%A9%D8%B3-%D8%A8%D8%AF%D9%88%D9%86-%D9%85%D8%AA%D9%86-%D8%AF%D8%B1-%D9%85%D9%88%D8%B1%D8%AF-%D8%A7%D9%85%D8%A7%D9%85-%D8%B2%D9%85%D8%A7%D9%86-1626023068.jpg" alt="بنر امام زمان (عج)">
+    <h2>با محصولات معنوی، طراحی محترمانه و الهام از نور ظهور</h2>
+    <a href="#products" class="btn">مشاهده محصولات</a>
+  </section>
 
-    <section id="about" class="about fade-in">
-      <h2>درباره ما</h2>
-      <p>ما با عشق و احترام به فرهنگ مذهبی، فروشگاهی طراحی کرده‌ایم که محصولات معنوی را با کیفیت و اصالت ارائه می‌دهد. هدف ما ترویج سبک زندگی اسلامی با طراحی مدرن و کاربرپسند است.</p>
-    </section>
+  <!-- محصولات -->
+  <section id="products" class="products">
+    <h2>محصولات ویژه</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200" alt="محصول 1">
+        <h3>کتاب دعا</h3>
+        <p>50,000 تومان</p>
+        <button>افزودن به سبد</button>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200" alt="محصول 2">
+        <h3>تسبیح</h3>
+        <p>30,000 تومان</p>
+        <button>افزودن به سبد</button>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200" alt="محصول 3">
+        <h3>جانماز</h3>
+        <p>70,000 تومان</p>
+        <button>افزودن به سبد</button>
+      </div>
+    </div>
+  </section>
 
-    <section id="comments" class="comments fade-in">
-      <h2>ارسال نظر شما</h2>
-      <form class="comment-form">
-        <div class="input-group">
-          <span class="icon">👤</span>
-          <input type="text" id="name" name="name" placeholder="نام شما" required>
-        </div>
+  <!-- درباره ما -->
+  <section id="about" class="about">
+    <h2>درباره ما</h2>
+    <p>ما با عشق و احترام به فرهنگ مذهبی، فروشگاهی طراحی کرده‌ایم که محصولات معنوی را با کیفیت و اصالت ارائه می‌دهد.</p>
+  </section>
 
-        <div class="input-group">
-          <span class="icon">💬</span>
-          <textarea id="message" name="message" rows="4" placeholder="نظر خود را بنویسید..." required></textarea>
-        </div>
-
-        <button type="submit" class="modern-btn">ارسال نظر</button>
-      </form>
-    </section>
-  </main>
-
+  <!-- فوتر -->
   <footer>
     <p>© 2025 فروشگاه مذهبی. همه حقوق محفوظ است.</p>
   </footer>
