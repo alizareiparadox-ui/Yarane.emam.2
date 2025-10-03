@@ -28,26 +28,81 @@ nav a {
   font-weight: bold;
 }
 
+.typewriter {
+  overflow: hidden;
+  border-right: .15em solid white;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 2px;
+  animation: typing 3s steps(30, end), blink-caret .75s step-end infinite;
+  display: inline-block;
+  font-size: 26px;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white }
+}
+
 .hero {
   text-align: center;
   padding: 40px 20px;
+  background: linear-gradient(to bottom, #d6eaf8, #ffffff);
 }
 
-.hero img {
+.imam-banner {
   width: 100%;
   max-height: 400px;
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
-.btn {
-  display: inline-block;
-  background: #16a085;
+.hero.loaded .imam-banner {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn, .modern-btn {
+  background: linear-gradient(45deg, #2980b9, #16a085);
   color: white;
   padding: 10px 20px;
   border-radius: 8px;
   text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover, .modern-btn:hover {
+  background: #138d75;
+}
+
+.glass-button {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 2px solid #ffffff55;
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+  font-weight: bold;
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
 .products {
@@ -68,6 +123,11 @@ nav a {
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   width: 200px;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
 }
 
 .product-card img {
@@ -75,8 +135,12 @@ nav a {
   border-radius: 8px;
 }
 
-footer {
-  background: #d6eaf8;
+.comments {
+  background-color: #ffffff;
+  padding: 40px 20px;
   text-align: center;
-  padding: 10px;
-  }
+  border-top: 2px solid #3498db;
+}
+
+.comment-form {
+  max
