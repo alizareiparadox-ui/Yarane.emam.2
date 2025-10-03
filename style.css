@@ -3,12 +3,12 @@ body {
   direction: rtl;
   margin: 0;
   padding: 0;
-  background-color: #f0f8ff; /* آبی خیلی روشن */
-  color: #2c3e50; /* آبی تیره برای خوانایی */
+  background-color: #eaf6ff;
+  color: #1a5276;
 }
 
 header {
-  background-color: #2980b9; /* آبی اصلی */
+  background-color: #2980b9;
   color: white;
   padding: 20px;
   text-align: center;
@@ -35,13 +35,31 @@ nav a:hover {
 
 .hero {
   text-align: center;
-  padding: 50px 20px;
+  padding: 40px 20px;
   background-color: #d6eaf8;
-  color: #154360;
+}
+
+.imam-banner {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+  margin-bottom: 20px;
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+  to {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.7);
+  }
 }
 
 button {
-  background-color: #3498db;
+  background-color: #16a085;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -52,7 +70,7 @@ button {
 }
 
 button:hover {
-  background-color: #2e86c1;
+  background-color: #138d75;
   transform: scale(1.05);
 }
 
@@ -112,11 +130,11 @@ button:hover {
   background-color: #2471a3;
 }
 
-/* انیمیشن‌ها */
+/* افکت ورود */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
-  animation: fadeInUp 1s forwards;
+  animation: fadeInUp 1.5s forwards;
 }
 
 @keyframes fadeInUp {
