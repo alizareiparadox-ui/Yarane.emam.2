@@ -72,27 +72,15 @@ nav a {
   transform: translateY(0);
 }
 
-.btn, .modern-btn {
-  background: linear-gradient(45deg, #2980b9, #16a085);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s ease;
+.fade-text {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
 }
 
-.btn:hover, .modern-btn:hover {
-  background: #138d75;
-}
-
-.glass-button {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  border: 2px solid #ffffff55;
-  box-shadow: 0 0 10px rgba(255,255,255,0.3);
-  font-weight: bold;
+.fade-text.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .pulse {
@@ -103,6 +91,22 @@ nav a {
   0% { transform: scale(1); }
   50% { transform: scale(1.05); }
   100% { transform: scale(1); }
+}
+
+.glass-button {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 2px solid #ffffff55;
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.glass-button:hover {
+  transform: scale(1.05);
 }
 
 .products {
@@ -143,4 +147,4 @@ nav a {
 }
 
 .comment-form {
-  max
+  max-width: 500px;
