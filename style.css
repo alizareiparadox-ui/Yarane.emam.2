@@ -12,6 +12,7 @@ header {
   color: white;
   padding: 20px;
   text-align: center;
+  animation: fadeInTop 1s ease-in-out;
 }
 
 nav ul {
@@ -26,6 +27,11 @@ nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #a2ffcc;
 }
 
 .hero {
@@ -35,6 +41,7 @@ nav a {
   background-size: cover;
   background-position: center;
   color: white;
+  animation: fadeIn 1.5s ease-in-out;
 }
 
 button {
@@ -44,6 +51,72 @@ button {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #1e8449;
+  transform: scale(1.05);
+}
+
+.about, .comments {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 2px solid #27ae60;
+}
+
+.about h2, .comments h2 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.about p, .comments p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.8;
+}
+
+.comment-box {
+  background-color: #f0f8ff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+/* انیمیشن‌ها */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 footer {
