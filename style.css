@@ -1,3 +1,4 @@
+/* فونت و تنظیمات پایه */
 body {
   font-family: 'Vazirmatn', sans-serif;
   direction: rtl;
@@ -7,6 +8,7 @@ body {
   color: #2c3e50;
 }
 
+/* هدر */
 header {
   background: linear-gradient(135deg, #2471a3, #2980b9);
   color: white;
@@ -28,6 +30,7 @@ nav a {
   font-weight: bold;
 }
 
+/* افکت تایپ */
 .typewriter {
   overflow: hidden;
   border-right: .15em solid white;
@@ -49,6 +52,7 @@ nav a {
   50% { border-color: white }
 }
 
+/* بنر */
 .hero {
   text-align: center;
   padding: 40px 20px;
@@ -72,6 +76,7 @@ nav a {
   transform: translateY(0);
 }
 
+/* افکت ورود */
 .fade-text {
   opacity: 0;
   transform: translateY(30px);
@@ -83,16 +88,7 @@ nav a {
   transform: translateY(0);
 }
 
-.pulse {
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
+/* دکمه‌ها */
 .glass-button {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
@@ -109,6 +105,18 @@ nav a {
   transform: scale(1.05);
 }
 
+/* افکت پالس */
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* محصولات */
 .products {
   padding: 40px 20px;
   text-align: center;
@@ -139,6 +147,7 @@ nav a {
   border-radius: 8px;
 }
 
+/* فرم ارسال نظر */
 .comments {
   background-color: #ffffff;
   padding: 40px 20px;
@@ -148,3 +157,100 @@ nav a {
 
 .comment-form {
   max-width: 500px;
+  margin: auto;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.input-group .icon {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.input-group input,
+.input-group textarea {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  outline: none;
+}
+
+/* بازخورد و امتیاز */
+.feedback {
+  padding: 40px 20px;
+  background: #ecf3fc;
+  text-align: center;
+}
+
+.progress {
+  background-color: #d6eaf8;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 10px auto;
+  max-width: 400px;
+  height: 25px;
+}
+
+.progress-bar {
+  background-color: #3498db;
+  height: 100%;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  line-height: 25px;
+  transition: width 0.5s ease;
+}
+
+/* کارت‌های نظرات */
+.card-deck {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  width: 300px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 14px;
+  color: #555;
+}
+
+/* فوتر */
+footer {
+  background: #d6eaf8;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+}
