@@ -1,932 +1,932 @@
-/* Reset و تنظیمات اولیه */
+/* استایل‌های کلی */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 :root {
-    --primary-color: #c8102e;
-    --primary-dark: #a00d25;
-    --primary-light: #e63946;
-    --secondary-color: #2a9d8f;
-    --dark-color: #333;
-    --light-color: #f8f9fa;
-    --gray-color: #6c757d;
-    --light-gray: #e9ecef;
-    --border-color: #dee2e6;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    --transition: all 0.3s ease;
-}
-
-html {
-    scroll-behavior: smooth;
+    /* رنگ‌ها */
+    --primary-blue: #1e3c72;
+    --secondary-blue: #2a5298;
+    --light-blue: #3498db;
+    --very-light-blue: #e6f0ff;
+    --white: #ffffff;
+    --text-dark: #2c3e50;
+    --text-light: #7f8c8d;
+    --gold: #ffd700;
+    --green: #27ae60;
+    --purple: #8e44ad;
+    
+    /* سیستم فاصله‌گذاری */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    
+    /* border radius */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    
+    /* shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    
+    /* تایپوگرافی */
+    --font-size-base: 16px;
+    --font-size-sm: 0.875rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
 }
 
 body {
-    background-color: #f5f5f5;
-    color: var(--dark-color);
-    line-height: 1.6;
+    font-family: 'BNazanin', 'BLotus', 'Iranian Sans', Tahoma, sans-serif;
+    line-height: 1.8;
+    background: linear-gradient(135deg, #f8fbff 0%, #e6f0ff 100%);
+    color: var(--text-dark);
     direction: rtl;
+    padding-top: 80px;
+    font-size: var(--font-size-base);
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+/* پشتیبانی از حالت تاریک */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-dark: #1a1a1a;
+        --text-dark: #ffffff;
+        --card-dark: #2d2d2d;
+    }
+    
+    body {
+        background: var(--bg-dark);
+        color: var(--text-dark);
+    }
+    
+    .section {
+        background: var(--card-dark);
+        border-color: #444;
+    }
 }
 
-ul {
-    list-style: none;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-.container {
+/* منوی اصلی */
+.main-nav {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    position: fixed;
+    top: 0;
     width: 100%;
+    z-index: 1000;
+    box-shadow: var(--shadow-lg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: var(--transition);
-    text-align: center;
-}
-
-.btn-primary {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-.btn-primary:hover {
-    background-color: var(--primary-dark);
-}
-
-.btn-outline {
-    background-color: transparent;
-    color: white;
-    border: 2px solid white;
-}
-
-.btn-outline:hover {
-    background-color: white;
-    color: var(--primary-color);
-}
-
-.section-title {
-    font-size: 24px;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    position: relative;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 50px;
-    height: 3px;
-    background-color: var(--primary-color);
-}
-
-.section-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
+    padding: 0 var(--space-md);
 }
 
-.view-all {
-    color: var(--primary-color);
-    font-weight: 600;
+.nav-logo {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: var(--space-sm);
 }
 
-.view-all:hover {
-    text-decoration: underline;
+.instagram-logo {
+    font-size: 1.8em;
+    color: var(--white);
 }
 
-/* استایل هدر */
-.header-top {
-    background-color: var(--dark-color);
-    color: white;
-    padding: 8px 0;
-    font-size: 14px;
+.nav-logo h2 {
+    color: var(--white);
+    font-size: 1.4em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
-.header-top-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.header-links {
-    display: flex;
-    gap: 20px;
-}
-
-.header-links a:hover {
-    color: var(--primary-light);
-}
-
-.header-main {
-    background-color: white;
-    box-shadow: var(--shadow);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.header-main-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 0;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--dark-color);
-}
-
-.logo i {
-    color: var(--primary-color);
-    margin-left: 10px;
-    font-size: 28px;
-}
-
-.logo .highlight {
-    color: var(--primary-color);
-}
-
-.search-bar {
-    display: flex;
-    flex-grow: 1;
-    max-width: 500px;
-    margin: 0 20px;
-    position: relative;
-}
-
-.search-bar input {
-    width: 100%;
-    padding: 12px 20px;
-    border: 1px solid var(--border-color);
-    border-radius: 30px;
-    font-size: 16px;
-    transition: var(--transition);
-}
-
-.search-bar input:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(200, 16, 46, 0.1);
-}
-
-.search-bar button {
-    position: absolute;
-    left: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition);
-}
-
-.search-bar button:hover {
-    background-color: var(--primary-dark);
-}
-
-.header-actions {
-    display: flex;
-    gap: 15px;
-}
-
-.action-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 12px;
-    position: relative;
-    transition: var(--transition);
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.action-item:hover {
-    color: var(--primary-color);
-}
-
-.action-item i {
-    font-size: 20px;
-    margin-bottom: 5px;
-}
-
-.action-item .count {
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    background: var(--primary-color);
-    color: white;
-    border-radius: 50%;
-    width: 18px;
-    height: 18px;
-    font-size: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-}
-
-.mobile-menu-toggle {
+/* منوی موبایل */
+.mobile-nav-toggle {
     display: none;
-    background: none;
-    border: none;
-    font-size: 24px;
+    flex-direction: column;
     cursor: pointer;
-    color: var(--dark-color);
+    padding: var(--space-sm);
+    z-index: 1001;
 }
 
-/* استایل منوی اصلی */
-.main-nav {
-    background-color: white;
-    border-top: 1px solid var(--border-color);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+.mobile-nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: var(--radius-sm);
 }
 
 .nav-menu {
+    list-style: none;
     display: flex;
+    gap: var(--space-xs);
 }
 
-.nav-menu > li {
-    position: relative;
-}
-
-.nav-menu > li > a {
-    display: block;
-    padding: 15px 20px;
-    color: var(--dark-color);
-    font-weight: 500;
-    transition: var(--transition);
-}
-
-.nav-menu > li > a:hover,
-.nav-menu > li > a.active {
-    color: var(--primary-color);
-}
-
-.menu-item-has-children > a {
+.nav-menu li a {
+    color: var(--white);
+    text-decoration: none;
+    padding: var(--space-md) var(--space-lg);
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: var(--space-sm);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: var(--radius-md);
+    font-weight: bold;
+    font-size: 0.95em;
+    -webkit-tap-highlight-color: transparent;
 }
 
-.sub-menu {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: white;
-    min-width: 200px;
-    box-shadow: var(--shadow);
-    border-radius: 5px;
+.nav-menu li a:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-2px);
+}
+
+.nav-menu li a i {
+    font-size: 1.1em;
+}
+
+/* هدر */
+header {
+    background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--primary-blue) 100%);
+    color: var(--white);
+    padding: var(--space-2xl) var(--space-md);
+    margin-bottom: var(--space-xl);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+}
+
+.header-text h1 {
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--space-lg);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    line-height: 1.3;
+}
+
+.instagram-handle {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    background: rgba(255,255,255,0.1);
+    padding: var(--space-md) var(--space-lg);
+    border-radius: 25px;
+    margin-bottom: var(--space-xl);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.instagram-handle i {
+    font-size: 1.3em;
+}
+
+.instagram-handle span {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.welcome-text {
+    background: rgba(255,255,255,0.1);
+    padding: var(--space-xl);
+    border-radius: var(--radius-xl);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.welcome-text p:first-child {
+    font-size: 1.3em;
+    margin-bottom: var(--space-md);
+    font-weight: bold;
+    color: var(--gold);
+}
+
+.welcome-text p:last-child {
+    font-size: 1.1em;
+    line-height: 1.7;
+}
+
+.header-symbol {
+    text-align: center;
+}
+
+.symbol-circle {
+    width: 150px;
+    height: 150px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-lg);
+    border: 3px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.symbol-circle i {
+    font-size: 4em;
+    color: var(--gold);
+}
+
+.header-symbol p {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* بخش اصلی */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+.section {
+    background: var(--white);
+    margin-bottom: var(--space-xl);
+    padding: var(--space-2xl);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid #e1e8f0;
+    transition: transform 0.3s ease;
+    will-change: transform;
+    contain: layout style paint;
+}
+
+.section:hover {
+    transform: translateY(-5px);
+}
+
+.section h2 {
+    color: var(--primary-blue);
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--space-xl);
+    text-align: center;
+    border-bottom: 3px solid var(--light-blue);
+    padding-bottom: var(--space-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
+}
+
+.section h2 i {
+    color: var(--light-blue);
+}
+
+/* انیمیشن‌های ظریف */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
     opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: var(--transition);
-    z-index: 100;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
 }
 
-.menu-item-has-children:hover .sub-menu {
+.fade-in.visible {
     opacity: 1;
-    visibility: visible;
     transform: translateY(0);
 }
 
-.sub-menu li a {
-    display: block;
-    padding: 10px 15px;
-    border-bottom: 1px solid var(--light-gray);
-    transition: var(--transition);
-}
-
-.sub-menu li a:hover {
-    background-color: var(--light-gray);
-    color: var(--primary-color);
-}
-
-.sub-menu li:last-child a {
-    border-bottom: none;
-}
-
-/* استایل اسلایدر */
-.hero-slider {
-    position: relative;
-    margin-bottom: 50px;
-}
-
-.slider-container {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-}
-
-.slider {
+/* بخش زندگینامه */
+.bio-content {
     display: flex;
-    transition: transform 0.5s ease;
+    flex-direction: column;
+    gap: var(--space-lg);
 }
 
-.slide {
-    min-width: 100%;
-    position: relative;
+.bio-section {
+    padding: var(--space-xl);
+    background: var(--very-light-blue);
+    border-radius: var(--radius-lg);
+    border-right: 4px solid var(--light-blue);
+    transition: transform 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
 }
 
-.slide-content {
+.bio-section:hover {
+    transform: translateX(-10px);
+}
+
+.bio-section h3 {
+    color: var(--secondary-blue);
+    margin: 0 0 var(--space-md);
+    font-size: 1.4em;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    color: white;
-    min-height: 400px;
+    gap: var(--space-sm);
 }
 
-.slide-text {
-    flex: 1;
-    padding: 40px 0;
+.bio-section h3 i {
+    color: var(--gold);
 }
 
-.slide-text h1,
-.slide-text h2 {
-    font-size: 36px;
-    margin-bottom: 15px;
+.bio-section p {
+    margin-bottom: var(--space-sm);
+    text-align: justify;
+    font-size: 1.1em;
+    line-height: 1.9;
 }
 
-.slide-text p {
-    font-size: 18px;
-    margin-bottom: 25px;
-    max-width: 500px;
-}
-
-.slide-image {
-    flex: 1;
+/* بخش غیبت */
+.ghaybat-intro {
     text-align: center;
+    margin-bottom: var(--space-xl);
+    padding: var(--space-lg);
+    background: var(--very-light-blue);
+    border-radius: var(--radius-lg);
+    font-size: 1.1em;
 }
 
-.slide-image img {
-    max-height: 350px;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+.ghaybat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
 }
 
-.slider-controls {
-    position: absolute;
-    top: 50%;
-    width: 100%;
+.ghaybat-item {
+    background: linear-gradient(135deg, #f8fbff 0%, #e6f0ff 100%);
+    padding: var(--space-xl);
+    border-radius: var(--radius-xl);
+    border: 2px solid var(--light-blue);
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.ghaybat-item:hover {
+    transform: translateY(-5px);
+}
+
+.ghaybat-item h3 {
+    color: var(--primary-blue);
+    text-align: center;
+    margin-bottom: var(--space-xl);
+    font-size: 1.6em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+}
+
+.ghaybat-info {
+    background: var(--white);
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-lg);
+    border-right: 3px solid var(--light-blue);
+}
+
+.ghaybat-details p {
+    margin-bottom: var(--space-sm);
+}
+
+.ghaybat-details ul {
+    margin: var(--space-md) 0;
+    padding-right: var(--space-xl);
+}
+
+.ghaybat-details li {
+    margin-bottom: var(--space-sm);
+    position: relative;
+    padding-right: var(--space-sm);
+}
+
+.ghaybat-details li:before {
+    content: "•";
+    color: var(--light-blue);
+    font-weight: bold;
+    margin-left: var(--space-sm);
+    font-size: 1.2em;
+}
+
+.nawwab-section, .philosophy-section {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-lg);
+    border-top: 2px dashed var(--light-blue);
+}
+
+.nawwab-section h4, .philosophy-section h4 {
+    color: var(--secondary-blue);
+    margin-bottom: var(--space-md);
+    font-size: 1.2em;
+}
+
+.nawwab-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.nawwab-item {
+    background: var(--white);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-md);
+    border-right: 3px solid var(--gold);
     display: flex;
     justify-content: space-between;
-    transform: translateY(-50%);
-    padding: 0 20px;
-}
-
-.slider-prev,
-.slider-next {
-    background: rgba(255, 255, 255, 0.8);
-    border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
     align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: var(--transition);
-    font-size: 18px;
-    color: var(--dark-color);
 }
 
-.slider-prev:hover,
-.slider-next:hover {
-    background: white;
-    transform: scale(1.1);
+.nawwab-item span {
+    color: var(--text-light);
+    font-size: 0.9em;
 }
 
-.slider-dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.dot.active {
-    background: white;
-    transform: scale(1.2);
-}
-
-/* استایل دسته‌بندی‌ها */
-.categories {
-    padding: 50px 0;
-}
-
-.categories-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 20px;
-}
-
-.category-card {
-    background: white;
-    border-radius: 10px;
-    padding: 20px 15px;
+/* تایمر */
+.timer-explanation {
     text-align: center;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
+    margin-bottom: var(--space-xl);
+    padding: var(--space-lg);
+    background: var(--very-light-blue);
+    border-radius: var(--radius-lg);
+    font-size: 1.1em;
 }
 
-.category-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.category-icon {
-    width: 60px;
-    height: 60px;
-    background: var(--light-gray);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 15px;
-    font-size: 24px;
-    color: var(--primary-color);
-    transition: var(--transition);
-}
-
-.category-card:hover .category-icon {
-    background: var(--primary-color);
-    color: white;
-}
-
-.category-card h3 {
-    font-size: 16px;
-    font-weight: 600;
-}
-
-/* استایل محصولات */
-.featured-products,
-.popular-products {
-    padding: 50px 0;
-}
-
-.products-grid {
+.timer-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    margin: var(--space-xl) 0;
 }
 
-.product-card {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-    position: relative;
+.timer-item {
+    text-align: center;
+    padding: var(--space-xl);
+    background: linear-gradient(135deg, #f0f7ff 0%, #e1ecf7 100%);
+    border-radius: var(--radius-xl);
+    border: 2px solid var(--light-blue);
 }
 
-.product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.product-badge {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: var(--primary-color);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 15px;
-    font-size: 12px;
-    font-weight: 600;
-    z-index: 10;
-}
-
-.product-badge.discount {
-    background: var(--primary-color);
-}
-
-.product-image {
-    height: 200px;
-    overflow: hidden;
+.timer-item h3 {
+    color: var(--secondary-blue);
+    margin-bottom: var(--space-xl);
+    font-size: 1.4em;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--light-gray);
+    gap: var(--space-sm);
 }
 
-.product-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--transition);
+.timer-display {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
 }
 
-.product-card:hover .product-image img {
+.time-unit {
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    color: var(--white);
+    padding: var(--space-xl) var(--space-md);
+    border-radius: var(--radius-lg);
+    min-width: 100px;
+    box-shadow: 0 8px 20px rgba(30, 60, 114, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+}
+
+.time-unit:hover {
     transform: scale(1.05);
 }
 
-.product-info {
-    padding: 15px;
+.time-unit span {
+    font-size: 2.5em;
+    font-weight: bold;
+    display: block;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
-.product-title {
-    font-size: 16px;
-    margin-bottom: 10px;
-    height: 40px;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+.time-unit small {
+    font-size: 1em;
+    opacity: 0.9;
+    margin-top: var(--space-xs);
+    display: block;
 }
 
-.product-price {
+.timer-note {
+    color: var(--text-light);
+    font-size: 0.9em;
+    margin-top: var(--space-sm);
+}
+
+.appearance-info {
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    border-right: 4px solid #4caf50;
+    margin-top: var(--space-xl);
+}
+
+.appearance-info h4 {
+    color: #2e7d32;
+    margin-bottom: var(--space-md);
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 15px;
+    gap: var(--space-sm);
+    font-size: 1.3em;
 }
 
-.current-price {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--primary-color);
+.appearance-info p {
+    line-height: 1.8;
+    font-size: 1.1em;
 }
 
-.old-price {
-    font-size: 14px;
-    text-decoration: line-through;
-    color: var(--gray-color);
-}
-
-.product-actions {
-    display: flex;
-    gap: 10px;
-}
-
-.add-to-cart {
-    flex: 1;
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: var(--transition);
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-}
-
-.add-to-cart:hover {
-    background: var(--primary-dark);
-}
-
-.add-to-wishlist {
-    background: var(--light-gray);
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.add-to-wishlist:hover {
-    background: var(--primary-color);
-    color: white;
-}
-
-/* استایل بنر تبلیغاتی */
-.promo-banner {
-    padding: 50px 0;
-}
-
-.banner-content {
-    display: flex;
-    align-items: center;
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-}
-
-.banner-text {
-    flex: 1;
-    padding: 40px;
-    color: white;
-}
-
-.banner-text h2 {
-    font-size: 32px;
-    margin-bottom: 15px;
-}
-
-.banner-text p {
-    font-size: 18px;
-    margin-bottom: 25px;
-}
-
-.banner-image {
-    flex: 1;
+/* بخش روایات */
+.traditions-intro {
     text-align: center;
+    margin-bottom: var(--space-xl);
+    padding: var(--space-xl);
+    background: var(--very-light-blue);
+    border-radius: var(--radius-lg);
+    font-size: 1.1em;
 }
 
-.banner-image img {
-    max-height: 300px;
-}
-
-/* استایل فوتر */
-footer {
-    background: var(--dark-color);
-    color: white;
-    margin-top: 50px;
-}
-
-.footer-main {
-    padding: 50px 0 30px;
-}
-
-.footer-grid {
+.traditions-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
 }
 
-.footer-column h3 {
-    font-size: 18px;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #444;
+.tradition-item {
+    background: linear-gradient(135deg, #f8fbff 0%, #e6f0ff 100%);
+    padding: var(--space-xl);
+    border-radius: var(--radius-xl);
+    border: 2px solid transparent;
+    transition: all 0.6s ease;
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-lg);
+    opacity: 0;
+    transform: translateY(30px);
     position: relative;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
 }
 
-.footer-column h3::after {
+.tradition-item:before {
     content: '';
     position: absolute;
-    bottom: -1px;
+    top: 0;
     right: 0;
-    width: 50px;
-    height: 2px;
-    background-color: var(--primary-color);
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
 }
 
-.footer-column p {
-    margin-bottom: 20px;
-    line-height: 1.8;
-    color: #ccc;
+.tradition-item:hover {
+    border-color: var(--light-blue);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(30, 60, 114, 0.2);
 }
 
-.footer-column ul li {
-    margin-bottom: 10px;
+.tradition-item:hover:before {
+    opacity: 0.05;
 }
 
-.footer-column ul li a {
-    color: #ccc;
-    transition: var(--transition);
-}
-
-.footer-column ul li a:hover {
-    color: white;
-    padding-right: 5px;
-}
-
-.contact-info li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 15px;
-    color: #ccc;
-}
-
-.contact-info li i {
-    color: var(--primary-color);
-    width: 20px;
-}
-
-.social-links {
-    display: flex;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.social-links a {
+.tradition-icon {
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    color: var(--white);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: #444;
-    border-radius: 50%;
-    transition: var(--transition);
+    flex-shrink: 0;
+    font-size: 1.5em;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease;
 }
 
-.social-links a:hover {
-    background: var(--primary-color);
-    transform: translateY(-3px);
+.tradition-item:hover .tradition-icon {
+    transform: scale(1.1) rotate(5deg);
 }
 
-.footer-bottom {
-    background: #222;
-    padding: 20px 0;
-    border-top: 1px solid #444;
+.tradition-content {
+    flex: 1;
+    position: relative;
+    z-index: 2;
 }
 
-.footer-bottom-content {
+.tradition-text {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin-bottom: var(--space-md);
+    color: var(--text-dark);
+    font-weight: 500;
+    text-align: justify;
+}
+
+.tradition-meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #aaa;
-    font-size: 14px;
+    padding-top: var(--space-md);
+    border-top: 1px dashed var(--light-blue);
 }
 
-.payment-methods {
+.tradition-source {
+    color: var(--primary-blue);
+    font-weight: bold;
+    font-size: 0.95em;
+}
+
+.tradition-reference {
+    color: var(--text-light);
+    font-size: 0.85em;
+    direction: ltr;
+}
+
+.traditions-note {
+    background: linear-gradient(135deg, #fff3e0, #ffecb3);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    border-right: 4px solid #ff9800;
+}
+
+.traditions-note h4 {
+    color: #e65100;
+    margin-bottom: var(--space-md);
+    font-size: 1.3em;
     display: flex;
-    gap: 15px;
-    font-size: 24px;
+    align-items: center;
+    gap: var(--space-sm);
 }
 
-/* استایل ریسپانسیو */
-@media (max-width: 1200px) {
-    .categories-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .products-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+.traditions-note p {
+    line-height: 1.8;
+    font-size: 1.1em;
 }
 
-@media (max-width: 992px) {
-    .header-main-content {
-        flex-wrap: wrap;
-    }
-    
-    .search-bar {
-        order: 3;
-        max-width: 100%;
-        margin: 15px 0 0;
-    }
-    
-    .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .slide-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .slide-text {
-        padding: 30px 0 0;
-    }
-    
-    .slide-image {
-        padding: 20px 0;
-    }
-    
-    .banner-content {
-        flex-direction: column;
-    }
-    
-    .banner-text {
-        text-align: center;
-    }
+/* بخش احادیث */
+.hadith-intro {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+    padding: var(--space-lg);
+    background: var(--very-light-blue);
+    border-radius: var(--radius-lg);
+    font-size: 1.1em;
 }
 
-@media (max-width: 768px) {
-    .header-top {
-        display: none;
-    }
-    
-    .header-actions {
-        display: none;
-    }
-    
-    .mobile-menu-toggle {
-        display: block;
-    }
-    
-    .nav-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        left: 0;
-        background: white;
-        flex-direction: column;
-        box-shadow: var(--shadow);
-        z-index: 1000;
-    }
-    
-    .nav-menu.active {
-        display: flex;
-    }
-    
-    .nav-menu > li > a {
-        padding: 15px;
-        border-bottom: 1px solid var(--border-color);
-    }
-    
-    .sub-menu {
-        position: static;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        box-shadow: none;
-        background: var(--light-gray);
-    }
-    
-    .categories-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .footer-bottom-content {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-    
-    .section-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
+.hadith-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
 }
 
-@media (max-width: 576px) {
-    .categories-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .footer-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .slider-text h1,
-    .slider-text h2 {
-        font-size: 24px;
-    }
-    
-    .slider-text p {
-        font-size: 16px;
-    }
-    
-    .product-actions {
-        flex-direction: column;
-    }
+.hadith-item {
+    background: linear-gradient(135deg, #f8fbff 0%, #e6f0ff 100%);
+    padding: var(--space-xl);
+    border-radius: var(--radius-xl);
+    border: 2px solid var(--light-blue);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
 }
+
+.hadith-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(30, 60, 114, 0.15);
+}
+
+.hadith-item:before {
+    content: '"';
+    position: absolute;
+    top: var(--space-sm);
+    right: var(--space-lg);
+    font-size: 4em;
+    color: var(--light-blue);
+    opacity: 0.3;
+    font-family: serif;
+}
+
+.hadith-text {
+    background: var(--white);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    border-right: 4px solid var(--gold);
+    margin-bottom: var(--space-lg);
+}
+
+.arabic-text {
+    font-size: var(--font-size-lg);
+    line-height: 2;
+    text-align: justify;
+    margin-bottom: var(--space-lg);
+    color: var(--primary-blue);
+    font-weight: bold;
+    font-family: 'Traditional Arabic', 'Lateef', serif;
+}
+
+.hadith-translation {
+    background: #fff9e6;
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    border-right: 3px solid var(--gold);
+    line-height: 1.8;
+    font-size: 1.1em;
+}
+
+.hadith-meta {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px dashed #ddd;
+}
+
+.hadith-source, .hadith-narrator {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 0.9em;
+    color: var(--text-light);
+    background: var(--white);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: 20px;
+    border: 1px solid #e1e8f0;
+}
+
+.hadith-benefits {
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    margin-top: var(--space-xl);
+    border-right: 4px solid #4caf50;
+}
+
+.hadith-benefits h4 {
+    color: #2e7d32;
+    margin-bottom: var(--space-lg);
+    font-size: 1.3em;
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.hadith-benefits ul {
+    list-style: none;
+    padding-right: 0;
+}
+
+.hadith-benefits li {
+    margin-bottom: var(--space-sm);
+    padding-right: var(--space-xl);
+    position: relative;
+    font-size: 1.1em;
+}
+
+.hadith-benefits li:before {
+    content: "✓";
+    position: absolute;
+    right: 0;
+    color: #4caf50;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* بخش دعاها */
+.prayers-intro {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+    padding: var(--space-lg);
+    background: var(--very-light-blue);
+    border-radius: var(--radius-lg);
+    font-size: 1.1em;
+}
+
+.prayers-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+}
+
+.prayer-item {
+    background: linear-gradient(135deg, #f0f7ff 0%, #e1ecf7 100%);
+    padding: var(--space-xl);
+    border-radius: var(--radius-xl);
+    border: 2px solid var(--light-blue);
+    transition: transform 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.prayer-item:hover {
+    transform: translateY(-5px);
+}
+
+.prayer-item h3 {
+    color: var(--primary-blue);
+    text-align: center;
+    margin-bottom: var(--space-lg);
+    font-size: 1.4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+}
+
+.prayer-text {
+    background: var(--white);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    border-right: 4px solid var(--light-blue);
+}
+
+.arabic-text {
+    font-size: var(--font-size-lg);
+    line-height: 2;
+    text-align: justify;
+    margin-bottom: var(--space-lg);
+    color: var(--primary-blue);
+    font-weight: bold;
+}
+
+.prayer-meta {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    padding-top: var(--space-md);
+    border-top: 1px dashed #ddd;
+}
+
+.prayer-time, .prayer-source {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: 0.9em;
+    color: var(--text-light);
+}
+
+.prayer-benefits {
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    margin-top: var(--space-xl);
+    border-right: 4px solid #4caf50;
+}
+
+.prayer-benefits h4 {
+    color: #2e7d32;
+    margin-bottom: var(--space-lg);
+    font-size: 1.3em;
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.prayer-benefits ul {
