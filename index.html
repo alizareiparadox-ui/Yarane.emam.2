@@ -4,354 +4,774 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>پایگاه اینترنتی یاران امام زمان (عج) | yarane.emam.2</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#1e3c72">
-</head>
-<body>
-    <!-- منوی بالا -->
-    <nav class="main-nav">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <i class="fab fa-instagram instagram-logo"></i>
-                <h2>yarane.emam.2</h2>
-            </div>
-            
-            <div class="mobile-nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            
-            <ul class="nav-menu">
-                <li><a href="#home"><i class="fas fa-home"></i> صفحه اصلی</a></li>
-                <li><a href="#biography"><i class="fas fa-book"></i> زندگینامه</a></li>
-                <li><a href="#ghaybat"><i class="fas fa-history"></i> غیبت صغرا و کبرا</a></li>
-                <li><a href="#timer"><i class="fas fa-clock"></i> زمان‌سنج</a></li>
-                <li><a href="#traditions"><i class="fas fa-star"></i> روایات</a></li>
-                <li><a href="#hadith"><i class="fas fa-quote-right"></i> احادیث</a></li>
-                <li><a href="#prayers"><i class="fas fa-pray"></i> دعاها</a></li>
-                <li><a href="#faq"><i class="fas fa-question-circle"></i> سوالات متداول</a></li>
-                <li><a href="#media"><i class="fas fa-music"></i> نواهای مهدوی</a></li>
-            </ul>
-        </div>
-    </nav>
+    <style>
+        /* استایل‌های کلی */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <header id="home">
-        <div class="header-content">
-            <div class="header-text">
-                <h1>پایگاه اینترنتی یاران امام زمان (عج)</h1>
-                <div class="instagram-handle">
-                    <i class="fab fa-instagram"></i>
-                    <span>yarane.emam.2</span>
-                </div>
-                <div class="welcome-text">
-                    <p>"وَإِنَّهُ لَعِلْمٌ لِّلسَّاعَةِ فَلَا تَمْتَرُنَّ بِهَا وَاتَّبِعُونِ ۚ هَـٰذَا صِرَاطٌ مُّسْتَقِيمٌ"</p>
-                    <p>و همانا او (مهدی) نشانه‌ای برای قیامت است، پس در آن تردید نکنید و از من پیروی کنید که این راه راست است.</p>
-                </div>
-            </div>
-            <div class="header-symbol">
-                <div class="symbol-circle">
-                    <i class="fas fa-mosque"></i>
-                </div>
-                <p>مسجد مقدس جمکران</p>
-            </div>
-        </div>
-    </header>
+        :root {
+            --primary-blue: #1e3c72;
+            --secondary-blue: #2a5298;
+            --light-blue: #3498db;
+            --very-light-blue: #e6f0ff;
+            --white: #ffffff;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --gold: #ffd700;
+        }
 
-    <main>
-        <!-- بخش زندگینامه -->
-        <section id="biography" class="section fade-in">
-            <h2><i class="fas fa-user"></i> زندگینامه امام زمان (عج)</h2>
-            <div class="content">
-                <div class="bio-content">
-                    <div class="bio-section">
-                        <h3><i class="fas fa-star"></i> ولادت با سعادت</h3>
-                        <p>حضرت مهدی (عج) در سپیده دم نیمه‌شعبان سال ۲۵۵ هجری قمری در شهر سامرا دیده به جهان گشودند. تولد ایشان در شرایطی اتفاق افتاد که حکومت عباسی به شدت در پی یافتن آخرین امام و حجت خدا بود. تولد آن حضرت تا مدتی مخفی نگه داشته شد تا از گزند دشمنان در امان بمانند.</p>
-                    </div>
-                    
-                    <div class="bio-section">
-                        <h3><i class="fas fa-users"></i> پدر و مادر گرامی</h3>
-                        <p>ایشان فرزند بلافصل امام حسن عسکری (ع) و نرجس خاتون (س) می‌باشند. نرجس خاتون از خاندان شاهان روم و از نوادگان شمعون، یکی از حواریون حضرت عیسی (ع) بودند. ایشان بانویی بسیار پرهیزگار و با فضیلت بودند.</p>
-                    </div>
-                    
-                    <div class="bio-section">
-                        <h3><i class="fas fa-crown"></i> نام‌ها و القاب</h3>
-                        <p><strong>نام:</strong> محمد بن حسن<br>
-                        <strong>کنیه:</strong> اباصالح، ابوالقاسم<br>
-                        <strong>القاب:</strong> مهدی، قائم، حجت، منتظر، بقیه‌الله، صاحب‌الزمان، خاتم‌الاوصیاء</p>
-                        <p>همه این القاب بیانگر ویژگی‌ها و مسئولیت‌های آن حضرت می‌باشد.</p>
-                    </div>
-                    
-                    <div class="bio-section">
-                        <h3><i class="fas fa-calendar"></i> دوران امامت</h3>
-                        <p>امامت ایشان در ۵ سالگی و پس از شهادت پدر بزرگوارشان آغاز شد. این دوره مصادف با فشارهای شدید حکومت عباسی بر شیعیان بود. امام عسکری (ع) قبل از شهادت، امامت فرزندشان را به برخی از یاران خاص معرفی کردند.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        body {
+            font-family: 'BNazanin', 'BLotus', 'Iranian Sans', Tahoma, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f8fbff 0%, #e6f0ff 100%);
+            color: var(--text-dark);
+            direction: rtl;
+            padding-top: 60px;
+            font-size: 14px;
+        }
 
-        <!-- بخش غیبت -->
-        <section id="ghaybat" class="section fade-in">
-            <h2><i class="fas fa-cloud"></i> غیبت صغرا و کبرا</h2>
-            <div class="content">
-                <div class="ghaybat-intro">
-                    <p>غیبت امام زمان (عج) به دو دوره تقسیم می‌شود که هر کدام ویژگی‌ها و فلسفه خاص خود را دارد:</p>
-                </div>
-                
-                <div class="ghaybat-grid">
-                    <div class="ghaybat-item">
-                        <h3><i class="fas fa-eye-slash"></i> غیبت صغرا (کوچک)</h3>
-                        <div class="ghaybat-details">
-                            <div class="ghaybat-info">
-                                <p><strong>مدت زمان:</strong> ۶۹ سال (۲۶۰-۳۲۹ ه.ق)</p>
-                                <p><strong>علت غیبت:</strong> ترس از کشته شدن توسط دشمنان و آماده‌سازی شیعیان</p>
-                            </div>
-                            <p><strong>ویژگی‌های مهم:</strong></p>
-                            <ul>
-                                <li>ارتباط غیرمستقیم از طریق چهار نائب خاص</li>
-                                <li>پاسخ به سوالات شرعی و حل مشکلات شیعیان</li>
-                                <li>آماده‌سازی شیعیان برای دوران غیبت کبرا</li>
-                                <li>حفظ سازمان وکالت و ارتباط با شیعیان</li>
-                            </ul>
-                            <div class="nawwab-section">
-                                <h4>نواب اربعه (نمایندگان خاص):</h4>
-                                <div class="nawwab-list">
-                                    <div class="nawwab-item">
-                                        <strong>۱- عثمان بن سعید عمری</strong>
-                                        <span>مدت نیابت: ۵ سال</span>
-                                    </div>
-                                    <div class="nawwab-item">
-                                        <strong>۲- محمد بن عثمان</strong>
-                                        <span>مدت نیابت: ۴۰ سال</span>
-                                    </div>
-                                    <div class="nawwab-item">
-                                        <strong>۳- حسین بن روح نوبختی</strong>
-                                        <span>مدت نیابت: ۲۱ سال</span>
-                                    </div>
-                                    <div class="nawwab-item">
-                                        <strong>۴- علی بن محمد سمری</strong>
-                                        <span>مدت نیابت: ۳ سال</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="ghaybat-item">
-                        <h3><i class="fas fa-eye"></i> غیبت کبرا (بزرگ)</h3>
-                        <div class="ghaybat-details">
-                            <div class="ghaybat-info">
-                                <p><strong>شروع:</strong> سال ۳۲۹ هجری قمری</p>
-                                <p><strong>علت غیبت:</strong> امتحان و آزمایش مردم، عدم آمادگی جهان برای ظهور</p>
-                            </div>
-                            <p><strong>ویژگی‌های مهم:</strong></p>
-                            <ul>
-                                <li>قطع ارتباط مستقیم با نائبان خاص</li>
-                                <li>مراجعه به علمای ربانی و فقهای واجد شرایط</li>
-                                <li>امتحان و آزمایش ایمان مردم</li>
-                                <li>حضور ناظر امام در میان مردم بدون شناخته شدن</li>
-                                <li>تکمیل ظرفیت‌های معنوی و معرفتی بشریت</li>
-                            </ul>
-                            <div class="philosophy-section">
-                                <h4>فلسفه غیبت کبرا:</h4>
-                                <p>غیبت کبرا دوران آماده‌سازی جهانی برای ظهور است. در این دوره، انسان‌ها باید با اختیار و آزادی اراده، راه حق را انتخاب کنند و زمینه‌ساز ظهور شوند. امام در این دوران مانند خورشید پشت ابر است که اگرچه دیده نمی‌شود، ولی نور و برکاتش به همه می‌رسد.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        /* منوی اصلی */
+        .main-nav {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            height: 60px;
+            display: flex;
+            align-items: center;
+        }
 
-        <!-- بخش تایمر -->
-        <section id="timer" class="section fade-in">
-            <h2><i class="fas fa-hourglass-half"></i> زمان‌سنج غیبت کبرا و سن امام</h2>
-            <div class="content">
-                <div class="timer-explanation">
-                    <p>این زمان‌سنج نشان می‌دهد که چه مدت از غیبت کبرای امام زمان (عج) گذشته و سن مبارک ایشان در حال حاضر چقدر است.</p>
-                </div>
-                
-                <div class="timer-container">
-                    <div class="timer-item">
-                        <h3><i class="fas fa-calendar-times"></i> مدت غیبت کبرا</h3>
-                        <div class="timer-display">
-                            <div class="time-unit">
-                                <span id="years">0</span>
-                                <small>سال</small>
-                            </div>
-                            <div class="time-unit">
-                                <span id="months">0</span>
-                                <small>ماه</small>
-                            </div>
-                            <div class="time-unit">
-                                <span id="days">0</span>
-                                <small>روز</small>
-                            </div>
-                        </div>
-                        <p class="timer-note">از سال ۳۲۹ هجری قمری تاکنون</p>
-                    </div>
-                    
-                    <div class="timer-item">
-                        <h3><i class="fas fa-user-clock"></i> سن مبارک امام زمان (عج)</h3>
-                        <div class="timer-display">
-                            <div class="time-unit">
-                                <span id="imam-years">0</span>
-                                <small>سال</small>
-                            </div>
-                            <div class="time-unit">
-                                <span id="imam-months">0</span>
-                                <small>ماه</small>
-                            </div>
-                            <div class="time-unit">
-                                <span id="imam-days">0</span>
-                                <small>روز</small>
-                            </div>
-                        </div>
-                        <p class="timer-note">از نیمه شعبان ۲۵۵ هجری قمری تاکنون</p>
-                    </div>
-                </div>
-                
-                <div class="appearance-info">
-                    <h4><i class="fas fa-info-circle"></i> نکته مهم:</h4>
-                    <p>امام زمان (عج) با عمر طولانی خود، نمونه‌ای از قدرت بی‌پایان الهی هستند. ایشان هم اکنون زنده و ناظر بر اعمال ما می‌باشند و در مواقع ضروری به کمک شیعیان می‌شتابند.</p>
-                </div>
-            </div>
-        </section>
+        .nav-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 15px;
+        }
 
-        <!-- بخش روایات -->
-        <section id="traditions" class="section fade-in">
-            <h2><i class="fas fa-gem"></i> روایات نورانی درباره امام زمان (عج)</h2>
-            <div class="content">
-                <div class="traditions-intro">
-                    <p>در این بخش، گزیده‌ای از زیباترین روایات و سخنان ائمه معصومین (ع) درباره حضرت مهدی (عج) را تقدیم می‌کنیم:</p>
-                </div>
-                
-                <div class="traditions-grid">
-                    <div class="tradition-item">
-                        <div class="tradition-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <div class="tradition-content">
-                            <p class="tradition-text">"مهدی از ما اهل بیت است، خداوند امر او را در یک شب اصلاح می‌کند."</p>
-                            <div class="tradition-meta">
-                                <span class="tradition-source">امام صادق (ع)</span>
-                                <span class="tradition-reference">کمال الدین، ج ۱، ص ۳۱۷</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="tradition-item">
-                        <div class="tradition-icon">
-                            <i class="fas fa-crown"></i>
-                        </div>
-                        <div class="tradition-content">
-                            <p class="tradition-text">"قائم ما هنگامی که قیام کند، به هر مؤمنی نیروی چهل مرد را عطا می‌کند."</p>
-                            <div class="tradition-meta">
-                                <span class="tradition-source">امام باقر (ع)</span>
-                                <span class="tradition-reference">بحارالانوار، ج ۵۲، ص ۳۱۷</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="tradition-item">
-                        <div class="tradition-icon">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
-                        <div class="tradition-content">
-                            <p class="tradition-text">"زمین از حجت خدا خالی نمی‌ماند و اگر چنین شود، اهلش را فرو می‌برد."</p>
-                            <div class="tradition-meta">
-                                <span class="tradition-source">امام علی (ع)</span>
-                                <span class="tradition-reference">اصول کافی، ج ۱، ص ۱۷۸</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="tradition-item">
-                        <div class="tradition-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <div class="tradition-content">
-                            <p class="tradition-text">"همانا برای قائم ما غیبتی است که بردبار در آن دچار حیرت می‌شود."</p>
-                            <div class="tradition-meta">
-                                <span class="tradition-source">امام سجاد (ع)</span>
-                                <span class="tradition-reference">کمال الدین، ج ۱، ص ۳۲۰</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="tradition-item">
-                        <div class="tradition-icon">
-                            <i class="fas fa-hand-holding-heart"></i>
-                        </div>
-                        <div class="tradition-content">
-                            <p class="tradition-text">"مهدی از طرف خداوند به مردم رحمت می‌آورد و به عدالت رفتار می‌کند."</p>
-                            <div class="tradition-meta">
-                                <span class="tradition-source">پیامبر اکرم (ص)</span>
-                                <span class="tradition-reference">ینابیع المودة، ج ۳، ص ۱۲۶</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="tradition-item">
-                        <div class="tradition-icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <div class="tradition-content">
-                            <p class="tradition-text">"دولت ما آخرین دولتهاست که هیچ خاندانی از باطل‌گرایان باقی نمی‌ماند مگر اینکه قبل از دولت ما حکومت می‌کنند."</p>
-                            <div class="tradition-meta">
-                                <span class="tradition-source">امام کاظم (ع)</span>
-                                <span class="tradition-reference">کمال الدین، ج ۱، ص ۳۷۲</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="traditions-note">
-                    <h4><i class="fas fa-info-circle"></i> اهمیت مطالعه روایات:</h4>
-                    <p>مطالعه روایات مربوط به امام زمان (عج) باعث افزایش محبت و شناخت بیشتر نسبت به ایشان می‌شود و روحیه انتظار فرج را در دل‌های مؤمنان زنده نگه می‌دارد.</p>
-                </div>
-            </div>
-        </section>
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-        <!-- بخش احادیث -->
-        <section id="hadith" class="section fade-in">
-            <h2><i class="fas fa-quote-right"></i> احادیث نورانی درباره امام زمان (عج)</h2>
-            <div class="content">
-                <div class="hadith-intro">
-                    <p>در این بخش، احادیث زیبا و نورانی از معصومین (ع) درباره حضرت مهدی (عج) را گردآوری کرده‌ایم:</p>
-                </div>
-                
-                <div class="hadith-grid">
-                    <div class="hadith-item">
-                        <div class="hadith-text">
-                            <p class="arabic-text">"الْمَهْدِيُّ مِنْ وُلْدِي، اسْمُهُ اسْمِي، وَكُنْيَتُهُ كُنْيَتِي، أَشْبَهُ النَّاسِ بِي خَلْقاً وَخُلْقاً، تَكُونُ لَهُ غَيْبَةٌ وَحَيْرَةٌ حَتَّى تَضِلَّ الْخَلْقُ عَنْ أَدْيَانِهِمْ، فَعِنْدَ ذَلِكَ يُقْبِلُ كَالشَّهَابِ الثَّاقِبِ فَيَمْلَأُهَا عَدْلاً وَقِسْطاً كَمَا مُلِئَتْ جَوْراً وَظُلْماً"</p>
-                            <p class="hadith-translation"><strong>ترجمه:</strong> "مهدی از فرزندان من است، نامش نام من و کنیه‌اش کنیه من است. از نظر خلقت و خلق، شبیه‌ترین مردم به من است. برای او غیبت و حیرتی خواهد بود تا آنجا که مردم از دین‌های خود گمراه شوند. در آن زمان مانند شهاب ثاقب می‌آید و زمین را پر از عدل و داد می‌کند، همان‌گونه که از ستم و بیداد پر شده باشد."</p>
-                        </div>
-                        <div class="hadith-meta">
-                            <span class="hadith-source"><i class="fas fa-book"></i> منبع: کمال الدین، ج ۱، ص ۲۸۶</span>
-                            <span class="hadith-narrator"><i class="fas fa-user"></i> راوی: پیامبر اکرم (ص)</span>
-                        </div>
-                    </div>
-                    
-                    <div class="hadith-item">
-                        <div class="hadith-text">
-                            <p class="arabic-text">"مَنْ مَاتَ وَلَمْ يَعْرِفْ إِمَامَ زَمَانِهِ مَاتَ مِيتَةً جَاهِلِيَّةً"</p>
-                            <p class="hadith-translation"><strong>ترجمه:</strong> "هر کس بمیرد و امام زمان خود را نشناسد، به مرگ جاهلیت مرده است."</p>
-                        </div>
-                        <div class="hadith-meta">
-                            <span class="hadith-source"><i class="fas fa-book"></i> منبع: اصول کافی، ج ۱، ص ۳۷۶</span>
-                            <span class="hadith-narrator"><i class="fas fa-user"></i> راوی: امام صادق (ع)</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="hadith-benefits">
-                    <h4><i class="fas fa-lightbulb"></i> نکات مهم از احادیث:</h4>
-                    <ul>
-                        <li>شناخت امام زمان از واجبات دینی است</li>
-                        <li>امام زمان وارث تمام پیامبران و اوصیاء است</li>
-                        <li>غیبت امام آزمایشی برای مؤمنان است</li>
-                        <li>ظهور حتمی است و جهان را پر از عدل می‌کند</li>
-                        <li>امام در دوران غیبت نیز ناظر بر اعمال است</li>
-                    </
+        .instagram-logo {
+            font-size: 1.4em;
+            color: var(--white);
+        }
+
+        .nav-logo h2 {
+            color: var(--white);
+            font-size: 1.1em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        /* منوی موبایل */
+        .mobile-nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-nav-toggle span {
+            width: 20px;
+            height: 2px;
+            background: white;
+            margin: 2px 0;
+            transition: 0.3s;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 5px;
+        }
+
+        .nav-menu li a {
+            color: var(--white);
+            text-decoration: none;
+            padding: 8px 12px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.85em;
+        }
+
+        .nav-menu li a:hover {
+            background: rgba(255,255,255,0.15);
+        }
+
+        .nav-menu li a i {
+            font-size: 0.9em;
+        }
+
+        /* هدر */
+        header {
+            background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--primary-blue) 100%);
+            color: var(--white);
+            padding: 40px 15px;
+            margin-bottom: 20px;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .header-text h1 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.3;
+        }
+
+        .instagram-handle {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .instagram-handle i {
+            font-size: 1.1em;
+        }
+
+        .instagram-handle span {
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+        .welcome-text {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .welcome-text p:first-child {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: var(--gold);
+        }
+
+        .welcome-text p:last-child {
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .header-symbol {
+            text-align: center;
+        }
+
+        .symbol-circle {
+            width: 100px;
+            height: 100px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .symbol-circle i {
+            font-size: 2.5em;
+            color: var(--gold);
+        }
+
+        .header-symbol p {
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+        /* بخش اصلی */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .section {
+            background: var(--white);
+            margin-bottom: 20px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid #e1e8f0;
+        }
+
+        .section h2 {
+            color: var(--primary-blue);
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            text-align: center;
+            border-bottom: 2px solid var(--light-blue);
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .section h2 i {
+            color: var(--light-blue);
+        }
+
+        /* بخش زندگینامه */
+        .bio-content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .bio-section {
+            padding: 15px;
+            background: var(--very-light-blue);
+            border-radius: 8px;
+            border-right: 3px solid var(--light-blue);
+        }
+
+        .bio-section h3 {
+            color: var(--secondary-blue);
+            margin: 0 0 10px;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .bio-section h3 i {
+            color: var(--gold);
+        }
+
+        .bio-section p {
+            margin-bottom: 8px;
+            text-align: justify;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        /* بخش غیبت */
+        .ghaybat-intro {
+            text-align: center;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: var(--very-light-blue);
+            border-radius: 8px;
+            font-size: 0.95em;
+        }
+
+        .ghaybat-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .ghaybat-item {
+            background: linear-gradient(135deg, #f8fbff 0%, #e6f0ff 100%);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid var(--light-blue);
+        }
+
+        .ghaybat-item h3 {
+            color: var(--primary-blue);
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .ghaybat-info {
+            background: var(--white);
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            border-right: 2px solid var(--light-blue);
+        }
+
+        .ghaybat-details p {
+            margin-bottom: 8px;
+            font-size: 0.9em;
+        }
+
+        .ghaybat-details ul {
+            margin: 10px 0;
+            padding-right: 15px;
+        }
+
+        .ghaybat-details li {
+            margin-bottom: 6px;
+            position: relative;
+            padding-right: 8px;
+            font-size: 0.9em;
+        }
+
+        .ghaybat-details li:before {
+            content: "•";
+            color: var(--light-blue);
+            font-weight: bold;
+            margin-left: 8px;
+        }
+
+        .nawwab-section, .philosophy-section {
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px dashed var(--light-blue);
+        }
+
+        .nawwab-section h4, .philosophy-section h4 {
+            color: var(--secondary-blue);
+            margin-bottom: 8px;
+            font-size: 1em;
+        }
+
+        .nawwab-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .nawwab-item {
+            background: var(--white);
+            padding: 8px 10px;
+            border-radius: 6px;
+            border-right: 2px solid var(--gold);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85em;
+        }
+
+        .nawwab-item span {
+            color: var(--text-light);
+            font-size: 0.8em;
+        }
+
+        /* بخش تایمر */
+        .timer-explanation {
+            text-align: center;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: var(--very-light-blue);
+            border-radius: 8px;
+            font-size: 0.95em;
+        }
+
+        .timer-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .timer-item {
+            text-align: center;
+            padding: 15px;
+            background: linear-gradient(135deg, #f0f7ff 0%, #e1ecf7 100%);
+            border-radius: 10px;
+            border: 1px solid var(--light-blue);
+        }
+
+        .timer-item h3 {
+            color: var(--secondary-blue);
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .timer-display {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .time-unit {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: 12px 8px;
+            border-radius: 8px;
+            min-width: 70px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .time-unit span {
+            font-size: 1.5em;
+            font-weight: bold;
+            display: block;
+        }
+
+        .time-unit small {
+            font-size: 0.8em;
+            opacity: 0.9;
+            margin-top: 3px;
+            display: block;
+        }
+
+        .timer-note {
+            color: var(--text-light);
+            font-size: 0.8em;
+            margin-top: 8px;
+        }
+
+        .appearance-info {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            padding: 15px;
+            border-radius: 8px;
+            border-right: 3px solid #4caf50;
+            margin-top: 15px;
+        }
+
+        .appearance-info h4 {
+            color: #2e7d32;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1em;
+        }
+
+        .appearance-info p {
+            line-height: 1.6;
+            font-size: 0.9em;
+        }
+
+        /* بخش روایات */
+        .traditions-intro {
+            text-align: center;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: var(--very-light-blue);
+            border-radius: 8px;
+            font-size: 0.95em;
+        }
+
+        .traditions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .tradition-item {
+            background: linear-gradient(135deg, #f8fbff 0%, #e6f0ff 100%);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid var(--light-blue);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .tradition-icon {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.1em;
+        }
+
+        .tradition-content {
+            flex: 1;
+        }
+
+        .tradition-text {
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+            text-align: justify;
+        }
+
+        .tradition-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 8px;
+            border-top: 1px dashed var(--light-blue);
+            font-size: 0.8em;
+        }
+
+        .tradition-source {
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+
+        .tradition-reference {
+            color: var(--text-light);
+            direction: ltr;
+        }
+
+        .traditions-note {
+            background: linear-gradient(135deg, #fff3e0, #ffecb3);
+            padding: 15px;
+            border-radius: 8px;
+            border-right: 3px solid #ff9800;
+        }
+
+        .traditions-note h4 {
+            color: #e65100;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .traditions-note p {
+            line-height: 1.6;
+            font-size: 0.9em;
+        }
+
+        /* بخش احادیث */
+        .hadith-intro {
+            text-align: center;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: var(--very-light-blue);
+            border-radius: 8px;
+            font-size: 0.95em;
+        }
+
+        .hadith-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .hadith-item {
+            background: linear-gradient(135deg, #f8fbff 0%, #e6f0ff 100%);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid var(--light-blue);
+        }
+
+        .hadith-text {
+            background: var(--white);
+            padding: 15px;
+            border-radius: 8px;
+            border-right: 3px solid var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .arabic-text {
+            font-size: 1em;
+            line-height: 1.8;
+            text-align: justify;
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-family: 'Traditional Arabic', 'Lateef', serif;
+        }
+
+        .hadith-translation {
+            background: #fff9e6;
+            padding: 10px;
+            border-radius: 6px;
+            border-right: 2px solid var(--gold);
+            line-height: 1.6;
+            font-size: 0.9em;
+        }
+
+        .hadith-meta {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding-top: 8px;
+            border-top: 1px dashed #ddd;
+            font-size: 0.8em;
+        }
+
+        .hadith-source, .hadith-narrator {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--text-light);
+            background: var(--white);
+            padding: 5px 10px;
+            border-radius: 15px;
+            border: 1px solid #e1e8f0;
+        }
+
+        .hadith-benefits {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-right: 3px solid #4caf50;
+        }
+
+        .hadith-benefits h4 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hadith-benefits ul {
+            list-style: none;
+            padding-right: 0;
+        }
+
+        .hadith-benefits li {
+            margin-bottom: 6px;
+            padding-right: 20px;
+            position: relative;
+            font-size: 0.9em;
+        }
+
+        .hadith-benefits li:before {
+            content: "✓";
+            position: absolute;
+            right: 0;
+            color: #4caf50;
+            font-weight: bold;
+        }
+
+        /* بخش دعاها */
+        .prayers-intro {
+            text-align: center;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: var(--very-light-blue);
+            border-radius: 8px;
+            font-size: 0.95em;
+        }
+
+        .prayers-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .prayer-item {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e1ecf7 100%);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid var(--light-blue);
+        }
+
+        .prayer-item h3 {
+            color: var(--primary-blue);
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .prayer-text {
+            background: var(--white);
+            padding: 15px;
+            border-radius: 8px;
+            border-right: 3px solid var(--light-blue);
+        }
+
+        .arabic-text {
+            font-size: 1em;
+            line-height: 1.8;
+            text-align: justify;
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+
+        .prayer-meta {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding-top: 8px;
+            border-top: 1px dashed #ddd;
+            font-size: 0.8em;
+        }
+
+        .prayer-time, .prayer-source {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: var(--text-light);
+        }
+
+        .prayer-benefits {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-right: 3px solid #4caf50;
+        }
+
+        .prayer-benefits h4 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .prayer-benefits ul {
+            list-style: none;
+            padding-right: 0;
+        }
+
+        .prayer-benefits li {
+            margin-bottom: 6px;
+            padding-right: 20px;
+            position: relative;
+            font-size: 0.9em;
+        }
+
+        .prayer-benefits li:before {
+            content: "✓";
+            position: absolute;
+            right: 0;
+            color: #4caf50;
+            font-weight: bold;
+        }
+
+        /* بخش سوالات متداول */
+        .faq-intro {
+            text-align: center;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: var(--very
