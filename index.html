@@ -1,543 +1,1046 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بوتیک قرمز | Red Boutique</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* استایل‌های مخصوص موبایل */
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 0.5rem 0;
-            }
-            
-            .logo {
-                order: 1;
-            }
-            
-            .search-box {
-                order: 3;
-                flex: 1;
-                width: 100%;
-                max-width: 100%;
-                margin: 0.5rem 0;
-            }
-            
-            .nav-icons {
-                order: 2;
-                gap: 15px;
-            }
-            
-            .categories {
-                flex-wrap: wrap;
-                gap: 0.5rem;
-                padding: 0 10px;
-            }
-            
-            .categories li {
-                margin: 0;
-            }
-            
-            .categories a {
-                font-size: 0.9rem;
-                padding: 5px 10px;
-            }
-            
-            .hero-slider {
-                height: 300px;
-            }
-            
-            .slide-content {
-                right: 5%;
-                padding: 1.5rem;
-                backdrop-filter: blur(5px);
-            }
-            
-            .slide-content h2 {
-                font-size: 1.8rem;
-                margin-bottom: 0.5rem;
-            }
-            
-            .slide-content p {
-                font-size: 1rem;
-                margin-bottom: 1rem;
-            }
-            
-            .shop-now {
-                padding: 10px 20px;
-                font-size: 1rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-                margin: 2rem 0;
-            }
-            
-            .category-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-                padding: 0 10px;
-            }
-            
-            .category-item {
-                padding: 1rem 0.5rem;
-            }
-            
-            .category-image {
-                width: 120px;
-                height: 120px;
-            }
-            
-            .category-item h3 {
-                font-size: 1.1rem;
-            }
-            
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-                padding: 0 10px;
-            }
-            
-            .product-card {
-                margin-bottom: 1rem;
-            }
-            
-            .product-image {
-                height: 200px;
-            }
-            
-            .product-info {
-                padding: 1rem;
-            }
-            
-            .product-title {
-                font-size: 1rem;
-            }
-            
-            .product-price {
-                font-size: 1.1rem;
-            }
-            
-            .add-to-cart {
-                padding: 10px 15px;
-                font-size: 0.9rem;
-            }
-            
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-                padding: 0 10px;
-            }
-            
-            .feature {
-                padding: 1.5rem 1rem;
-            }
-            
-            .feature i {
-                font-size: 2rem;
-            }
-            
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                padding: 0 10px;
-            }
-            
-            .slider-arrow {
-                width: 40px;
-                height: 40px;
-                font-size: 1rem;
-            }
-            
-            .prev-slide {
-                right: 10px;
-            }
-            
-            .next-slide {
-                left: 10px;
-            }
-            
-            /* منوی موبایل */
-            .mobile-menu-btn {
-                display: block;
-                background: none;
-                border: none;
-                font-size: 1.5rem;
-                color: #333;
-                cursor: pointer;
-                order: 2;
-            }
-            
-            .categories {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: white;
-                flex-direction: column;
-                padding: 1rem;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-                z-index: 1000;
-            }
-            
-            .categories.active {
-                display: flex;
-            }
-            
-            .categories li {
-                width: 100%;
-                text-align: center;
-            }
-            
-            .categories a {
-                display: block;
-                padding: 10px;
-                border-bottom: 1px solid #f0f0f0;
-            }
-        }
+/* Reset و تنظیمات پایه */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        @media (max-width: 480px) {
-            .category-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero-slider {
-                height: 250px;
-            }
-            
-            .slide-content {
-                padding: 1rem;
-            }
-            
-            .slide-content h2 {
-                font-size: 1.5rem;
-            }
-            
-            .logo-text {
-                font-size: 1.4rem;
-            }
-            
-            .search-box {
-                flex: 0 0 100%;
-            }
-            
-            .top-bar .container {
-                flex-direction: column;
-                gap: 5px;
-                text-align: center;
-            }
-            
-            .top-links {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
-            }
-            
-            .top-links a {
-                margin: 0;
-                font-size: 0.8rem;
-            }
-        }
-
-        /* دکمه منوی موبایل */
-        .mobile-menu-btn {
-            display: none;
-        }
-
-        /* بهبود نمایش برای تبلت */
-        @media (max-width: 1024px) and (min-width: 769px) {
-            .products-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            
-            .category-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Preloader -->
+:root {
+    /* رنگ‌بندی قرمز */
+    --primary-red: #dc2626;
+    --dark-red: #b91c1c;
+    --light-red: #fef2f2;
+    --red-gradient: linear-gradient(135deg, #dc2626, #b91c1c);
     
+    /* رنگ‌های خنثی */
+    --white: #ffffff;
+    --black: #1a1a1a;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-500: #6b7280;
+    --gray-700: #374151;
+    --gray-900: #111827;
+    
+    /* سایه‌ها */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-red: 0 10px 25px -3px rgba(220, 38, 38, 0.3);
+    
+    /* انیمیشن‌ها */
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-    <!-- نوار بالایی -->
-    <div class="top-bar">
-        <div class="container">
-            <div class="top-links">
-                <a href="#" class="hover-underline">پیگیری سفارش</a>
-                <a href="#" class="hover-underline">مرجوعی کالا</a>
-                <a href="#" class="hover-underline">پرسش‌های متداول</a>
-            </div>
-            <div class="auth-links">
-                <a href="#" id="login-btn" class="hover-underline">
-                    <i class="fas fa-user"></i> ورود / ثبت‌نام
-                </a>
-            </div>
-        </div>
-    </div>
+body {
+    font-family: 'Vazir', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--gray-700);
+    background: var(--white);
+    direction: rtl;
+    overflow-x: hidden;
+}
 
-    <!-- هدر اصلی -->
-    <header class="header">
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="logo">
-                    <div class="logo-icon">
-                        <div class="diamond"></div>
-                    </div>
-                    <h1 class="logo-text">بوتیک قرمز</h1>
-                </div>
-                
-                <!-- دکمه منوی موبایل -->
-                <button class="mobile-menu-btn" id="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-                <div class="search-box">
-                    <input type="text" placeholder="جستجوی محصولات..." class="search-input">
-                    <button class="search-btn">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
+/* Preloader */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: var(--transition-slow);
+}
 
-                <div class="nav-icons">
-                    <a href="#" class="nav-icon heartbeat">
-                        <i class="fas fa-heart"></i>
-                        <span class="badge pulse">۳</span>
-                    </a>
-                    <a href="cart.html" class="nav-icon" id="cart-icon"> <!-- تغییر لینک به cart.html -->
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="badge" id="cart-count">۰</span>
-                    </a>
-                </div>
-            </div>
-        </nav>
+.loader {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
 
-        <!-- منوی دسته‌بندی -->
-        <div class="category-menu">
-            <div class="container">
-                <ul class="categories" id="categories-menu">
-                    <li><a href="#" class="category-link">لباس مردانه</a></li>
-                    <li><a href="#" class="category-link">لباس زنانه</a></li>
-                    <li><a href="#" class="category-link">بچه‌گانه</a></li>
-                    <li><a href="#" class="category-link">ورزشی</a></li>
-                    <li><a href="#" class="category-link">اکسسوری</a></li>
-                    <li><a href="#" class="category-link sale">تخفیف‌های ویژه</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
+.red-dot {
+    width: 20px;
+    height: 20px;
+    background: var(--primary-red);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: bounce 1.5s infinite;
+}
 
-    <!-- اسلایدر اصلی -->
-    <section class="hero-slider">
-        <div class="slider-container" id="slider-container">
-            <!-- اسلایدها با JavaScript ساخته می‌شوند -->
-        </div>
-        <div class="floating-elements">
-            <div class="floating-circle circle-1"></div>
-            <div class="floating-circle circle-2"></div>
-            <div class="floating-circle circle-3"></div>
-        </div>
-    </section>
+.pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border: 2px solid var(--primary-red);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
 
-    <!-- دسته‌بندی محصولات -->
-    <section class="categories-section">
-        <div class="container">
-            <h2 class="section-title fade-in-up">دسته‌بندی محصولات</h2>
-            <div class="category-grid">
-                <div class="category-item glass">
-                    <div class="category-image">
-                        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="مردانه">
-                        <div class="category-overlay"></div>
-                    </div>
-                    <h3>لباس مردانه</h3>
-                    <div class="category-hover">
-                        <span>مشاهده محصولات</span>
-                        <i class="fas fa-arrow-left"></i>
-                    </div>
-                </div>
-                <div class="category-item glass">
-                    <div class="category-image">
-                        <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="زنانه">
-                        <div class="category-overlay"></div>
-                    </div>
-                    <h3>لباس زنانه</h3>
-                    <div class="category-hover">
-                        <span>مشاهده محصولات</span>
-                        <i class="fas fa-arrow-left"></i>
-                    </div>
-                </div>
-                <div class="category-item glass">
-                    <div class="category-image">
-                        <img src="https://images.unsplash.com/photo-1519457431-44ccd64a579b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="بچه‌گانه">
-                        <div class="category-overlay"></div>
-                    </div>
-                    <h3>بچه‌گانه</h3>
-                    <div class="category-hover">
-                        <span>مشاهده محصولات</span>
-                        <i class="fas fa-arrow-left"></i>
-                    </div>
-                </div>
-                <div class="category-item glass">
-                    <div class="category-image">
-                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="ورزشی">
-                        <div class="category-overlay"></div>
-                    </div>
-                    <h3>لباس ورزشی</h3>
-                    <div class="category-hover">
-                        <span>مشاهده محصولات</span>
-                        <i class="fas fa-arrow-left"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+@keyframes bounce {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.2); }
+}
 
-    <!-- محصولات پرفروش -->
-    <section class="featured-products">
-        <div class="container">
-            <h2 class="section-title fade-in-up">محصولات پرفروش</h2>
-            <div class="products-grid" id="products-grid">
-                <!-- محصولات با JavaScript لود می‌شوند -->
-            </div>
-            
-            <!-- دکمه مشاهده سبد خرید -->
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="cart.html" class="shopping-btn" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
-                    <i class="fas fa-shopping-cart"></i>
-                    مشاهده سبد خرید
-                </a>
-            </div>
-        </div>
-    </section>
+@keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(0.8); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(2); opacity: 0; }
+}
 
-    <!-- ویژگی‌های فروشگاه -->
-    <section class="features">
-        <div class="container">
-            <div class="features-grid">
-                <div class="feature glass fade-in-up">
-                    <div class="feature-icon">
-                        <i class="fas fa-shipping-fast"></i>
-                    </div>
-                    <h3>ارسال رایگان</h3>
-                    <p>برای خریدهای بالای 200 هزار تومان</p>
-                </div>
-                <div class="feature glass fade-in-up">
-                    <div class="feature-icon">
-                        <i class="fas fa-undo"></i>
-                    </div>
-                    <h3>مرجوعی آسان</h3>
-                    <p>تا ۷ روز امکان مرجوعی کالا</p>
-                </div>
-                <div class="feature glass fade-in-up">
-                    <div class="feature-icon">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <h3>پرداخت امن</h3>
-                    <p>پرداخت آنلاین با امنیت بالا</p>
-                </div>
-                <div class="feature glass fade-in-up">
-                    <div class="feature-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>پشتیبانی 24/7</h3>
-                    <p>پشتیبانی آنلاین در تمام ساعات</p>
-                </div>
-            </div>
-        </div>
-    </section>
+.preloader p {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-red);
+    animation: fadeInOut 2s infinite;
+}
 
-    <!-- سایدبار سبد خرید -->
-    <div class="cart-sidebar" id="cart-sidebar">
-        <div class="cart-header">
-            <h3>سبد خرید شما</h3>
-            <button class="close-cart" id="close-cart">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="cart-items" id="cart-items">
-            <!-- آیتم‌های سبد خرید -->
-        </div>
-        <div class="cart-total">
-            <p>جمع کل: <span id="cart-total-price">۰ تومان</span></p>
-            <a href="cart.html" class="checkout-btn glow" style="text-decoration: none; display: block;"> <!-- تغییر به لینک -->
-                تکمیل سفارش در صفحه سبد خرید
-            </a>
-        </div>
-    </div>
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
 
-    <!-- فوتر -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h4>بوتیک قرمز</h4>
-                    <p>مرجع تخصصی مد و لباس با کیفیت برتر</p>
-                    <div class="logo footer-logo">
-                        <div class="diamond small"></div>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>لینک‌های مفید</h4>
-                    <ul>
-                        <li><a href="index.html" class="hover-underline">صفحه اصلی</a></li>
-                        <li><a href="#" class="hover-underline">درباره ما</a></li>
-                        <li><a href="#" class="hover-underline">تماس با ما</a></li>
-                        <li><a href="#" class="hover-underline">قوانین و مقررات</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>خدمات مشتریان</h4>
-                    <ul>
-                        <li><a href="cart.html" class="hover-underline">سبد خرید</a></li> <!-- لینک به سبد خرید -->
-                        <li><a href="#" class="hover-underline">روش‌های پرداخت</a></li>
-                        <li><a href="#" class="hover-underline">شرایط مرجوعی</a></li>
-                        <li><a href="#" class="hover-underline">پرسش‌های متداول</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>تماس با ما</h4>
-                    <p><i class="fas fa-phone"></i> ۰۲۱-۱۲۳۴۵۶۷۸</p>
-                    <p><i class="fas fa-envelope"></i> info@redboutique.com</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+/* هدر و ناوبری */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--gray-100);
+    z-index: 1000;
+    transition: var(--transition);
+}
 
-    <!-- مودال ورود -->
-    <div class="modal" id="login-modal">
-        <div class="modal-content glass">
-            <span class="close-modal">&times;</span>
-            <h2>ورود به بوتیک قرمز</h2>
-            <form class="auth-form">
-                <div class="input-group">
-                    <input type="text" placeholder="شماره موبایل یا ایمیل" required>
-                    <i class="fas fa-user input-icon"></i>
-                </div>
-                <div class="input-group">
-                    <input type="password" placeholder="رمز عبور" required>
-                    <i class="fas fa-lock input-icon"></i>
-                </div>
-                <button type="submit" class="auth-btn glow">ورود</button>
-                <p>حساب کاربری ندارید؟ <a href="#" class="auth-link">ثبت‌نام کنید</a></p>
-            </form>
-        </div>
-    </div>
+.navbar {
+    padding: 1rem 0;
+}
 
-    <script src="script.js"></script>
-</body>
-                                </html>
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* لوگو */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-icon {
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
+.diamond {
+    width: 25px;
+    height: 25px;
+    background: var(--red-gradient);
+    transform: rotate(45deg);
+    position: relative;
+    animation: float 3s ease-in-out infinite;
+    box-shadow: var(--shadow-red);
+}
+
+.diamond::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 15px;
+    background: var(--white);
+    transform: rotate(45deg);
+}
+
+@keyframes float {
+    0%, 100% { transform: rotate(45deg) translateY(0); }
+    50% { transform: rotate(45deg) translateY(-10px); }
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: var(--red-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* منوی اصلی */
+.main-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-link {
+    text-decoration: none;
+    color: var(--gray-700);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: var(--transition);
+    position: relative;
+}
+
+.menu-link:hover,
+.menu-link.active {
+    color: var(--primary-red);
+    background: var(--light-red);
+}
+
+.menu-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    right: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-red);
+    transition: var(--transition);
+    transform: translateX(50%);
+}
+
+.menu-link:hover::after,
+.menu-link.active::after {
+    width: 80%;
+}
+
+/* آیکون‌های ناوبری */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.search-container {
+    position: relative;
+}
+
+.search-toggle {
+    background: none;
+    border: none;
+    color: var(--gray-700);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.search-toggle:hover {
+    color: var(--primary-red);
+    background: var(--light-red);
+}
+
+.search-box {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 300px;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    padding: 0.5rem;
+    box-shadow: var(--shadow-lg);
+    display: none;
+    animation: slideDown 0.3s ease;
+}
+
+.search-box.active {
+    display: flex;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    background: transparent;
+}
+
+.search-btn {
+    background: var(--primary-red);
+    color: var(--white);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.search-btn:hover {
+    background: var(--dark-red);
+}
+
+.nav-action-btn {
+    position: relative;
+    background: none;
+    border: none;
+    color: var(--gray-700);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: var(--transition);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-action-btn:hover {
+    color: var(--primary-red);
+    background: var(--light-red);
+}
+
+.action-badge {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    background: var(--primary-red);
+    color: var(--white);
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--gray-700);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.mobile-menu-btn:hover {
+    color: var(--primary-red);
+    background: var(--light-red);
+}
+
+/* بخش هیرو */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--light-red) 0%, var(--white) 50%, var(--light-red) 100%);
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(220, 38, 38, 0.1) 0%, transparent 50%);
+}
+
+.floating-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.particle {
+    position: absolute;
+    background: var(--primary-red);
+    border-radius: 50%;
+    opacity: 0.1;
+    animation: floatParticle 20s infinite linear;
+}
+
+.particle:nth-child(1) { top: 20%; left: 10%; width: 30px; height: 30px; animation-delay: 0s; }
+.particle:nth-child(2) { top: 60%; left: 80%; width: 20px; height: 20px; animation-delay: 5s; }
+.particle:nth-child(3) { top: 80%; left: 20%; width: 25px; height: 25px; animation-delay: 10s; }
+.particle:nth-child(4) { top: 40%; left: 60%; width: 15px; height: 15px; animation-delay: 15s; }
+.particle:nth-child(5) { top: 70%; left: 40%; width: 35px; height: 35px; animation-delay: 20s; }
+
+@keyframes floatParticle {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-20px) rotate(90deg); }
+    50% { transform: translateY(0) rotate(180deg); }
+    75% { transform: translateY(20px) rotate(270deg); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-text {
+    animation: slideInRight 1s ease;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: var(--gray-900);
+}
+
+.title-line {
+    display: block;
+}
+
+.title-line.highlight {
+    background: var(--red-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: var(--gray-500);
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn-primary {
+    background: var(--red-gradient);
+    color: var(--white);
+    box-shadow: var(--shadow-red);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(220, 38, 38, 0.4);
+}
+
+.btn-secondary {
+    background: var(--white);
+    color: var(--gray-700);
+    border: 2px solid var(--gray-200);
+}
+
+.btn-secondary:hover {
+    border-color: var(--primary-red);
+    color: var(--primary-red);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary-red);
+    border: 2px solid var(--primary-red);
+}
+
+.btn-outline:hover {
+    background: var(--primary-red);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.btn-block {
+    width: 100%;
+    justify-content: center;
+}
+
+/* بخش بصری هیرو */
+.hero-visual {
+    position: relative;
+    height: 500px;
+    animation: slideInLeft 1s ease;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.floating-card {
+    position: absolute;
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: var(--shadow-xl);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.floating-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: var(--primary-red);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.card-1 {
+    width: 250px;
+    height: 300px;
+    top: 0;
+    left: 0;
+    animation: floatCard1 6s ease-in-out infinite;
+}
+
+.card-2 {
+    width: 200px;
+    height: 250px;
+    top: 150px;
+    left: 200px;
+    animation: floatCard2 7s ease-in-out infinite;
+}
+
+.card-3 {
+    width: 180px;
+    height: 220px;
+    top: 50px;
+    left: 400px;
+    animation: floatCard3 8s ease-in-out infinite;
+}
+
+@keyframes floatCard1 {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@keyframes floatCard2 {
+    0%, 100% { transform: translateY(0) rotate(3deg); }
+    50% { transform: translateY(-15px) rotate(-3deg); }
+}
+
+@keyframes floatCard3 {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: var(--gray-500);
+    font-size: 0.9rem;
+    z-index: 2;
+}
+
+.scroll-line {
+    width: 2px;
+    height: 40px;
+    background: var(--primary-red);
+    margin: 0 auto 0.5rem;
+    animation: scrollLine 2s infinite;
+}
+
+@keyframes scrollLine {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(0.5); }
+}
+
+/* بخش‌های مختلف */
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 80px;
+    height: 4px;
+    background: var(--red-gradient);
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--gray-500);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* دسته‌بندی‌ها */
+.categories-section {
+    padding: 6rem 0;
+    background: var(--gray-50);
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.category-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+    position: relative;
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-xl);
+}
+
+.category-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.category-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-slow);
+}
+
+.category-card:hover .category-image img {
+    transform: scale(1.1);
+}
+
+.category-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.category-card:hover .category-overlay {
+    opacity: 1;
+}
+
+.category-btn {
+    background: var(--white);
+    color: var(--primary-red);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.category-btn:hover {
+    background: var(--primary-red);
+    color: var(--white);
+}
+
+.category-info {
+    padding: 1.5rem;
+}
+
+.category-info h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--gray-900);
+}
+
+.category-info p {
+    color: var(--gray-500);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.category-count {
+    color: var(--primary-red);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* محصولات */
+.featured-products {
+    padding: 6rem 0;
+}
+
+.products-filter {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: var(--white);
+    color: var(--gray-700);
+    border: 2px solid var(--gray-200);
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--primary-red);
+    color: var(--white);
+    border-color: var(--primary-red);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.product-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.product-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-slow);
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.product-badges {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.product-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.badge-discount {
+    background: var(--primary-red);
+}
+
+.badge-new {
+    background: #10b981;
+}
+
+.badge-hot {
+    background: #f59e0b;
+}
+
+.product-wishlist {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--white);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+}
+
+.product-wishlist:hover {
+    background: var(--primary-red);
+    color: var(--white);
+}
+
+.product-wishlist.active {
+    background: var(--primary-red);
+    color: var(--white);
+}
+
+.product-info {
+    padding: 1.5rem;
+}
+
+.product-category {
+    color: var(--gray-500);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--gray-900);
+    line-height: 1.4;
+}
+
+.product-price {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.current-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-red);
+}
+
+.original-price {
+    font-size: 1rem;
+    color: var(--gray-500);
+    text-decoration: line-through;
+}
+
+.product-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.add-to-cart {
+    flex: 1;
+    background: var(--red-gradient);
+    color: var(--white);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.add-to-cart:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-red);
+}
+
+.quick-view {
+    background: var(--gray-100);
+    color: var(--gray-700);
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quick-view:hover {
+    background: var(--primary-red);
+    color: var(--white);
+}
+
+.section-footer {
+    text-align: center;
+}
+
+/* ویژگی‌ها */
+.features-section {
+    padding: 6rem 0;
+    background: var(--light-red);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 2rem;
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--red-gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    transition: var(--transition);
+}
+
+.feature
