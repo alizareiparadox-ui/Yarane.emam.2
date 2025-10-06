@@ -3,418 +3,355 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>فروشگاه آنلاین | صفحه اصلی</title>
+    <title>پایگاه اینترنتی یاران امام زمان (عج) | yarane.emam.2</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1e3c72">
 </head>
 <body>
-    <!-- هدر سایت -->
-    <header>
-        <div class="header-top">
-            <div class="container">
-                <div class="header-top-content">
-                    <div class="welcome-message">به فروشگاه آنلاین ما خوش آمدید!</div>
-                    <div class="header-links">
-                        <a href="#">ورود</a>
-                        <a href="#">ثبت نام</a>
-                        <a href="#">پیگیری سفارش</a>
-                    </div>
+    <!-- منوی بالا -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fab fa-instagram instagram-logo"></i>
+                <h2>yarane.emam.2</h2>
+            </div>
+            
+            <div class="mobile-nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="#home"><i class="fas fa-home"></i> صفحه اصلی</a></li>
+                <li><a href="#biography"><i class="fas fa-book"></i> زندگینامه</a></li>
+                <li><a href="#ghaybat"><i class="fas fa-history"></i> غیبت صغرا و کبرا</a></li>
+                <li><a href="#timer"><i class="fas fa-clock"></i> زمان‌سنج</a></li>
+                <li><a href="#traditions"><i class="fas fa-star"></i> روایات</a></li>
+                <li><a href="#hadith"><i class="fas fa-quote-right"></i> احادیث</a></li>
+                <li><a href="#prayers"><i class="fas fa-pray"></i> دعاها</a></li>
+                <li><a href="#faq"><i class="fas fa-question-circle"></i> سوالات متداول</a></li>
+                <li><a href="#media"><i class="fas fa-music"></i> نواهای مهدوی</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="home">
+        <div class="header-content">
+            <div class="header-text">
+                <h1>پایگاه اینترنتی یاران امام زمان (عج)</h1>
+                <div class="instagram-handle">
+                    <i class="fab fa-instagram"></i>
+                    <span>yarane.emam.2</span>
+                </div>
+                <div class="welcome-text">
+                    <p>"وَإِنَّهُ لَعِلْمٌ لِّلسَّاعَةِ فَلَا تَمْتَرُنَّ بِهَا وَاتَّبِعُونِ ۚ هَـٰذَا صِرَاطٌ مُّسْتَقِيمٌ"</p>
+                    <p>و همانا او (مهدی) نشانه‌ای برای قیامت است، پس در آن تردید نکنید و از من پیروی کنید که این راه راست است.</p>
                 </div>
             </div>
-        </div>
-        
-        <div class="header-main">
-            <div class="container">
-                <div class="header-main-content">
-                    <div class="logo">
-                        <i class="fas fa-shopping-bag"></i>
-                        <span>فروشگاه<span class="highlight">آنلاین</span></span>
-                    </div>
-                    
-                    <div class="search-bar">
-                        <input type="text" placeholder="جستجوی محصولات...">
-                        <button><i class="fas fa-search"></i></button>
-                    </div>
-                    
-                    <div class="header-actions">
-                        <a href="#" class="action-item">
-                            <i class="fas fa-user"></i>
-                            <span>حساب کاربری</span>
-                        </a>
-                        <a href="#" class="action-item">
-                            <i class="fas fa-heart"></i>
-                            <span>علاقه‌مندی‌ها</span>
-                            <span class="count">۳</span>
-                        </a>
-                        <a href="#" class="action-item cart">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span>سبد خرید</span>
-                            <span class="count">۲</span>
-                        </a>
-                    </div>
-                    
-                    <button class="mobile-menu-toggle">
-                        <i class="fas fa-bars"></i>
-                    </button>
+            <div class="header-symbol">
+                <div class="symbol-circle">
+                    <i class="fas fa-mosque"></i>
                 </div>
+                <p>مسجد مقدس جمکران</p>
             </div>
         </div>
-        
-        <nav class="main-nav">
-            <div class="container">
-                <ul class="nav-menu">
-                    <li><a href="#" class="active">خانه</a></li>
-                    <li><a href="#">محصولات پرفروش</a></li>
-                    <li><a href="#">تخفیف‌های ویژه</a></li>
-                    <li class="menu-item-has-children">
-                        <a href="#">دسته‌بندی محصولات <i class="fas fa-chevron-down"></i></a>
-                        <ul class="sub-menu">
-                            <li><a href="#">لوازم الکترونیکی</a></li>
-                            <li><a href="#">پوشاک</a></li>
-                            <li><a href="#">خانه و آشپزخانه</a></li>
-                            <li><a href="#">زیبایی و سلامت</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">برندها</a></li>
-                    <li><a href="#">تماس با ما</a></li>
-                </ul>
-            </div>
-        </nav>
     </header>
 
-    <!-- اسلایدر اصلی -->
-    <section class="hero-slider">
-        <div class="slider-container">
-            <div class="slider">
-                <div class="slide active">
-                    <div class="slide-content">
-                        <div class="container">
-                            <div class="slide-text">
-                                <h1>تخفیف‌های شگفت‌انگیز</h1>
-                                <p>تا 70% تخفیف روی محصولات منتخب - فقط برای مدت محدود</p>
-                                <a href="#" class="btn btn-primary">مشاهده محصولات</a>
-                            </div>
-                            <div class="slide-image">
-                                <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="تخفیف ویژه">
-                            </div>
-                        </div>
+    <main>
+        <!-- بخش زندگینامه -->
+        <section id="biography" class="section fade-in">
+            <h2><i class="fas fa-user"></i> زندگینامه امام زمان (عج)</h2>
+            <div class="content">
+                <div class="bio-content">
+                    <div class="bio-section">
+                        <h3><i class="fas fa-star"></i> ولادت با سعادت</h3>
+                        <p>حضرت مهدی (عج) در سپیده دم نیمه‌شعبان سال ۲۵۵ هجری قمری در شهر سامرا دیده به جهان گشودند. تولد ایشان در شرایطی اتفاق افتاد که حکومت عباسی به شدت در پی یافتن آخرین امام و حجت خدا بود. تولد آن حضرت تا مدتی مخفی نگه داشته شد تا از گزند دشمنان در امان بمانند.</p>
                     </div>
-                </div>
-                
-                <div class="slide">
-                    <div class="slide-content">
-                        <div class="container">
-                            <div class="slide-text">
-                                <h2>جدیدترین محصولات</h2>
-                                <p>بهترین و به‌روزترین محصولات با گارانتی معتبر</p>
-                                <a href="#" class="btn btn-primary">خرید now</a>
-                            </div>
-                            <div class="slide-image">
-                                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="جدیدترین محصولات">
-                            </div>
-                        </div>
+                    
+                    <div class="bio-section">
+                        <h3><i class="fas fa-users"></i> پدر و مادر گرامی</h3>
+                        <p>ایشان فرزند بلافصل امام حسن عسکری (ع) و نرجس خاتون (س) می‌باشند. نرجس خاتون از خاندان شاهان روم و از نوادگان شمعون، یکی از حواریون حضرت عیسی (ع) بودند. ایشان بانویی بسیار پرهیزگار و با فضیلت بودند.</p>
                     </div>
-                </div>
-                
-                <div class="slide">
-                    <div class="slide-content">
-                        <div class="container">
-                            <div class="slide-text">
-                                <h2>ارسال رایگان</h2>
-                                <p>برای خریدهای بالای 200 هزار تومان، ارسال کاملاً رایگان</p>
-                                <a href="#" class="btn btn-primary">خرید کنید</a>
-                            </div>
-                            <div class="slide-image">
-                                <img src="https://images.unsplash.com/photo-1563013546-7e5c7c07c877?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="ارسال رایگان">
-                            </div>
-                        </div>
+                    
+                    <div class="bio-section">
+                        <h3><i class="fas fa-crown"></i> نام‌ها و القاب</h3>
+                        <p><strong>نام:</strong> محمد بن حسن<br>
+                        <strong>کنیه:</strong> اباصالح، ابوالقاسم<br>
+                        <strong>القاب:</strong> مهدی، قائم، حجت، منتظر، بقیه‌الله، صاحب‌الزمان، خاتم‌الاوصیاء</p>
+                        <p>همه این القاب بیانگر ویژگی‌ها و مسئولیت‌های آن حضرت می‌باشد.</p>
+                    </div>
+                    
+                    <div class="bio-section">
+                        <h3><i class="fas fa-calendar"></i> دوران امامت</h3>
+                        <p>امامت ایشان در ۵ سالگی و پس از شهادت پدر بزرگوارشان آغاز شد. این دوره مصادف با فشارهای شدید حکومت عباسی بر شیعیان بود. امام عسکری (ع) قبل از شهادت، امامت فرزندشان را به برخی از یاران خاص معرفی کردند.</p>
                     </div>
                 </div>
             </div>
-            
-            <div class="slider-controls">
-                <button class="slider-prev"><i class="fas fa-chevron-right"></i></button>
-                <button class="slider-next"><i class="fas fa-chevron-left"></i></button>
-            </div>
-            
-            <div class="slider-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- دسته‌بندی‌ها -->
-    <section class="categories">
-        <div class="container">
-            <h2 class="section-title">دسته‌بندی محصولات</h2>
-            <div class="categories-grid">
-                <a href="#" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>موبایل و تبلت</h3>
-                </a>
-                
-                <a href="#" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-laptop"></i>
-                    </div>
-                    <h3>لپ‌تاپ و کامپیوتر</h3>
-                </a>
-                
-                <a href="#" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-tshirt"></i>
-                    </div>
-                    <h3>پوشاک</h3>
-                </a>
-                
-                <a href="#" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3>خانه و آشپزخانه</h3>
-                </a>
-                
-                <a href="#" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-gamepad"></i>
-                    </div>
-                    <h3>اسباب بازی</h3>
-                </a>
-                
-                <a href="#" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-utensils"></i>
-                    </div>
-                    <h3>خوراکی‌ها</h3>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- محصولات پرتخفیف -->
-    <section class="featured-products">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">محصولات پرتخفیف</h2>
-                <a href="#" class="view-all">مشاهده همه <i class="fas fa-arrow-left"></i></a>
-            </div>
-            
-            <div class="products-grid">
-                <!-- محصول 1 -->
-                <div class="product-card">
-                    <div class="product-badge discount">35%</div>
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="دوربین عکاسی">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">دوربین عکاسی حرفه ای DSLR</h3>
-                        <div class="product-price">
-                            <span class="current-price">12,500,000 تومان</span>
-                            <span class="old-price">19,000,000 تومان</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> افزودن به سبد</button>
-                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
-                        </div>
-                    </div>
+        <!-- بخش غیبت -->
+        <section id="ghaybat" class="section fade-in">
+            <h2><i class="fas fa-cloud"></i> غیبت صغرا و کبرا</h2>
+            <div class="content">
+                <div class="ghaybat-intro">
+                    <p>غیبت امام زمان (عج) به دو دوره تقسیم می‌شود که هر کدام ویژگی‌ها و فلسفه خاص خود را دارد:</p>
                 </div>
                 
-                <!-- محصول 2 -->
-                <div class="product-card">
-                    <div class="product-badge discount">25%</div>
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="هدفون">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">هدفون بی سیم نویز کنسلینگ</h3>
-                        <div class="product-price">
-                            <span class="current-price">1,850,000 تومان</span>
-                            <span class="old-price">2,450,000 تومان</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> افزودن به سبد</button>
-                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- محصول 3 -->
-                <div class="product-card">
-                    <div class="product-badge discount">40%</div>
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="کفش ورزشی">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">کفش ورزشی مردانه مدل 2023</h3>
-                        <div class="product-price">
-                            <span class="current-price">650,000 تومان</span>
-                            <span class="old-price">1,080,000 تومان</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> افزودن به سبد</button>
-                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- محصول 4 -->
-                <div class="product-card">
-                    <div class="product-badge discount">15%</div>
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="هدفون">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">هدفون حرفه ای گیمینگ</h3>
-                        <div class="product-price">
-                            <span class="current-price">890,000 تومان</span>
-                            <span class="old-price">1,050,000 تومان</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> افزودن به سبد</button>
-                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- محصولات پرفروش -->
-    <section class="popular-products">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">محصولات پرفروش</h2>
-                <a href="#" class="view-all">مشاهده همه <i class="fas fa-arrow-left"></i></a>
-            </div>
-            
-            <div class="products-grid">
-                <!-- محصول 5 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1504274066651-8d31a536b11a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="لپ تاپ">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">لپ تاپ گیمینگ 15 اینچی</h3>
-                        <div class="product-price">
-                            <span class="current-price">32,500,000 تومان</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> افزودن به سبد</button>
-                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- محصول 6 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="ساعت هوشمند">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">ساعت هوشمند اندروید و iOS</h3>
-                        <div class="product-price">
-                            <span class="current-price">3,200,000 تومان</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> افزودن به سبد</button>
-                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- محصول 7 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="موبایل">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">گوشی موبایل هوشمند 128GB</h3>
-                        <div class="product-price">
-                            <span class="current-price">8,750,000 تومان</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> افزودن به سبد</button>
-                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- محصول 8 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1543512214-318c7553f230?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="کتاب">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">کتاب آموزش برنامه نویسی پیشرفته</h3>
-                        <div class="product-price">
-                            <span class="current-price">120,000 تومان</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> افزودن به سبد</button>
-                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- بنر تبلیغاتی -->
-    <section class="promo-banner">
-        <div class="container">
-            <div class="banner-content">
-                <div class="banner-text">
-                    <h2>فروش ویژه زمستانه</h2>
-                    <p>تا 50% تخفیف روی تمام محصولات پوشاک زمستانی</p>
-                    <a href="#" class="btn btn-outline">خرید now</a>
-                </div>
-                <div class="banner-image">
-                    <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="فروش ویژه">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- فوتر -->
-    <footer>
-        <div class="footer-main">
-            <div class="container">
-                <div class="footer-grid">
-                    <div class="footer-column">
-                        <h3>درباره ما</h3>
-                        <p>فروشگاه آنلاین ما با بیش از 10 سال سابقه در زمینه فروش محصولات با کیفیت، همواره تلاش کرده بهترین خدمات را به مشتریان ارائه دهد.</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-telegram"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
+                <div class="ghaybat-grid">
+                    <div class="ghaybat-item">
+                        <h3><i class="fas fa-eye-slash"></i> غیبت صغرا (کوچک)</h3>
+                        <div class="ghaybat-details">
+                            <div class="ghaybat-info">
+                                <p><strong>مدت زمان:</strong> ۶۹ سال (۲۶۰-۳۲۹ ه.ق)</p>
+                                <p><strong>علت غیبت:</strong> ترس از کشته شدن توسط دشمنان و آماده‌سازی شیعیان</p>
+                            </div>
+                            <p><strong>ویژگی‌های مهم:</strong></p>
+                            <ul>
+                                <li>ارتباط غیرمستقیم از طریق چهار نائب خاص</li>
+                                <li>پاسخ به سوالات شرعی و حل مشکلات شیعیان</li>
+                                <li>آماده‌سازی شیعیان برای دوران غیبت کبرا</li>
+                                <li>حفظ سازمان وکالت و ارتباط با شیعیان</li>
+                            </ul>
+                            <div class="nawwab-section">
+                                <h4>نواب اربعه (نمایندگان خاص):</h4>
+                                <div class="nawwab-list">
+                                    <div class="nawwab-item">
+                                        <strong>۱- عثمان بن سعید عمری</strong>
+                                        <span>مدت نیابت: ۵ سال</span>
+                                    </div>
+                                    <div class="nawwab-item">
+                                        <strong>۲- محمد بن عثمان</strong>
+                                        <span>مدت نیابت: ۴۰ سال</span>
+                                    </div>
+                                    <div class="nawwab-item">
+                                        <strong>۳- حسین بن روح نوبختی</strong>
+                                        <span>مدت نیابت: ۲۱ سال</span>
+                                    </div>
+                                    <div class="nawwab-item">
+                                        <strong>۴- علی بن محمد سمری</strong>
+                                        <span>مدت نیابت: ۳ سال</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="footer-column">
-                        <h3>خدمات مشتریان</h3>
-                        <ul>
-                            <li><a href="#">پاسخ به پرسش‌های متداول</a></li>
-                            <li><a href="#">رویه ارسال سفارش</a></li>
-                            <li><a href="#">شرایط بازگرداندن کالا</a></li>
-                            <li><a href="#">گزارش باگ در سایت</a></li>
-                        </ul>
+                    <div class="ghaybat-item">
+                        <h3><i class="fas fa-eye"></i> غیبت کبرا (بزرگ)</h3>
+                        <div class="ghaybat-details">
+                            <div class="ghaybat-info">
+                                <p><strong>شروع:</strong> سال ۳۲۹ هجری قمری</p>
+                                <p><strong>علت غیبت:</strong> امتحان و آزمایش مردم، عدم آمادگی جهان برای ظهور</p>
+                            </div>
+                            <p><strong>ویژگی‌های مهم:</strong></p>
+                            <ul>
+                                <li>قطع ارتباط مستقیم با نائبان خاص</li>
+                                <li>مراجعه به علمای ربانی و فقهای واجد شرایط</li>
+                                <li>امتحان و آزمایش ایمان مردم</li>
+                                <li>حضور ناظر امام در میان مردم بدون شناخته شدن</li>
+                                <li>تکمیل ظرفیت‌های معنوی و معرفتی بشریت</li>
+                            </ul>
+                            <div class="philosophy-section">
+                                <h4>فلسفه غیبت کبرا:</h4>
+                                <p>غیبت کبرا دوران آماده‌سازی جهانی برای ظهور است. در این دوره، انسان‌ها باید با اختیار و آزادی اراده، راه حق را انتخاب کنند و زمینه‌ساز ظهور شوند. امام در این دوران مانند خورشید پشت ابر است که اگرچه دیده نمی‌شود، ولی نور و برکاتش به همه می‌رسد.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- بخش تایمر -->
+        <section id="timer" class="section fade-in">
+            <h2><i class="fas fa-hourglass-half"></i> زمان‌سنج غیبت کبرا و سن امام</h2>
+            <div class="content">
+                <div class="timer-explanation">
+                    <p>این زمان‌سنج نشان می‌دهد که چه مدت از غیبت کبرای امام زمان (عج) گذشته و سن مبارک ایشان در حال حاضر چقدر است.</p>
+                </div>
+                
+                <div class="timer-container">
+                    <div class="timer-item">
+                        <h3><i class="fas fa-calendar-times"></i> مدت غیبت کبرا</h3>
+                        <div class="timer-display">
+                            <div class="time-unit">
+                                <span id="years">0</span>
+                                <small>سال</small>
+                            </div>
+                            <div class="time-unit">
+                                <span id="months">0</span>
+                                <small>ماه</small>
+                            </div>
+                            <div class="time-unit">
+                                <span id="days">0</span>
+                                <small>روز</small>
+                            </div>
+                        </div>
+                        <p class="timer-note">از سال ۳۲۹ هجری قمری تاکنون</p>
                     </div>
                     
-                    <div class="footer-column">
-                        <h3>راهنمای خرید</h3>
-                        <ul>
-                            <li><a href="#">نحوه ثبت سفارش</a></li>
-                            <li><a href="#">روش‌های پرداخت</a></li>
-                            <li><a href="#">پیگیری سفارش</a></li>
-                            <li><a href="#">گارانتی محصولات</a></li>
-                        </ul>
+                    <div class="timer-item">
+                        <h3><i class="fas fa-user-clock"></i> سن مبارک امام زمان (عج)</h3>
+                        <div class="timer-display">
+                            <div class="time-unit">
+                                <span id="imam-years">0</span>
+                                <small>سال</small>
+                            </div>
+                            <div class="time-unit">
+                                <span id="imam-months">0</span>
+                                <small>ماه</small>
+                            </div>
+                            <div class="time-unit">
+                                <span id="imam-days">0</span>
+                                <small>روز</small>
+                            </div>
+                        </div>
+                        <p class="timer-note">از نیمه شعبان ۲۵۵ هجری قمری تاکنون</p>
+                    </div>
+                </div>
+                
+                <div class="appearance-info">
+                    <h4><i class="fas fa-info-circle"></i> نکته مهم:</h4>
+                    <p>امام زمان (عج) با عمر طولانی خود، نمونه‌ای از قدرت بی‌پایان الهی هستند. ایشان هم اکنون زنده و ناظر بر اعمال ما می‌باشند و در مواقع ضروری به کمک شیعیان می‌شتابند.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- بخش روایات -->
+        <section id="traditions" class="section fade-in">
+            <h2><i class="fas fa-gem"></i> روایات نورانی درباره امام زمان (عج)</h2>
+            <div class="content">
+                <div class="traditions-intro">
+                    <p>در این بخش، گزیده‌ای از زیباترین روایات و سخنان ائمه معصومین (ع) درباره حضرت مهدی (عج) را تقدیم می‌کنیم:</p>
+                </div>
+                
+                <div class="traditions-grid">
+                    <div class="tradition-item">
+                        <div class="tradition-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="tradition-content">
+                            <p class="tradition-text">"مهدی از ما اهل بیت است، خداوند امر او را در یک شب اصلاح می‌کند."</p>
+                            <div class="tradition-meta">
+                                <span class="tradition-source">امام صادق (ع)</span>
+                                <span class="tradition-reference">کمال الدین، ج ۱، ص ۳۱۷</span>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="footer-column">
-                        <h3>اطلاعات تماس</h3>
-                        <ul class="contact-info
+                    <div class="tradition-item">
+                        <div class="tradition-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div class="tradition-content">
+                            <p class="tradition-text">"قائم ما هنگامی که قیام کند، به هر مؤمنی نیروی چهل مرد را عطا می‌کند."</p>
+                            <div class="tradition-meta">
+                                <span class="tradition-source">امام باقر (ع)</span>
+                                <span class="tradition-reference">بحارالانوار، ج ۵۲، ص ۳۱۷</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tradition-item">
+                        <div class="tradition-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="tradition-content">
+                            <p class="tradition-text">"زمین از حجت خدا خالی نمی‌ماند و اگر چنین شود، اهلش را فرو می‌برد."</p>
+                            <div class="tradition-meta">
+                                <span class="tradition-source">امام علی (ع)</span>
+                                <span class="tradition-reference">اصول کافی، ج ۱، ص ۱۷۸</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tradition-item">
+                        <div class="tradition-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="tradition-content">
+                            <p class="tradition-text">"همانا برای قائم ما غیبتی است که بردبار در آن دچار حیرت می‌شود."</p>
+                            <div class="tradition-meta">
+                                <span class="tradition-source">امام سجاد (ع)</span>
+                                <span class="tradition-reference">کمال الدین، ج ۱، ص ۳۲۰</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tradition-item">
+                        <div class="tradition-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <div class="tradition-content">
+                            <p class="tradition-text">"مهدی از طرف خداوند به مردم رحمت می‌آورد و به عدالت رفتار می‌کند."</p>
+                            <div class="tradition-meta">
+                                <span class="tradition-source">پیامبر اکرم (ص)</span>
+                                <span class="tradition-reference">ینابیع المودة، ج ۳، ص ۱۲۶</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tradition-item">
+                        <div class="tradition-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="tradition-content">
+                            <p class="tradition-text">"دولت ما آخرین دولتهاست که هیچ خاندانی از باطل‌گرایان باقی نمی‌ماند مگر اینکه قبل از دولت ما حکومت می‌کنند."</p>
+                            <div class="tradition-meta">
+                                <span class="tradition-source">امام کاظم (ع)</span>
+                                <span class="tradition-reference">کمال الدین، ج ۱، ص ۳۷۲</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="traditions-note">
+                    <h4><i class="fas fa-info-circle"></i> اهمیت مطالعه روایات:</h4>
+                    <p>مطالعه روایات مربوط به امام زمان (عج) باعث افزایش محبت و شناخت بیشتر نسبت به ایشان می‌شود و روحیه انتظار فرج را در دل‌های مؤمنان زنده نگه می‌دارد.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- بخش احادیث -->
+        <section id="hadith" class="section fade-in">
+            <h2><i class="fas fa-quote-right"></i> احادیث نورانی درباره امام زمان (عج)</h2>
+            <div class="content">
+                <div class="hadith-intro">
+                    <p>در این بخش، احادیث زیبا و نورانی از معصومین (ع) درباره حضرت مهدی (عج) را گردآوری کرده‌ایم:</p>
+                </div>
+                
+                <div class="hadith-grid">
+                    <div class="hadith-item">
+                        <div class="hadith-text">
+                            <p class="arabic-text">"الْمَهْدِيُّ مِنْ وُلْدِي، اسْمُهُ اسْمِي، وَكُنْيَتُهُ كُنْيَتِي، أَشْبَهُ النَّاسِ بِي خَلْقاً وَخُلْقاً، تَكُونُ لَهُ غَيْبَةٌ وَحَيْرَةٌ حَتَّى تَضِلَّ الْخَلْقُ عَنْ أَدْيَانِهِمْ، فَعِنْدَ ذَلِكَ يُقْبِلُ كَالشَّهَابِ الثَّاقِبِ فَيَمْلَأُهَا عَدْلاً وَقِسْطاً كَمَا مُلِئَتْ جَوْراً وَظُلْماً"</p>
+                            <p class="hadith-translation"><strong>ترجمه:</strong> "مهدی از فرزندان من است، نامش نام من و کنیه‌اش کنیه من است. از نظر خلقت و خلق، شبیه‌ترین مردم به من است. برای او غیبت و حیرتی خواهد بود تا آنجا که مردم از دین‌های خود گمراه شوند. در آن زمان مانند شهاب ثاقب می‌آید و زمین را پر از عدل و داد می‌کند، همان‌گونه که از ستم و بیداد پر شده باشد."</p>
+                        </div>
+                        <div class="hadith-meta">
+                            <span class="hadith-source"><i class="fas fa-book"></i> منبع: کمال الدین، ج ۱، ص ۲۸۶</span>
+                            <span class="hadith-narrator"><i class="fas fa-user"></i> راوی: پیامبر اکرم (ص)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="hadith-item">
+                        <div class="hadith-text">
+                            <p class="arabic-text">"مَنْ مَاتَ وَلَمْ يَعْرِفْ إِمَامَ زَمَانِهِ مَاتَ مِيتَةً جَاهِلِيَّةً"</p>
+                            <p class="hadith-translation"><strong>ترجمه:</strong> "هر کس بمیرد و امام زمان خود را نشناسد، به مرگ جاهلیت مرده است."</p>
+                        </div>
+                        <div class="hadith-meta">
+                            <span class="hadith-source"><i class="fas fa-book"></i> منبع: اصول کافی، ج ۱، ص ۳۷۶</span>
+                            <span class="hadith-narrator"><i class="fas fa-user"></i> راوی: امام صادق (ع)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hadith-benefits">
+                    <h4><i class="fas fa-lightbulb"></i> نکات مهم از احادیث:</h4>
+                    <ul>
+                        <li>شناخت امام زمان از واجبات دینی است</li>
+                        <li>امام زمان وارث تمام پیامبران و اوصیاء است</li>
+                        <li>غیبت امام آزمایشی برای مؤمنان است</li>
+                        <li>ظهور حتمی است و جهان را پر از عدل می‌کند</li>
+                        <li>امام در دوران غیبت نیز ناظر بر اعمال است</li>
+                    </
