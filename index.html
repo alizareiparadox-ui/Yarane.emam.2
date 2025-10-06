@@ -1,151 +1,207 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>فروشگاه مذهبی امام مهدی (عج)</title>
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فروشگاه مد و لباس | Fashion Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- هدر -->
-  <header>
-    <h1 class="typewriter">فروشگاه مذهبی امام مهدی (عج)</h1>
-    <nav>
-      <ul>
-        <li><a href="#home">خانه</a></li>
-        <li><a href="#products">محصولات</a></li>
-        <li><a href="#comments">نظرات</a></li>
-        <li><a href="#feedback">بازخورد</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- بنر -->
-  <section id="home" class="hero">
-    <img src="https://raw.githubusercontent.com/alizareiparadox-ui/Yarane.emam.2/refs/heads/main/nody-%D8%B9%DA%A9%D8%B3-%D8%A8%D8%AF%D9%88%D9%86-%D9%85%D8%AA%D9%86-%D8%AF%D8%B1-%D9%85%D9%88%D8%B1%D8%AF-%D8%A7%D9%85%D8%A7%D9%85-%D8%B2%D9%85%D8%A7%D9%86-1626023068.jpg" alt="بنر امام زمان (عج)" class="imam-banner">
-    <h2 class="fade-text">با محصولات معنوی، طراحی محترمانه و الهام از نور ظهور</h2>
-    <a href="#products"><button class="pulse glass-button fade-text">مشاهده محصولات</button></a>
-  </section>
-
-  <!-- محصولات -->
-  <section id="products" class="products">
-    <h2 class="fade-text">محصولات ویژه</h2>
-    <div class="product-grid">
-      <div class="product-card fade-text">
-        <img src="https://via.placeholder.com/200" alt="کتاب دعا">
-        <h3>کتاب دعا</h3>
-        <p>۵۰٬۰۰۰ تومان</p>
-        <button class="glass-button">افزودن به سبد</button>
-      </div>
-      <div class="product-card fade-text">
-        <img src="https://via.placeholder.com/200" alt="تسبیح">
-        <h3>تسبیح سنگی</h3>
-        <p>۳۰٬۰۰۰ تومان</p>
-        <button class="glass-button">افزودن به سبد</button>
-      </div>
-      <div class="product-card fade-text">
-        <img src="https://via.placeholder.com/200" alt="جانماز">
-        <h3>جانماز ترمه</h3>
-        <p>۷۰٬۰۰۰ تومان</p>
-        <button class="glass-button">افزودن به سبد</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- فرم ارسال نظر -->
-  <section id="comments" class="comments">
-    <h2 class="fade-text">ارسال نظر شما</h2>
-    <form class="comment-form fade-text">
-      <div class="input-group">
-        <span class="icon">👤</span>
-        <input type="text" id="name" name="name" placeholder="نام شما" required>
-      </div>
-      <div class="input-group">
-        <span class="icon">💬</span>
-        <textarea id="message" name="message" rows="4" placeholder="نظر خود را بنویسید..." required></textarea>
-      </div>
-      <button type="submit" class="glass-button">ارسال نظر</button>
-    </form>
-  </section>
-
-  <!-- بازخورد و امتیازدهی -->
-  <section id="feedback" class="feedback">
-    <div class="container">
-      <h2>امتیاز کاربران</h2>
-      <label for="input-1">نظر درباره کتاب دعا:</label>
-      <input id="input-1" class="rating" data-min="0" data-max="5" data-step="0.1" value="4">
-      <br>
-      <label for="input-2">نظر درباره تسبیح:</label>
-      <input id="input-2" class="rating" data-min="0" data-max="5" data-step="0.1" value="3.5">
-      <br>
-      <label for="input-3">نظر درباره جانماز:</label>
-      <input id="input-3" class="rating" data-min="0" data-max="5" data-step="0.1" value="5">
-    </div>
-
-    <div class="container">
-      <h2>میزان رضایت</h2>
-      <div class="progress"><div class="progress-bar" style="width: 20%">۲۰٪</div></div>
-      <div class="progress"><div class="progress-bar" style="width: 40%">۴۰٪</div></div>
-      <div class="progress"><div class="progress-bar" style="width: 60%">۶۰٪</div></div>
-      <div class="progress"><div class="progress-bar" style="width: 80%">۸۰٪</div></div>
-      <div class="progress"><div class="progress-bar" style="width: 100%">۱۰۰٪</div></div>
-    </div>
-
-    <div class="container">
-      <h2>نظرات کاربران</h2>
-      <div class="card-deck">
-        <div class="card">
-          <img src="https://via.placeholder.com/300x200" alt="نظر کاربر">
-          <div class="card-body">
-            <h5 class="card-title">کاربر ۱</h5>
-            <p class="card-text">کتاب دعا بسیار زیبا و با کیفیت بود. ممنون از فروشگاه امام مهدی (عج).</p>
-            <p class="card-text"><small>۳ دقیقه پیش</small></p>
-          </div>
+    <!-- نوار بالایی -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-links">
+                <a href="#">پیگیری سفارش</a>
+                <a href="#">مرجوعی کالا</a>
+                <a href="#">پرسش‌های متداول</a>
+            </div>
+            <div class="auth-links">
+                <a href="#" id="login-btn"><i class="fas fa-user"></i> ورود / ثبت‌نام</a>
+            </div>
         </div>
-        <div class="card">
-          <img src="https://via.placeholder.com/300x200" alt="نظر کاربر">
-          <div class="card-body">
-            <h5 class="card-title">کاربر ۲</h5>
-            <p class="card-text">تسبیح سنگی خیلی خوش‌دست و خوش‌رنگ بود. بسته‌بندی عالی.</p>
-            <p class="card-text"><small>۵ دقیقه پیش</small></p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://via.placeholder.com/300x200" alt="نظر کاربر">
-          <div class="card-body">
-            <h5 class="card-title">کاربر ۳</h5>
-            <p class="card-text">جانماز ترمه واقعاً زیباست. حس معنوی خاصی داره.</p>
-            <p class="card-text"><small>۱۰ دقیقه پیش</small></p>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
 
-  <!-- فوتر -->
-  <footer>
-    <p>© ۲۰۲۵ فروشگاه مذهبی. همه حقوق محفوظ است.</p>
-  </footer>
+    <!-- هدر اصلی -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1>FashionStore</h1>
+                </div>
+                
+                <div class="search-box">
+                    <input type="text" placeholder="جستجوی محصولات...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
 
-  <!-- اسکریپت افکت‌ها -->
-  <script>
-    window.addEventListener('load', function () {
-      document.querySelector('.hero').classList.add('loaded');
-    });
+                <div class="nav-icons">
+                    <a href="#" class="nav-icon">
+                        <i class="fas fa-heart"></i>
+                        <span class="badge">۳</span>
+                    </a>
+                    <a href="#" class="nav-icon" id="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge" id="cart-count">۰</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
 
-    const fadeTexts = document.querySelectorAll('.fade-text');
-    function checkFade() {
-      const triggerBottom = window.innerHeight * 0.85;
-      fadeTexts.forEach(el => {
-        const boxTop = el.getBoundingClientRect().top;
-        if (boxTop < triggerBottom) {
-          el.classList.add('visible');
-        }
-      });
-    }
-    window.addEventListener('scroll', checkFade);
-    window.addEventListener('load', checkFade);
-  </script>
+        <!-- منوی دسته‌بندی -->
+        <div class="category-menu">
+            <div class="container">
+                <ul class="categories">
+                    <li><a href="#">لباس مردانه</a></li>
+                    <li><a href="#">لباس زنانه</a></li>
+                    <li><a href="#">بچه‌گانه</a></li>
+                    <li><a href="#">ورزشی</a></li>
+                    <li><a href="#">اکسسوری</a></li>
+                    <li><a href="#">تخفیف‌های ویژه</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- اسلایدر اصلی -->
+    <section class="hero-slider">
+        <div class="slider-container" id="slider-container">
+            <!-- اسلایدها با JavaScript ساخته می‌شوند -->
+        </div>
+    </section>
+
+    <!-- دسته‌بندی محصولات -->
+    <section class="categories-section">
+        <div class="container">
+            <h2 class="section-title">دسته‌بندی محصولات</h2>
+            <div class="category-grid">
+                <div class="category-item">
+                    <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="مردانه">
+                    <h3>لباس مردانه</h3>
+                </div>
+                <div class="category-item">
+                    <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="زنانه">
+                    <h3>لباس زنانه</h3>
+                </div>
+                <div class="category-item">
+                    <img src="https://images.unsplash.com/photo-1519457431-44ccd64a579b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="بچه‌گانه">
+                    <h3>بچه‌گانه</h3>
+                </div>
+                <div class="category-item">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="ورزشی">
+                    <h3>لباس ورزشی</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- محصولات پرفروش -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">محصولات پرفروش</h2>
+            <div class="products-grid" id="products-grid">
+                <!-- محصولات با JavaScript لود می‌شوند -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ویژگی‌های فروشگاه -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>ارسال رایگان</h3>
+                    <p>برای خریدهای بالای 200 هزار تومان</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-undo"></i>
+                    <h3>مرجوعی آسان</h3>
+                    <p>تا ۷ روز امکان مرجوعی کالا</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-lock"></i>
+                    <h3>پرداخت امن</h3>
+                    <p>پرداخت آنلاین با امنیت بالا</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-headset"></i>
+                    <h3>پشتیبانی 24/7</h3>
+                    <p>پشتیبانی آنلاین در تمام ساعات</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- سایدبار سبد خرید -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>سبد خرید شما</h3>
+            <button class="close-cart" id="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- آیتم‌های سبد خرید -->
+        </div>
+        <div class="cart-total">
+            <p>جمع کل: <span id="cart-total-price">۰ تومان</span></p>
+            <button class="checkout-btn">تکمیل سفارش</button>
+        </div>
+    </div>
+
+    <!-- فوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>درباره ما</h4>
+                    <p>فروشگاه مد و لباس با بیش از ۱۰ سال سابقه در زمینه پوشاک</p>
+                </div>
+                <div class="footer-section">
+                    <h4>لینک‌های مفید</h4>
+                    <ul>
+                        <li><a href="#">درباره ما</a></li>
+                        <li><a href="#">تماس با ما</a></li>
+                        <li><a href="#">قوانین و مقررات</a></li>
+                        <li><a href="#">حریم خصوصی</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>خدمات مشتریان</h4>
+                    <ul>
+                        <li><a href="#">پیگیری سفارش</a></li>
+                        <li><a href="#">روش‌های پرداخت</a></li>
+                        <li><a href="#">شرایط مرجوعی</a></li>
+                        <li><a href="#">پرسش‌های متداول</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>تماس با ما</h4>
+                    <p><i class="fas fa-phone"></i> ۰۲۱-۱۲۳۴۵۶۷۸</p>
+                    <p><i class="fas fa-envelope"></i> info@fashionstore.com</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- مودال ورود -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>ورود / ثبت‌نام</h2>
+            <form class="auth-form">
+                <input type="text" placeholder="شماره موبایل یا ایمیل" required>
+                <input type="password" placeholder="رمز عبور" required>
+                <button type="submit">ورود</button>
+                <p>حساب کاربری ندارید؟ <a href="#">ثبت‌نام کنید</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
