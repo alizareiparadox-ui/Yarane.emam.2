@@ -1,1046 +1,438 @@
-/* Reset و تنظیمات پایه */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    /* رنگ‌بندی قرمز */
-    --primary-red: #dc2626;
-    --dark-red: #b91c1c;
-    --light-red: #fef2f2;
-    --red-gradient: linear-gradient(135deg, #dc2626, #b91c1c);
-    
-    /* رنگ‌های خنثی */
-    --white: #ffffff;
-    --black: #1a1a1a;
-    --gray-50: #f9fafb;
-    --gray-100: #f3f4f6;
-    --gray-200: #e5e7eb;
-    --gray-500: #6b7280;
-    --gray-700: #374151;
-    --gray-900: #111827;
-    
-    /* سایه‌ها */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    --shadow-red: 0 10px 25px -3px rgba(220, 38, 38, 0.3);
-    
-    /* انیمیشن‌ها */
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-body {
-    font-family: 'Vazir', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: var(--gray-700);
-    background: var(--white);
-    direction: rtl;
-    overflow-x: hidden;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Preloader */
-.preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--white);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    transition: var(--transition-slow);
-}
-
-.loader {
-    position: relative;
-    width: 80px;
-    height: 80px;
-}
-
-.red-dot {
-    width: 20px;
-    height: 20px;
-    background: var(--primary-red);
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: bounce 1.5s infinite;
-}
-
-.pulse {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60px;
-    height: 60px;
-    border: 2px solid var(--primary-red);
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-}
-
-@keyframes bounce {
-    0%, 100% { transform: translate(-50%, -50%) scale(1); }
-    50% { transform: translate(-50%, -50%) scale(1.2); }
-}
-
-@keyframes pulse {
-    0% { transform: translate(-50%, -50%) scale(0.8); opacity: 1; }
-    100% { transform: translate(-50%, -50%) scale(2); opacity: 0; }
-}
-
-.preloader p {
-    margin-top: 20px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--primary-red);
-    animation: fadeInOut 2s infinite;
-}
-
-@keyframes fadeInOut {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 1; }
-}
-
-/* هدر و ناوبری */
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--gray-100);
-    z-index: 1000;
-    transition: var(--transition);
-}
-
-.navbar {
-    padding: 1rem 0;
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* لوگو */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-}
-
-.logo-icon {
-    position: relative;
-    width: 40px;
-    height: 40px;
-}
-
-.diamond {
-    width: 25px;
-    height: 25px;
-    background: var(--red-gradient);
-    transform: rotate(45deg);
-    position: relative;
-    animation: float 3s ease-in-out infinite;
-    box-shadow: var(--shadow-red);
-}
-
-.diamond::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 15px;
-    height: 15px;
-    background: var(--white);
-    transform: rotate(45deg);
-}
-
-@keyframes float {
-    0%, 100% { transform: rotate(45deg) translateY(0); }
-    50% { transform: rotate(45deg) translateY(-10px); }
-}
-
-.logo-text {
-    font-size: 1.8rem;
-    font-weight: 800;
-    background: var(--red-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-/* منوی اصلی */
-.main-menu {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-    margin: 0;
-    padding: 0;
-}
-
-.menu-link {
-    text-decoration: none;
-    color: var(--gray-700);
-    font-weight: 500;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    transition: var(--transition);
-    position: relative;
-}
-
-.menu-link:hover,
-.menu-link.active {
-    color: var(--primary-red);
-    background: var(--light-red);
-}
-
-.menu-link::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    right: 50%;
-    width: 0;
-    height: 2px;
-    background: var(--primary-red);
-    transition: var(--transition);
-    transform: translateX(50%);
-}
-
-.menu-link:hover::after,
-.menu-link.active::after {
-    width: 80%;
-}
-
-/* آیکون‌های ناوبری */
-.nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.search-container {
-    position: relative;
-}
-
-.search-toggle {
-    background: none;
-    border: none;
-    color: var(--gray-700);
-    font-size: 1.2rem;
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 8px;
-    transition: var(--transition);
-}
-
-.search-toggle:hover {
-    color: var(--primary-red);
-    background: var(--light-red);
-}
-
-.search-box {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 300px;
-    background: var(--white);
-    border: 1px solid var(--gray-200);
-    border-radius: 12px;
-    padding: 0.5rem;
-    box-shadow: var(--shadow-lg);
-    display: none;
-    animation: slideDown 0.3s ease;
-}
-
-.search-box.active {
-    display: flex;
-}
-
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.search-input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 0.5rem;
-    background: transparent;
-}
-
-.search-btn {
-    background: var(--primary-red);
-    color: var(--white);
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.search-btn:hover {
-    background: var(--dark-red);
-}
-
-.nav-action-btn {
-    position: relative;
-    background: none;
-    border: none;
-    color: var(--gray-700);
-    font-size: 1.2rem;
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 8px;
-    transition: var(--transition);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-}
-
-.nav-action-btn:hover {
-    color: var(--primary-red);
-    background: var(--light-red);
-}
-
-.action-badge {
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    background: var(--primary-red);
-    color: var(--white);
-    border-radius: 50%;
-    width: 18px;
-    height: 18px;
-    font-size: 0.7rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-}
-
-.mobile-menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: var(--gray-700);
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 8px;
-    transition: var(--transition);
-}
-
-.mobile-menu-btn:hover {
-    color: var(--primary-red);
-    background: var(--light-red);
-}
-
-/* بخش هیرو */
-.hero-section {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(135deg, var(--light-red) 0%, var(--white) 50%, var(--light-red) 100%);
-    overflow: hidden;
-}
-
-.hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, rgba(220, 38, 38, 0.1) 0%, transparent 50%);
-}
-
-.floating-particles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-
-.particle {
-    position: absolute;
-    background: var(--primary-red);
-    border-radius: 50%;
-    opacity: 0.1;
-    animation: floatParticle 20s infinite linear;
-}
-
-.particle:nth-child(1) { top: 20%; left: 10%; width: 30px; height: 30px; animation-delay: 0s; }
-.particle:nth-child(2) { top: 60%; left: 80%; width: 20px; height: 20px; animation-delay: 5s; }
-.particle:nth-child(3) { top: 80%; left: 20%; width: 25px; height: 25px; animation-delay: 10s; }
-.particle:nth-child(4) { top: 40%; left: 60%; width: 15px; height: 15px; animation-delay: 15s; }
-.particle:nth-child(5) { top: 70%; left: 40%; width: 35px; height: 35px; animation-delay: 20s; }
-
-@keyframes floatParticle {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    25% { transform: translateY(-20px) rotate(90deg); }
-    50% { transform: translateY(0) rotate(180deg); }
-    75% { transform: translateY(20px) rotate(270deg); }
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.hero-text {
-    animation: slideInRight 1s ease;
-}
-
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.hero-title {
-    font-size: 3.5rem;
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-    color: var(--gray-900);
-}
-
-.title-line {
-    display: block;
-}
-
-.title-line.highlight {
-    background: var(--red-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.hero-description {
-    font-size: 1.2rem;
-    color: var(--gray-500);
-    margin-bottom: 2.5rem;
-    line-height: 1.8;
-}
-
-.hero-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 12px;
-    font-weight: 600;
-    text-decoration: none;
-    cursor: pointer;
-    transition: var(--transition);
-    position: relative;
-    overflow: hidden;
-}
-
-.btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-    transition: left 0.5s;
-}
-
-.btn:hover::before {
-    left: 100%;
-}
-
-.btn-primary {
-    background: var(--red-gradient);
-    color: var(--white);
-    box-shadow: var(--shadow-red);
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 15px 30px rgba(220, 38, 38, 0.4);
-}
-
-.btn-secondary {
-    background: var(--white);
-    color: var(--gray-700);
-    border: 2px solid var(--gray-200);
-}
-
-.btn-secondary:hover {
-    border-color: var(--primary-red);
-    color: var(--primary-red);
-    transform: translateY(-2px);
-}
-
-.btn-outline {
-    background: transparent;
-    color: var(--primary-red);
-    border: 2px solid var(--primary-red);
-}
-
-.btn-outline:hover {
-    background: var(--primary-red);
-    color: var(--white);
-    transform: translateY(-2px);
-}
-
-.btn-block {
-    width: 100%;
-    justify-content: center;
-}
-
-/* بخش بصری هیرو */
-.hero-visual {
-    position: relative;
-    height: 500px;
-    animation: slideInLeft 1s ease;
-}
-
-@keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.floating-card {
-    position: absolute;
-    background: var(--white);
-    border-radius: 20px;
-    box-shadow: var(--shadow-xl);
-    overflow: hidden;
-    transition: var(--transition);
-}
-
-.floating-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.card-badge {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    background: var(--primary-red);
-    color: var(--white);
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-}
-
-.card-1 {
-    width: 250px;
-    height: 300px;
-    top: 0;
-    left: 0;
-    animation: floatCard1 6s ease-in-out infinite;
-}
-
-.card-2 {
-    width: 200px;
-    height: 250px;
-    top: 150px;
-    left: 200px;
-    animation: floatCard2 7s ease-in-out infinite;
-}
-
-.card-3 {
-    width: 180px;
-    height: 220px;
-    top: 50px;
-    left: 400px;
-    animation: floatCard3 8s ease-in-out infinite;
-}
-
-@keyframes floatCard1 {
-    0%, 100% { transform: translateY(0) rotate(-5deg); }
-    50% { transform: translateY(-20px) rotate(5deg); }
-}
-
-@keyframes floatCard2 {
-    0%, 100% { transform: translateY(0) rotate(3deg); }
-    50% { transform: translateY(-15px) rotate(-3deg); }
-}
-
-@keyframes floatCard3 {
-    0%, 100% { transform: translateY(0) rotate(-2deg); }
-    50% { transform: translateY(-10px) rotate(2deg); }
-}
-
-.scroll-indicator {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    color: var(--gray-500);
-    font-size: 0.9rem;
-    z-index: 2;
-}
-
-.scroll-line {
-    width: 2px;
-    height: 40px;
-    background: var(--primary-red);
-    margin: 0 auto 0.5rem;
-    animation: scrollLine 2s infinite;
-}
-
-@keyframes scrollLine {
-    0%, 100% { transform: scaleY(1); }
-    50% { transform: scaleY(0.5); }
-}
-
-/* بخش‌های مختلف */
-.section-header {
-    text-align: center;
-    margin-bottom: 4rem;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--gray-900);
-    margin-bottom: 1rem;
-    position: relative;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    right: 50%;
-    transform: translateX(50%);
-    width: 80px;
-    height: 4px;
-    background: var(--red-gradient);
-    border-radius: 2px;
-}
-
-.section-subtitle {
-    font-size: 1.1rem;
-    color: var(--gray-500);
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* دسته‌بندی‌ها */
-.categories-section {
-    padding: 6rem 0;
-    background: var(--gray-50);
-}
-
-.categories-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-}
-
-.category-card {
-    background: var(--white);
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: var(--shadow-lg);
-    transition: var(--transition);
-    position: relative;
-}
-
-.category-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-xl);
-}
-
-.category-image {
-    position: relative;
-    height: 250px;
-    overflow: hidden;
-}
-
-.category-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--transition-slow);
-}
-
-.category-card:hover .category-image img {
-    transform: scale(1.1);
-}
-
-.category-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: var(--transition);
-}
-
-.category-card:hover .category-overlay {
-    opacity: 1;
-}
-
-.category-btn {
-    background: var(--white);
-    color: var(--primary-red);
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 25px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.category-btn:hover {
-    background: var(--primary-red);
-    color: var(--white);
-}
-
-.category-info {
-    padding: 1.5rem;
-}
-
-.category-info h3 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--gray-900);
-}
-
-.category-info p {
-    color: var(--gray-500);
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
-
-.category-count {
-    color: var(--primary-red);
-    font-weight: 600;
-    font-size: 0.9rem;
-}
-
-/* محصولات */
-.featured-products {
-    padding: 6rem 0;
-}
-
-.products-filter {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 3rem;
-    flex-wrap: wrap;
-}
-
-.filter-btn {
-    background: var(--white);
-    color: var(--gray-700);
-    border: 2px solid var(--gray-200);
-    padding: 0.75rem 1.5rem;
-    border-radius: 25px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.filter-btn:hover,
-.filter-btn.active {
-    background: var(--primary-red);
-    color: var(--white);
-    border-color: var(--primary-red);
-}
-
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-
-.product-card {
-    background: var(--white);
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: var(--shadow-lg);
-    transition: var(--transition);
-    position: relative;
-}
-
-.product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-xl);
-}
-
-.product-image {
-    position: relative;
-    height: 250px;
-    overflow: hidden;
-}
-
-.product-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--transition-slow);
-}
-
-.product-card:hover .product-image img {
-    transform: scale(1.05);
-}
-
-.product-badges {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.product-badge {
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--white);
-}
-
-.badge-discount {
-    background: var(--primary-red);
-}
-
-.badge-new {
-    background: #10b981;
-}
-
-.badge-hot {
-    background: #f59e0b;
-}
-
-.product-wishlist {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: var(--white);
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: var(--transition);
-    box-shadow: var(--shadow-md);
-}
-
-.product-wishlist:hover {
-    background: var(--primary-red);
-    color: var(--white);
-}
-
-.product-wishlist.active {
-    background: var(--primary-red);
-    color: var(--white);
-}
-
-.product-info {
-    padding: 1.5rem;
-}
-
-.product-category {
-    color: var(--gray-500);
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-}
-
-.product-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: var(--gray-900);
-    line-height: 1.4;
-}
-
-.product-price {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.current-price {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--primary-red);
-}
-
-.original-price {
-    font-size: 1rem;
-    color: var(--gray-500);
-    text-decoration: line-through;
-}
-
-.product-actions {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.add-to-cart {
-    flex: 1;
-    background: var(--red-gradient);
-    color: var(--white);
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 10px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-.add-to-cart:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-red);
-}
-
-.quick-view {
-    background: var(--gray-100);
-    color: var(--gray-700);
-    border: none;
-    width: 45px;
-    height: 45px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.quick-view:hover {
-    background: var(--primary-red);
-    color: var(--white);
-}
-
-.section-footer {
-    text-align: center;
-}
-
-/* ویژگی‌ها */
-.features-section {
-    padding: 6rem 0;
-    background: var(--light-red);
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3rem;
-}
-
-.feature-item {
-    text-align: center;
-    padding: 2rem;
-    background: var(--white);
-    border-radius: 20px;
-    box-shadow: var(--shadow-lg);
-    transition: var(--transition);
-}
-
-.feature-item:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-xl);
-}
-
-.feature-icon {
-    width: 80px;
-    height: 80px;
-    background: var(--red-gradient);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.5rem;
-    transition: var(--transition);
-}
-
-.feature
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوتیک قرمز | مرجع مد و لباس لوکس</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- هدر اصلی -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- لوگو -->
+                <div class="logo">
+                    <div class="logo-icon">
+                        <div class="diamond"></div>
+                    </div>
+                    <h1 class="logo-text">بوتیک قرمز</h1>
+                </div>
+
+                <!-- منوی اصلی -->
+                <ul class="main-menu" id="main-menu">
+                    <li><a href="#home" class="menu-link active">خانه</a></li>
+                    <li><a href="#products" class="menu-link">محصولات</a></li>
+                    <li><a href="#categories" class="menu-link">دسته‌بندی‌ها</a></li>
+                    <li><a href="#about" class="menu-link">درباره ما</a></li>
+                    <li><a href="#contact" class="menu-link">تماس با ما</a></li>
+                </ul>
+
+                <!-- آیکون‌های سمت چپ -->
+                <div class="nav-actions">
+                    <!-- جستجو -->
+                    <div class="search-container">
+                        <button class="search-toggle" id="search-toggle">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <div class="search-box" id="search-box">
+                            <input type="text" placeholder="جستجوی محصولات..." class="search-input">
+                            <button class="search-btn">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- علاقه‌مندی‌ها -->
+                    <a href="#" class="nav-action-btn wishlist-btn">
+                        <i class="fas fa-heart"></i>
+                        <span class="action-badge" id="wishlist-count">۰</span>
+                    </a>
+
+                    <!-- سبد خرید -->
+                    <a href="cart.html" class="nav-action-btn cart-btn">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="action-badge" id="cart-count">۰</span>
+                    </a>
+
+                    <!-- پروفایل کاربر -->
+                    <a href="#" class="nav-action-btn profile-btn" id="profile-btn">
+                        <i class="fas fa-user"></i>
+                    </a>
+
+                    <!-- منوی موبایل -->
+                    <button class="mobile-menu-btn" id="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- بخش هیرو -->
+    <section class="hero-section" id="home">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+            <div class="floating-particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line">سبک خود را</span>
+                    <span class="title-line highlight">با بوتیک قرمز</span>
+                    <span class="title-line">تعریف کنید</span>
+                </h1>
+                <p class="hero-description">
+                    کشف کنید مجموعه بی‌نظیر مد و لباس ما که برای زیبایی و اعتماد به نفس شما طراحی شده است. 
+                    هر قطعه داستانی از ظرافت و استایل را روایت می‌کند.
+                </p>
+                <div class="hero-actions">
+                    <a href="#products" class="btn btn-primary">
+                        <span>مشاهده محصولات</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                    <a href="#about" class="btn btn-secondary">
+                        <span>درباره ما</span>
+                        <i class="fas fa-play"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="floating-card card-1">
+                    <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="مدل زنانه">
+                    <div class="card-badge">جدید</div>
+                </div>
+                <div class="floating-card card-2">
+                    <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="مدل مردانه">
+                    <div class="card-badge">پرفروش</div>
+                </div>
+                <div class="floating-card card-3">
+                    <img src="https://images.unsplash.com/photo-1519457431-44ccd64a579b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="مدل بچه‌گانه">
+                    <div class="card-badge">محبوب</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>اسکرول کنید</span>
+        </div>
+    </section>
+
+    <!-- بخش دسته‌بندی‌ها -->
+    <section class="categories-section" id="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">کشف دسته‌بندی‌ها</h2>
+                <p class="section-subtitle">هر سلیقه‌ای را در مجموعه گسترده ما پیدا کنید</p>
+            </div>
+            
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="مردانه">
+                        <div class="category-overlay">
+                            <button class="category-btn">مشاهده مجموعه</button>
+                        </div>
+                    </div>
+                    <div class="category-info">
+                        <h3>لباس مردانه</h3>
+                        <p>استایل مدرن و کلاسیک برای مردان</p>
+                        <span class="category-count">۱۲۵ محصول</span>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="زنانه">
+                        <div class="category-overlay">
+                            <button class="category-btn">مشاهده مجموعه</button>
+                        </div>
+                    </div>
+                    <div class="category-info">
+                        <h3>لباس زنانه</h3>
+                        <p>طراحی‌های شیک و منحصر به فرد</p>
+                        <span class="category-count">۱۸۹ محصول</span>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1519457431-44ccd64a579b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="بچه‌گانه">
+                        <div class="category-overlay">
+                            <button class="category-btn">مشاهده مجموعه</button>
+                        </div>
+                    </div>
+                    <div class="category-info">
+                        <h3>بچه‌گانه</h3>
+                        <p>رنگارنگ و شاد برای کودکان</p>
+                        <span class="category-count">۷۸ محصول</span>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="ورزشی">
+                        <div class="category-overlay">
+                            <button class="category-btn">مشاهده مجموعه</button>
+                        </div>
+                    </div>
+                    <div class="category-info">
+                        <h3>لباس ورزشی</h3>
+                        <p>راحت و کاربردی برای فعالیت‌های ورزشی</p>
+                        <span class="category-count">۹۲ محصول</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش محصولات ویژه -->
+    <section class="featured-products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">محصولات منتخب</h2>
+                <p class="section-subtitle">برترین و محبوب‌ترین محصولات ما</p>
+            </div>
+            
+            <div class="products-filter">
+                <button class="filter-btn active" data-filter="all">همه محصولات</button>
+                <button class="filter-btn" data-filter="men">مردانه</button>
+                <button class="filter-btn" data-filter="women">زنانه</button>
+                <button class="filter-btn" data-filter="kids">بچه‌گانه</button>
+                <button class="filter-btn" data-filter="sale">تخفیف‌دار</button>
+            </div>
+            
+            <div class="products-grid" id="products-grid">
+                <!-- محصولات با JavaScript لود می‌شوند -->
+            </div>
+            
+            <div class="section-footer">
+                <a href="products.html" class="btn btn-outline">
+                    <span>مشاهده همه محصولات</span>
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش ویژگی‌ها -->
+    <section class="features-section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>تحویل سریع</h3>
+                    <p>ارسال رایگان برای خریدهای بالای ۵۰۰ هزار تومان و تحویل در کمتر از ۴۸ ساعت</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>ضمانت کیفیت</h3>
+                    <p>گارانتی بازگشت ۷ روزه کالا و تضمین بهترین کیفیت در تمام محصولات</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>پشتیبانی ۲۴/۷</h3>
+                    <p>تیم پشتیبانی ما در تمام ساعات شبانه‌روز آماده پاسخگویی به شماست</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>برند معتبر</h3>
+                    <p>با بیش از ۱۰ سال سابقه درخشان در صنعت مد و پوشاک ایران</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- فوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- بخش اطلاعات بوتیک -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo">
+                            <div class="logo-icon">
+                                <div class="diamond"></div>
+                            </div>
+                            <h3>بوتیک قرمز</h3>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        <strong>مرجع تخصصی مد و لباس با کیفیت برتر</strong><br>
+                        ما در بوتیک قرمز با افتخار ارائه‌دهنده برترین برندهای مد و پوشاک هستیم. 
+                        با تیمی از متخصصان fashion، همیشه در تلاشیم تا جدیدترین ترندهای روز دنیا 
+                        را با بالاترین کیفیت در اختیار شما قرار دهیم.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- لینک‌های مفید -->
+                <div class="footer-section">
+                    <h4 class="footer-title">لینک‌های مفید</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">صفحه اصلی</a></li>
+                        <li><a href="products.html">تمام محصولات</a></li>
+                        <li><a href="about.html">درباره بوتیک قرمز</a></li>
+                        <li><a href="contact.html">راهنمای اندازه‌گیری</a></li>
+                        <li><a href="blog.html">مجله مد و استایل</a></li>
+                        <li><a href="careers.html">فرصت‌های شغلی</a></li>
+                    </ul>
+                </div>
+
+                <!-- خدمات مشتریان -->
+                <div class="footer-section">
+                    <h4 class="footer-title">خدمات مشتریان</h4>
+                    <ul class="footer-links">
+                        <li><a href="tracking.html">🎯 پیگیری سفارش - رهگیری آنلاین خرید</a></li>
+                        <li><a href="return.html">🔄 مرجوعی کالا - بازگشت آسان محصول</a></li>
+                        <li><a href="faq.html">❓ پرسش‌های متداول - راهنمای کامل</a></li>
+                        <li><a href="size-guide.html">📏 راهنمای سایز - انتخاب اندازه مناسب</a></li>
+                        <li><a href="payment.html">💳 روش‌های پرداخت - امن و متنوع</a></li>
+                        <li><a href="support.html">🎧 پشتیبانی آنلاین - ۲۴ ساعته</a></li>
+                    </ul>
+                </div>
+
+                <!-- تماس با ما -->
+                <div class="footer-section">
+                    <h4 class="footer-title">تماس با ما</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>تهران، خیابان ولیعصر، پلاک ۱۲۳۴</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>۰۲۱ - ۱۲۳۴۵۶۷۸</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@redboutique.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>همه روزه ۹:۰۰ تا ۲۱:۰۰</span>
+                        </div>
+                    </div>
+                    
+                    <div class="newsletter">
+                        <h5>عضویت در خبرنامه</h5>
+                        <p>از جدیدترین تخفیف‌ها و محصولات باخبر شوید</p>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="ایمیل خود را وارد کنید">
+                            <button type="submit">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; ۲۰۲۴ بوتیک قرمز. تمام حقوق محفوظ است.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">قوانین و مقررات</a>
+                        <a href="#">حریم خصوصی</a>
+                        <a href="#">روش‌های پرداخت</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- مودال ثبت‌نام/ورود -->
+    <div class="auth-modal" id="auth-modal">
+        <div class="auth-modal-content">
+            <button class="close-auth-modal" id="close-auth-modal">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">ورود</button>
+                <button class="auth-tab" data-tab="register">ثبت‌نام</button>
+            </div>
+            
+            <div class="auth-forms">
+                <!-- فرم ورود -->
+                <form class="auth-form login-form active">
+                    <h3>خوش آمدید</h3>
+                    <p>لطفا برای ادامه وارد حساب کاربری خود شوید</p>
+                    
+                    <div class="form-group">
+                        <input type="text" placeholder="ایمیل یا شماره موبایل" required>
+                        <i class="fas fa-user"></i>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="password" placeholder="رمز عبور" required>
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    
+                    <div class="form-options">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span>مرا به خاطر بسپار</span>
+                        </label>
+                        <a href="#" class="forgot-password">رمز عبور را فراموش کرده‌اید؟</a>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <span>ورود به حساب</span>
+                        <i class="fas fa-sign-in-alt"></i>
+                    </button>
+                    
+                    <div class="auth-divider">
+                        <span>یا وارد شوید با</span>
+                    </div>
+                    
+                    <div class="social-auth">
+                        <button type="button" class="btn btn-google">
+                            <i class="fab fa-google"></i>
+                            Google
+                        </button>
+                    </div>
+                </form>
+                
+                <!-- فرم ثبت‌نام -->
+                <form class="auth-form register-form">
+                    <h3>حساب جدید</h3>
+                    <p>لطفا اطلاعات خود را برای ثبت‌نام وارد کنید</p>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" placeholder="نام" required>
+                            <i class="fas fa-user">
