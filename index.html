@@ -6,6 +6,265 @@
     <title>بوتیک قرمز | Red Boutique</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* استایل‌های مخصوص موبایل */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 0.5rem 0;
+            }
+            
+            .logo {
+                order: 1;
+            }
+            
+            .search-box {
+                order: 3;
+                flex: 1;
+                width: 100%;
+                max-width: 100%;
+                margin: 0.5rem 0;
+            }
+            
+            .nav-icons {
+                order: 2;
+                gap: 15px;
+            }
+            
+            .categories {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                padding: 0 10px;
+            }
+            
+            .categories li {
+                margin: 0;
+            }
+            
+            .categories a {
+                font-size: 0.9rem;
+                padding: 5px 10px;
+            }
+            
+            .hero-slider {
+                height: 300px;
+            }
+            
+            .slide-content {
+                right: 5%;
+                padding: 1.5rem;
+                backdrop-filter: blur(5px);
+            }
+            
+            .slide-content h2 {
+                font-size: 1.8rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .slide-content p {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+            
+            .shop-now {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+                margin: 2rem 0;
+            }
+            
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+                padding: 0 10px;
+            }
+            
+            .category-item {
+                padding: 1rem 0.5rem;
+            }
+            
+            .category-image {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .category-item h3 {
+                font-size: 1.1rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+                padding: 0 10px;
+            }
+            
+            .product-card {
+                margin-bottom: 1rem;
+            }
+            
+            .product-image {
+                height: 200px;
+            }
+            
+            .product-info {
+                padding: 1rem;
+            }
+            
+            .product-title {
+                font-size: 1rem;
+            }
+            
+            .product-price {
+                font-size: 1.1rem;
+            }
+            
+            .add-to-cart {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                padding: 0 10px;
+            }
+            
+            .feature {
+                padding: 1.5rem 1rem;
+            }
+            
+            .feature i {
+                font-size: 2rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 0 10px;
+            }
+            
+            .slider-arrow {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+            
+            .prev-slide {
+                right: 10px;
+            }
+            
+            .next-slide {
+                left: 10px;
+            }
+            
+            /* منوی موبایل */
+            .mobile-menu-btn {
+                display: block;
+                background: none;
+                border: none;
+                font-size: 1.5rem;
+                color: #333;
+                cursor: pointer;
+                order: 2;
+            }
+            
+            .categories {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                z-index: 1000;
+            }
+            
+            .categories.active {
+                display: flex;
+            }
+            
+            .categories li {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .categories a {
+                display: block;
+                padding: 10px;
+                border-bottom: 1px solid #f0f0f0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-slider {
+                height: 250px;
+            }
+            
+            .slide-content {
+                padding: 1rem;
+            }
+            
+            .slide-content h2 {
+                font-size: 1.5rem;
+            }
+            
+            .logo-text {
+                font-size: 1.4rem;
+            }
+            
+            .search-box {
+                flex: 0 0 100%;
+            }
+            
+            .top-bar .container {
+                flex-direction: column;
+                gap: 5px;
+                text-align: center;
+            }
+            
+            .top-links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+            
+            .top-links a {
+                margin: 0;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* دکمه منوی موبایل */
+        .mobile-menu-btn {
+            display: none;
+        }
+
+        /* بهبود نمایش برای تبلت */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Preloader -->
@@ -44,6 +303,11 @@
                     <h1 class="logo-text">بوتیک قرمز</h1>
                 </div>
                 
+                <!-- دکمه منوی موبایل -->
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+
                 <div class="search-box">
                     <input type="text" placeholder="جستجوی محصولات..." class="search-input">
                     <button class="search-btn">
@@ -56,7 +320,7 @@
                         <i class="fas fa-heart"></i>
                         <span class="badge pulse">۳</span>
                     </a>
-                    <a href="#" class="nav-icon" id="cart-icon">
+                    <a href="cart.html" class="nav-icon" id="cart-icon"> <!-- تغییر لینک به cart.html -->
                         <i class="fas fa-shopping-cart"></i>
                         <span class="badge" id="cart-count">۰</span>
                     </a>
@@ -67,7 +331,7 @@
         <!-- منوی دسته‌بندی -->
         <div class="category-menu">
             <div class="container">
-                <ul class="categories">
+                <ul class="categories" id="categories-menu">
                     <li><a href="#" class="category-link">لباس مردانه</a></li>
                     <li><a href="#" class="category-link">لباس زنانه</a></li>
                     <li><a href="#" class="category-link">بچه‌گانه</a></li>
@@ -151,6 +415,14 @@
             <div class="products-grid" id="products-grid">
                 <!-- محصولات با JavaScript لود می‌شوند -->
             </div>
+            
+            <!-- دکمه مشاهده سبد خرید -->
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="cart.html" class="shopping-btn" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
+                    <i class="fas fa-shopping-cart"></i>
+                    مشاهده سبد خرید
+                </a>
+            </div>
         </div>
     </section>
 
@@ -203,7 +475,9 @@
         </div>
         <div class="cart-total">
             <p>جمع کل: <span id="cart-total-price">۰ تومان</span></p>
-            <button class="checkout-btn glow">تکمیل سفارش</button>
+            <a href="cart.html" class="checkout-btn glow" style="text-decoration: none; display: block;"> <!-- تغییر به لینک -->
+                تکمیل سفارش در صفحه سبد خرید
+            </a>
         </div>
     </div>
 
@@ -221,16 +495,16 @@
                 <div class="footer-section">
                     <h4>لینک‌های مفید</h4>
                     <ul>
+                        <li><a href="index.html" class="hover-underline">صفحه اصلی</a></li>
                         <li><a href="#" class="hover-underline">درباره ما</a></li>
                         <li><a href="#" class="hover-underline">تماس با ما</a></li>
                         <li><a href="#" class="hover-underline">قوانین و مقررات</a></li>
-                        <li><a href="#" class="hover-underline">حریم خصوصی</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>خدمات مشتریان</h4>
                     <ul>
-                        <li><a href="#" class="hover-underline">پیگیری سفارش</a></li>
+                        <li><a href="cart.html" class="hover-underline">سبد خرید</a></li> <!-- لینک به سبد خرید -->
                         <li><a href="#" class="hover-underline">روش‌های پرداخت</a></li>
                         <li><a href="#" class="hover-underline">شرایط مرجوعی</a></li>
                         <li><a href="#" class="hover-underline">پرسش‌های متداول</a></li>
@@ -272,4 +546,4 @@
 
     <script src="script.js"></script>
 </body>
-</html>
+                                </html>
