@@ -3,21 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>فروشگاه مد و لباس | Fashion Store</title>
+    <title>بوتیک قرمز | Red Boutique</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="loader">
+            <div class="red-dot"></div>
+            <div class="pulse"></div>
+        </div>
+        <p>بوتیک قرمز</p>
+    </div>
+
     <!-- نوار بالایی -->
     <div class="top-bar">
         <div class="container">
             <div class="top-links">
-                <a href="#">پیگیری سفارش</a>
-                <a href="#">مرجوعی کالا</a>
-                <a href="#">پرسش‌های متداول</a>
+                <a href="#" class="hover-underline">پیگیری سفارش</a>
+                <a href="#" class="hover-underline">مرجوعی کالا</a>
+                <a href="#" class="hover-underline">پرسش‌های متداول</a>
             </div>
             <div class="auth-links">
-                <a href="#" id="login-btn"><i class="fas fa-user"></i> ورود / ثبت‌نام</a>
+                <a href="#" id="login-btn" class="hover-underline">
+                    <i class="fas fa-user"></i> ورود / ثبت‌نام
+                </a>
             </div>
         </div>
     </div>
@@ -27,18 +38,23 @@
         <nav class="navbar">
             <div class="nav-container">
                 <div class="logo">
-                    <h1>FashionStore</h1>
+                    <div class="logo-icon">
+                        <div class="diamond"></div>
+                    </div>
+                    <h1 class="logo-text">بوتیک قرمز</h1>
                 </div>
                 
                 <div class="search-box">
-                    <input type="text" placeholder="جستجوی محصولات...">
-                    <button><i class="fas fa-search"></i></button>
+                    <input type="text" placeholder="جستجوی محصولات..." class="search-input">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
                 </div>
 
                 <div class="nav-icons">
-                    <a href="#" class="nav-icon">
+                    <a href="#" class="nav-icon heartbeat">
                         <i class="fas fa-heart"></i>
-                        <span class="badge">۳</span>
+                        <span class="badge pulse">۳</span>
                     </a>
                     <a href="#" class="nav-icon" id="cart-icon">
                         <i class="fas fa-shopping-cart"></i>
@@ -52,12 +68,12 @@
         <div class="category-menu">
             <div class="container">
                 <ul class="categories">
-                    <li><a href="#">لباس مردانه</a></li>
-                    <li><a href="#">لباس زنانه</a></li>
-                    <li><a href="#">بچه‌گانه</a></li>
-                    <li><a href="#">ورزشی</a></li>
-                    <li><a href="#">اکسسوری</a></li>
-                    <li><a href="#">تخفیف‌های ویژه</a></li>
+                    <li><a href="#" class="category-link">لباس مردانه</a></li>
+                    <li><a href="#" class="category-link">لباس زنانه</a></li>
+                    <li><a href="#" class="category-link">بچه‌گانه</a></li>
+                    <li><a href="#" class="category-link">ورزشی</a></li>
+                    <li><a href="#" class="category-link">اکسسوری</a></li>
+                    <li><a href="#" class="category-link sale">تخفیف‌های ویژه</a></li>
                 </ul>
             </div>
         </div>
@@ -68,28 +84,61 @@
         <div class="slider-container" id="slider-container">
             <!-- اسلایدها با JavaScript ساخته می‌شوند -->
         </div>
+        <div class="floating-elements">
+            <div class="floating-circle circle-1"></div>
+            <div class="floating-circle circle-2"></div>
+            <div class="floating-circle circle-3"></div>
+        </div>
     </section>
 
     <!-- دسته‌بندی محصولات -->
     <section class="categories-section">
         <div class="container">
-            <h2 class="section-title">دسته‌بندی محصولات</h2>
+            <h2 class="section-title fade-in-up">دسته‌بندی محصولات</h2>
             <div class="category-grid">
-                <div class="category-item">
-                    <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="مردانه">
+                <div class="category-item glass">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="مردانه">
+                        <div class="category-overlay"></div>
+                    </div>
                     <h3>لباس مردانه</h3>
+                    <div class="category-hover">
+                        <span>مشاهده محصولات</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </div>
                 </div>
-                <div class="category-item">
-                    <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="زنانه">
+                <div class="category-item glass">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="زنانه">
+                        <div class="category-overlay"></div>
+                    </div>
                     <h3>لباس زنانه</h3>
+                    <div class="category-hover">
+                        <span>مشاهده محصولات</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </div>
                 </div>
-                <div class="category-item">
-                    <img src="https://images.unsplash.com/photo-1519457431-44ccd64a579b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="بچه‌گانه">
+                <div class="category-item glass">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1519457431-44ccd64a579b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="بچه‌گانه">
+                        <div class="category-overlay"></div>
+                    </div>
                     <h3>بچه‌گانه</h3>
+                    <div class="category-hover">
+                        <span>مشاهده محصولات</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </div>
                 </div>
-                <div class="category-item">
-                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="ورزشی">
+                <div class="category-item glass">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="ورزشی">
+                        <div class="category-overlay"></div>
+                    </div>
                     <h3>لباس ورزشی</h3>
+                    <div class="category-hover">
+                        <span>مشاهده محصولات</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -98,7 +147,7 @@
     <!-- محصولات پرفروش -->
     <section class="featured-products">
         <div class="container">
-            <h2 class="section-title">محصولات پرفروش</h2>
+            <h2 class="section-title fade-in-up">محصولات پرفروش</h2>
             <div class="products-grid" id="products-grid">
                 <!-- محصولات با JavaScript لود می‌شوند -->
             </div>
@@ -109,23 +158,31 @@
     <section class="features">
         <div class="container">
             <div class="features-grid">
-                <div class="feature">
-                    <i class="fas fa-shipping-fast"></i>
+                <div class="feature glass fade-in-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
                     <h3>ارسال رایگان</h3>
                     <p>برای خریدهای بالای 200 هزار تومان</p>
                 </div>
-                <div class="feature">
-                    <i class="fas fa-undo"></i>
+                <div class="feature glass fade-in-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-undo"></i>
+                    </div>
                     <h3>مرجوعی آسان</h3>
                     <p>تا ۷ روز امکان مرجوعی کالا</p>
                 </div>
-                <div class="feature">
-                    <i class="fas fa-lock"></i>
+                <div class="feature glass fade-in-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
                     <h3>پرداخت امن</h3>
                     <p>پرداخت آنلاین با امنیت بالا</p>
                 </div>
-                <div class="feature">
-                    <i class="fas fa-headset"></i>
+                <div class="feature glass fade-in-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
                     <h3>پشتیبانی 24/7</h3>
                     <p>پشتیبانی آنلاین در تمام ساعات</p>
                 </div>
@@ -137,14 +194,16 @@
     <div class="cart-sidebar" id="cart-sidebar">
         <div class="cart-header">
             <h3>سبد خرید شما</h3>
-            <button class="close-cart" id="close-cart">&times;</button>
+            <button class="close-cart" id="close-cart">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
         <div class="cart-items" id="cart-items">
             <!-- آیتم‌های سبد خرید -->
         </div>
         <div class="cart-total">
             <p>جمع کل: <span id="cart-total-price">۰ تومان</span></p>
-            <button class="checkout-btn">تکمیل سفارش</button>
+            <button class="checkout-btn glow">تکمیل سفارش</button>
         </div>
     </div>
 
@@ -153,35 +212,38 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
-                    <h4>درباره ما</h4>
-                    <p>فروشگاه مد و لباس با بیش از ۱۰ سال سابقه در زمینه پوشاک</p>
+                    <h4>بوتیک قرمز</h4>
+                    <p>مرجع تخصصی مد و لباس با کیفیت برتر</p>
+                    <div class="logo footer-logo">
+                        <div class="diamond small"></div>
+                    </div>
                 </div>
                 <div class="footer-section">
                     <h4>لینک‌های مفید</h4>
                     <ul>
-                        <li><a href="#">درباره ما</a></li>
-                        <li><a href="#">تماس با ما</a></li>
-                        <li><a href="#">قوانین و مقررات</a></li>
-                        <li><a href="#">حریم خصوصی</a></li>
+                        <li><a href="#" class="hover-underline">درباره ما</a></li>
+                        <li><a href="#" class="hover-underline">تماس با ما</a></li>
+                        <li><a href="#" class="hover-underline">قوانین و مقررات</a></li>
+                        <li><a href="#" class="hover-underline">حریم خصوصی</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>خدمات مشتریان</h4>
                     <ul>
-                        <li><a href="#">پیگیری سفارش</a></li>
-                        <li><a href="#">روش‌های پرداخت</a></li>
-                        <li><a href="#">شرایط مرجوعی</a></li>
-                        <li><a href="#">پرسش‌های متداول</a></li>
+                        <li><a href="#" class="hover-underline">پیگیری سفارش</a></li>
+                        <li><a href="#" class="hover-underline">روش‌های پرداخت</a></li>
+                        <li><a href="#" class="hover-underline">شرایط مرجوعی</a></li>
+                        <li><a href="#" class="hover-underline">پرسش‌های متداول</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>تماس با ما</h4>
                     <p><i class="fas fa-phone"></i> ۰۲۱-۱۲۳۴۵۶۷۸</p>
-                    <p><i class="fas fa-envelope"></i> info@fashionstore.com</p>
+                    <p><i class="fas fa-envelope"></i> info@redboutique.com</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-telegram"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
             </div>
@@ -190,14 +252,20 @@
 
     <!-- مودال ورود -->
     <div class="modal" id="login-modal">
-        <div class="modal-content">
+        <div class="modal-content glass">
             <span class="close-modal">&times;</span>
-            <h2>ورود / ثبت‌نام</h2>
+            <h2>ورود به بوتیک قرمز</h2>
             <form class="auth-form">
-                <input type="text" placeholder="شماره موبایل یا ایمیل" required>
-                <input type="password" placeholder="رمز عبور" required>
-                <button type="submit">ورود</button>
-                <p>حساب کاربری ندارید؟ <a href="#">ثبت‌نام کنید</a></p>
+                <div class="input-group">
+                    <input type="text" placeholder="شماره موبایل یا ایمیل" required>
+                    <i class="fas fa-user input-icon"></i>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="رمز عبور" required>
+                    <i class="fas fa-lock input-icon"></i>
+                </div>
+                <button type="submit" class="auth-btn glow">ورود</button>
+                <p>حساب کاربری ندارید؟ <a href="#" class="auth-link">ثبت‌نام کنید</a></p>
             </form>
         </div>
     </div>
