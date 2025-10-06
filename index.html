@@ -3,436 +3,418 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بوتیک قرمز | مرجع مد و لباس لوکس</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>فروشگاه آنلاین | صفحه اصلی</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- هدر اصلی -->
-    <header class="header">
-        <nav class="navbar">
-            <div class="nav-container">
-                <!-- لوگو -->
-                <div class="logo">
-                    <div class="logo-icon">
-                        <div class="diamond"></div>
+    <!-- هدر سایت -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="welcome-message">به فروشگاه آنلاین ما خوش آمدید!</div>
+                    <div class="header-links">
+                        <a href="#">ورود</a>
+                        <a href="#">ثبت نام</a>
+                        <a href="#">پیگیری سفارش</a>
                     </div>
-                    <h1 class="logo-text">بوتیک قرمز</h1>
                 </div>
-
-                <!-- منوی اصلی -->
-                <ul class="main-menu" id="main-menu">
-                    <li><a href="#home" class="menu-link active">خانه</a></li>
-                    <li><a href="#products" class="menu-link">محصولات</a></li>
-                    <li><a href="#categories" class="menu-link">دسته‌بندی‌ها</a></li>
-                    <li><a href="#about" class="menu-link">درباره ما</a></li>
-                    <li><a href="#contact" class="menu-link">تماس با ما</a></li>
-                </ul>
-
-                <!-- آیکون‌های سمت چپ -->
-                <div class="nav-actions">
-                    <!-- جستجو -->
-                    <div class="search-container">
-                        <button class="search-toggle" id="search-toggle">
-                            <i class="fas fa-search"></i>
-                        </button>
-                        <div class="search-box" id="search-box">
-                            <input type="text" placeholder="جستجوی محصولات..." class="search-input">
-                            <button class="search-btn">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- علاقه‌مندی‌ها -->
-                    <a href="#" class="nav-action-btn wishlist-btn">
-                        <i class="fas fa-heart"></i>
-                        <span class="action-badge" id="wishlist-count">۰</span>
-                    </a>
-
-                    <!-- سبد خرید -->
-                    <a href="cart.html" class="nav-action-btn cart-btn">
+            </div>
+        </div>
+        
+        <div class="header-main">
+            <div class="container">
+                <div class="header-main-content">
+                    <div class="logo">
                         <i class="fas fa-shopping-bag"></i>
-                        <span class="action-badge" id="cart-count">۰</span>
-                    </a>
-
-                    <!-- پروفایل کاربر -->
-                    <a href="#" class="nav-action-btn profile-btn" id="profile-btn">
-                        <i class="fas fa-user"></i>
-                    </a>
-
-                    <!-- منوی موبایل -->
-                    <button class="mobile-menu-btn" id="mobile-menu-btn">
+                        <span>فروشگاه<span class="highlight">آنلاین</span></span>
+                    </div>
+                    
+                    <div class="search-bar">
+                        <input type="text" placeholder="جستجوی محصولات...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    
+                    <div class="header-actions">
+                        <a href="#" class="action-item">
+                            <i class="fas fa-user"></i>
+                            <span>حساب کاربری</span>
+                        </a>
+                        <a href="#" class="action-item">
+                            <i class="fas fa-heart"></i>
+                            <span>علاقه‌مندی‌ها</span>
+                            <span class="count">۳</span>
+                        </a>
+                        <a href="#" class="action-item cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>سبد خرید</span>
+                            <span class="count">۲</span>
+                        </a>
+                    </div>
+                    
+                    <button class="mobile-menu-toggle">
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
             </div>
+        </div>
+        
+        <nav class="main-nav">
+            <div class="container">
+                <ul class="nav-menu">
+                    <li><a href="#" class="active">خانه</a></li>
+                    <li><a href="#">محصولات پرفروش</a></li>
+                    <li><a href="#">تخفیف‌های ویژه</a></li>
+                    <li class="menu-item-has-children">
+                        <a href="#">دسته‌بندی محصولات <i class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="#">لوازم الکترونیکی</a></li>
+                            <li><a href="#">پوشاک</a></li>
+                            <li><a href="#">خانه و آشپزخانه</a></li>
+                            <li><a href="#">زیبایی و سلامت</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">برندها</a></li>
+                    <li><a href="#">تماس با ما</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
-    <!-- بخش هیرو -->
-    <section class="hero-section" id="home">
-        <div class="hero-background">
-            <div class="hero-overlay"></div>
-            <div class="floating-particles">
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-            </div>
-        </div>
-        
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    <span class="title-line">سبک خود را</span>
-                    <span class="title-line highlight">با بوتیک قرمز</span>
-                    <span class="title-line">تعریف کنید</span>
-                </h1>
-                <p class="hero-description">
-                    کشف کنید مجموعه بی‌نظیر مد و لباس ما که برای زیبایی و اعتماد به نفس شما طراحی شده است. 
-                    هر قطعه داستانی از ظرافت و استایل را روایت می‌کند.
-                </p>
-                <div class="hero-actions">
-                    <a href="#products" class="btn btn-primary">
-                        <span>مشاهده محصولات</span>
-                        <i class="fas fa-arrow-left"></i>
-                    </a>
-                    <a href="#about" class="btn btn-secondary">
-                        <span>درباره ما</span>
-                        <i class="fas fa-play"></i>
-                    </a>
+    <!-- اسلایدر اصلی -->
+    <section class="hero-slider">
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide active">
+                    <div class="slide-content">
+                        <div class="container">
+                            <div class="slide-text">
+                                <h1>تخفیف‌های شگفت‌انگیز</h1>
+                                <p>تا 70% تخفیف روی محصولات منتخب - فقط برای مدت محدود</p>
+                                <a href="#" class="btn btn-primary">مشاهده محصولات</a>
+                            </div>
+                            <div class="slide-image">
+                                <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="تخفیف ویژه">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slide">
+                    <div class="slide-content">
+                        <div class="container">
+                            <div class="slide-text">
+                                <h2>جدیدترین محصولات</h2>
+                                <p>بهترین و به‌روزترین محصولات با گارانتی معتبر</p>
+                                <a href="#" class="btn btn-primary">خرید now</a>
+                            </div>
+                            <div class="slide-image">
+                                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="جدیدترین محصولات">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slide">
+                    <div class="slide-content">
+                        <div class="container">
+                            <div class="slide-text">
+                                <h2>ارسال رایگان</h2>
+                                <p>برای خریدهای بالای 200 هزار تومان، ارسال کاملاً رایگان</p>
+                                <a href="#" class="btn btn-primary">خرید کنید</a>
+                            </div>
+                            <div class="slide-image">
+                                <img src="https://images.unsplash.com/photo-1563013546-7e5c7c07c877?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="ارسال رایگان">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <div class="hero-visual">
-                <div class="floating-card card-1">
-                    <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="مدل زنانه">
-                    <div class="card-badge">جدید</div>
-                </div>
-                <div class="floating-card card-2">
-                    <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="مدل مردانه">
-                    <div class="card-badge">پرفروش</div>
-                </div>
-                <div class="floating-card card-3">
-                    <img src="https://images.unsplash.com/photo-1519457431-44ccd64a579b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="مدل بچه‌گانه">
-                    <div class="card-badge">محبوب</div>
-                </div>
+            <div class="slider-controls">
+                <button class="slider-prev"><i class="fas fa-chevron-right"></i></button>
+                <button class="slider-next"><i class="fas fa-chevron-left"></i></button>
             </div>
-        </div>
-        
-        <div class="scroll-indicator">
-            <div class="scroll-line"></div>
-            <span>اسکرول کنید</span>
+            
+            <div class="slider-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
         </div>
     </section>
 
-    <!-- بخش دسته‌بندی‌ها -->
-    <section class="categories-section" id="categories">
+    <!-- دسته‌بندی‌ها -->
+    <section class="categories">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">کشف دسته‌بندی‌ها</h2>
-                <p class="section-subtitle">هر سلیقه‌ای را در مجموعه گسترده ما پیدا کنید</p>
-            </div>
-            
+            <h2 class="section-title">دسته‌بندی محصولات</h2>
             <div class="categories-grid">
-                <div class="category-card">
-                    <div class="category-image">
-                        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="مردانه">
-                        <div class="category-overlay">
-                            <button class="category-btn">مشاهده مجموعه</button>
-                        </div>
+                <a href="#" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-mobile-alt"></i>
                     </div>
-                    <div class="category-info">
-                        <h3>لباس مردانه</h3>
-                        <p>استایل مدرن و کلاسیک برای مردان</p>
-                        <span class="category-count">۱۲۵ محصول</span>
-                    </div>
-                </div>
+                    <h3>موبایل و تبلت</h3>
+                </a>
                 
-                <div class="category-card">
-                    <div class="category-image">
-                        <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="زنانه">
-                        <div class="category-overlay">
-                            <button class="category-btn">مشاهده مجموعه</button>
-                        </div>
+                <a href="#" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-laptop"></i>
                     </div>
-                    <div class="category-info">
-                        <h3>لباس زنانه</h3>
-                        <p>طراحی‌های شیک و منحصر به فرد</p>
-                        <span class="category-count">۱۸۹ محصول</span>
-                    </div>
-                </div>
+                    <h3>لپ‌تاپ و کامپیوتر</h3>
+                </a>
                 
-                <div class="category-card">
-                    <div class="category-image">
-                        <img src="https://images.unsplash.com/photo-1519457431-44ccd64a579b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="بچه‌گانه">
-                        <div class="category-overlay">
-                            <button class="category-btn">مشاهده مجموعه</button>
-                        </div>
+                <a href="#" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-tshirt"></i>
                     </div>
-                    <div class="category-info">
-                        <h3>بچه‌گانه</h3>
-                        <p>رنگارنگ و شاد برای کودکان</p>
-                        <span class="category-count">۷۸ محصول</span>
-                    </div>
-                </div>
+                    <h3>پوشاک</h3>
+                </a>
                 
-                <div class="category-card">
-                    <div class="category-image">
-                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="ورزشی">
-                        <div class="category-overlay">
-                            <button class="category-btn">مشاهده مجموعه</button>
-                        </div>
+                <a href="#" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-home"></i>
                     </div>
-                    <div class="category-info">
-                        <h3>لباس ورزشی</h3>
-                        <p>راحت و کاربردی برای فعالیت‌های ورزشی</p>
-                        <span class="category-count">۹۲ محصول</span>
+                    <h3>خانه و آشپزخانه</h3>
+                </a>
+                
+                <a href="#" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-gamepad"></i>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- بخش محصولات ویژه -->
-    <section class="featured-products" id="products">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">محصولات منتخب</h2>
-                <p class="section-subtitle">برترین و محبوب‌ترین محصولات ما</p>
-            </div>
-            
-            <div class="products-filter">
-                <button class="filter-btn active" data-filter="all">همه محصولات</button>
-                <button class="filter-btn" data-filter="men">مردانه</button>
-                <button class="filter-btn" data-filter="women">زنانه</button>
-                <button class="filter-btn" data-filter="kids">بچه‌گانه</button>
-                <button class="filter-btn" data-filter="sale">تخفیف‌دار</button>
-            </div>
-            
-            <div class="products-grid" id="products-grid">
-                <!-- محصولات با JavaScript لود می‌شوند -->
-            </div>
-            
-            <div class="section-footer">
-                <a href="products.html" class="btn btn-outline">
-                    <span>مشاهده همه محصولات</span>
-                    <i class="fas fa-arrow-left"></i>
+                    <h3>اسباب بازی</h3>
+                </a>
+                
+                <a href="#" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>خوراکی‌ها</h3>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- بخش ویژگی‌ها -->
-    <section class="features-section">
+    <!-- محصولات پرتخفیف -->
+    <section class="featured-products">
         <div class="container">
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-shipping-fast"></i>
+            <div class="section-header">
+                <h2 class="section-title">محصولات پرتخفیف</h2>
+                <a href="#" class="view-all">مشاهده همه <i class="fas fa-arrow-left"></i></a>
+            </div>
+            
+            <div class="products-grid">
+                <!-- محصول 1 -->
+                <div class="product-card">
+                    <div class="product-badge discount">35%</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="دوربین عکاسی">
                     </div>
-                    <h3>تحویل سریع</h3>
-                    <p>ارسال رایگان برای خریدهای بالای ۵۰۰ هزار تومان و تحویل در کمتر از ۴۸ ساعت</p>
+                    <div class="product-info">
+                        <h3 class="product-title">دوربین عکاسی حرفه ای DSLR</h3>
+                        <div class="product-price">
+                            <span class="current-price">12,500,000 تومان</span>
+                            <span class="old-price">19,000,000 تومان</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> افزودن به سبد</button>
+                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
+                <!-- محصول 2 -->
+                <div class="product-card">
+                    <div class="product-badge discount">25%</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="هدفون">
                     </div>
-                    <h3>ضمانت کیفیت</h3>
-                    <p>گارانتی بازگشت ۷ روزه کالا و تضمین بهترین کیفیت در تمام محصولات</p>
+                    <div class="product-info">
+                        <h3 class="product-title">هدفون بی سیم نویز کنسلینگ</h3>
+                        <div class="product-price">
+                            <span class="current-price">1,850,000 تومان</span>
+                            <span class="old-price">2,450,000 تومان</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> افزودن به سبد</button>
+                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-headset"></i>
+                <!-- محصول 3 -->
+                <div class="product-card">
+                    <div class="product-badge discount">40%</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="کفش ورزشی">
                     </div>
-                    <h3>پشتیبانی ۲۴/۷</h3>
-                    <p>تیم پشتیبانی ما در تمام ساعات شبانه‌روز آماده پاسخگویی به شماست</p>
+                    <div class="product-info">
+                        <h3 class="product-title">کفش ورزشی مردانه مدل 2023</h3>
+                        <div class="product-price">
+                            <span class="current-price">650,000 تومان</span>
+                            <span class="old-price">1,080,000 تومان</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> افزودن به سبد</button>
+                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-award"></i>
+                <!-- محصول 4 -->
+                <div class="product-card">
+                    <div class="product-badge discount">15%</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="هدفون">
                     </div>
-                    <h3>برند معتبر</h3>
-                    <p>با بیش از ۱۰ سال سابقه درخشان در صنعت مد و پوشاک ایران</p>
+                    <div class="product-info">
+                        <h3 class="product-title">هدفون حرفه ای گیمینگ</h3>
+                        <div class="product-price">
+                            <span class="current-price">890,000 تومان</span>
+                            <span class="old-price">1,050,000 تومان</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> افزودن به سبد</button>
+                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- محصولات پرفروش -->
+    <section class="popular-products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">محصولات پرفروش</h2>
+                <a href="#" class="view-all">مشاهده همه <i class="fas fa-arrow-left"></i></a>
+            </div>
+            
+            <div class="products-grid">
+                <!-- محصول 5 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1504274066651-8d31a536b11a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="لپ تاپ">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">لپ تاپ گیمینگ 15 اینچی</h3>
+                        <div class="product-price">
+                            <span class="current-price">32,500,000 تومان</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> افزودن به سبد</button>
+                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- محصول 6 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="ساعت هوشمند">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">ساعت هوشمند اندروید و iOS</h3>
+                        <div class="product-price">
+                            <span class="current-price">3,200,000 تومان</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> افزودن به سبد</button>
+                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- محصول 7 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="موبایل">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">گوشی موبایل هوشمند 128GB</h3>
+                        <div class="product-price">
+                            <span class="current-price">8,750,000 تومان</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> افزودن به سبد</button>
+                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- محصول 8 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1543512214-318c7553f230?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="کتاب">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">کتاب آموزش برنامه نویسی پیشرفته</h3>
+                        <div class="product-price">
+                            <span class="current-price">120,000 تومان</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> افزودن به سبد</button>
+                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بنر تبلیغاتی -->
+    <section class="promo-banner">
+        <div class="container">
+            <div class="banner-content">
+                <div class="banner-text">
+                    <h2>فروش ویژه زمستانه</h2>
+                    <p>تا 50% تخفیف روی تمام محصولات پوشاک زمستانی</p>
+                    <a href="#" class="btn btn-outline">خرید now</a>
+                </div>
+                <div class="banner-image">
+                    <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="فروش ویژه">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- فوتر -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <!-- بخش اطلاعات بوتیک -->
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <div class="logo">
-                            <div class="logo-icon">
-                                <div class="diamond"></div>
-                            </div>
-                            <h3>بوتیک قرمز</h3>
-                        </div>
-                    </div>
-                    <p class="footer-description">
-                        <strong>مرجع تخصصی مد و لباس با کیفیت برتر</strong><br>
-                        ما در بوتیک قرمز با افتخار ارائه‌دهنده برترین برندهای مد و پوشاک هستیم. 
-                        با تیمی از متخصصان fashion، همیشه در تلاشیم تا جدیدترین ترندهای روز دنیا 
-                        را با بالاترین کیفیت در اختیار شما قرار دهیم.
-                    </p>
-                    <div class="social-links">
-                        <a href="#" class="social-link">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-telegram"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- لینک‌های مفید -->
-                <div class="footer-section">
-                    <h4 class="footer-title">لینک‌های مفید</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">صفحه اصلی</a></li>
-                        <li><a href="products.html">تمام محصولات</a></li>
-                        <li><a href="about.html">درباره بوتیک قرمز</a></li>
-                        <li><a href="contact.html">راهنمای اندازه‌گیری</a></li>
-                        <li><a href="blog.html">مجله مد و استایل</a></li>
-                        <li><a href="careers.html">فرصت‌های شغلی</a></li>
-                    </ul>
-                </div>
-
-                <!-- خدمات مشتریان -->
-                <div class="footer-section">
-                    <h4 class="footer-title">خدمات مشتریان</h4>
-                    <ul class="footer-links">
-                        <li><a href="tracking.html">🎯 پیگیری سفارش - رهگیری آنلاین خرید</a></li>
-                        <li><a href="return.html">🔄 مرجوعی کالا - بازگشت آسان محصول</a></li>
-                        <li><a href="faq.html">❓ پرسش‌های متداول - راهنمای کامل</a></li>
-                        <li><a href="size-guide.html">📏 راهنمای سایز - انتخاب اندازه مناسب</a></li>
-                        <li><a href="payment.html">💳 روش‌های پرداخت - امن و متنوع</a></li>
-                        <li><a href="support.html">🎧 پشتیبانی آنلاین - ۲۴ ساعته</a></li>
-                    </ul>
-                </div>
-
-                <!-- تماس با ما -->
-                <div class="footer-section">
-                    <h4 class="footer-title">تماس با ما</h4>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>تهران، خیابان ولیعصر، پلاک ۱۲۳۴</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>۰۲۱ - ۱۲۳۴۵۶۷۸</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>info@redboutique.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-clock"></i>
-                            <span>همه روزه ۹:۰۰ تا ۲۱:۰۰</span>
+    <footer>
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-column">
+                        <h3>درباره ما</h3>
+                        <p>فروشگاه آنلاین ما با بیش از 10 سال سابقه در زمینه فروش محصولات با کیفیت، همواره تلاش کرده بهترین خدمات را به مشتریان ارائه دهد.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-telegram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
                     
-                    <div class="newsletter">
-                        <h5>عضویت در خبرنامه</h5>
-                        <p>از جدیدترین تخفیف‌ها و محصولات باخبر شوید</p>
-                        <div class="newsletter-form">
-                            <input type="email" placeholder="ایمیل خود را وارد کنید">
-                            <button type="submit">
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <div class="footer-bottom-content">
-                    <p>&copy; ۲۰۲۴ بوتیک قرمز. تمام حقوق محفوظ است.</p>
-                    <div class="footer-bottom-links">
-                        <a href="#">قوانین و مقررات</a>
-                        <a href="#">حریم خصوصی</a>
-                        <a href="#">روش‌های پرداخت</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- مودال ثبت‌نام/ورود -->
-    <div class="auth-modal" id="auth-modal">
-        <div class="auth-modal-content">
-            <button class="close-auth-modal" id="close-auth-modal">
-                <i class="fas fa-times"></i>
-            </button>
-            
-            <div class="auth-tabs">
-                <button class="auth-tab active" data-tab="login">ورود</button>
-                <button class="auth-tab" data-tab="register">ثبت‌نام</button>
-            </div>
-            
-            <div class="auth-forms">
-                <!-- فرم ورود -->
-                <form class="auth-form login-form active">
-                    <h3>خوش آمدید</h3>
-                    <p>لطفا برای ادامه وارد حساب کاربری خود شوید</p>
-                    
-                    <div class="form-group">
-                        <input type="text" placeholder="ایمیل یا شماره موبایل" required>
-                        <i class="fas fa-user"></i>
+                    <div class="footer-column">
+                        <h3>خدمات مشتریان</h3>
+                        <ul>
+                            <li><a href="#">پاسخ به پرسش‌های متداول</a></li>
+                            <li><a href="#">رویه ارسال سفارش</a></li>
+                            <li><a href="#">شرایط بازگرداندن کالا</a></li>
+                            <li><a href="#">گزارش باگ در سایت</a></li>
+                        </ul>
                     </div>
                     
-                    <div class="form-group">
-                        <input type="password" placeholder="رمز عبور" required>
-                        <i class="fas fa-lock"></i>
+                    <div class="footer-column">
+                        <h3>راهنمای خرید</h3>
+                        <ul>
+                            <li><a href="#">نحوه ثبت سفارش</a></li>
+                            <li><a href="#">روش‌های پرداخت</a></li>
+                            <li><a href="#">پیگیری سفارش</a></li>
+                            <li><a href="#">گارانتی محصولات</a></li>
+                        </ul>
                     </div>
                     
-                    <div class="form-options">
-                        <label class="checkbox">
-                            <input type="checkbox">
-                            <span>مرا به خاطر بسپار</span>
-                        </label>
-                        <a href="#" class="forgot-password">رمز عبور را فراموش کرده‌اید؟</a>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary btn-block">
-                        <span>ورود به حساب</span>
-                        <i class="fas fa-sign-in-alt"></i>
-                    </button>
-                    
-                    <div class="auth-divider">
-                        <span>یا وارد شوید با</span>
-                    </div>
-                    
-                    <div class="social-auth">
-                        <button type="button" class="btn btn-google">
-                            <i class="fab fa-google"></i>
-                            Google
-                        </button>
-                    </div>
-                </form>
-                
-                <!-- فرم ثبت‌نام -->
-                <form class="auth-form register-form">
-                    <h3>حساب جدید</h3>
-                    <p>لطفا اطلاعات خود را برای ثبت‌نام وارد کنید</p>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <input type="text" placeholder="نام" required>
-                            <i class="fas fa-user">
+                    <div class="footer-column">
+                        <h3>اطلاعات تماس</h3>
+                        <ul class="contact-info
