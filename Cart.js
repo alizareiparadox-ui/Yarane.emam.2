@@ -646,4 +646,174 @@ function showNotification(message, type = 'info') {
         padding: 15px 25px;
         border-radius: 10px;
         z-index: 3000;
-        animation: slideInLeft 0.3s ease, slideOutLeft 0.3s ea
+        animation: slideInLeft 0.3s ease, slideOutLeft 0.3s ease 2.7s forwards;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        max-width: 400px;
+    `;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.remove();
+    }, 3000);
+}
+
+function getNotificationIcon(type) {
+    const icons = {
+        'success': 'check-circle',
+        'error': 'exclamation-circle',
+        'warning': 'exclamation-triangle',
+        'info': 'info-circle'
+    };
+    return icons[type] || 'info-circle';
+}
+
+function getNotificationColor(type) {
+    const colors = {
+        'success': '#10b981',
+        'error': '#ef4444',
+        'warning': '#f59e0b',
+        'info': '#3b82f6'
+    };
+    return colors[type] || '#3b82f6';
+}
+
+// utility functions
+function saveToLocalStorage(key, data) {
+    try {
+        localStorage.setItem(key, JSON.stringify(data));
+    } catch (error) {
+        console.error('Error saving to localStorage:', error);
+    }
+}
+
+function loadFromLocalStorage(key) {
+    try {
+        return JSON.parse(localStorage.getItem(key)) || [];
+    } catch (error) {
+        console.error('Error loading from localStorage:', error);
+        return [];
+    }
+}
+
+// مدیریت رویدادهای پنجره
+function initWindowEvents() {
+    // ریسایز
+    window.addEventListener('resize', handleResize);
+    
+    // لود
+    window.addEventListener('load', handleLoad);
+    
+    // اسکرول
+    window.addEventListener('scroll', handleScroll);
+}
+
+function handleResize() {
+    // بستن منوی موبایل در صورت تغییر سایز به دسکتاپ
+    if (window.innerWidth > 768 && elements.mainMenu) {
+        elements.mainMenu.classList.remove('active');
+    }
+}
+
+function handleLoad() {
+    // لود lazy برای تصاویر
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    images.forEach(img => {
+        img.loading = 'lazy';
+    });
+}
+
+function handleScroll() {
+    // افکت‌های اسکرول پیشرفته
+    const scrolled = window.pageYOffset;
+    const parallaxElements = document.querySelectorAll('.hero-background');
+    
+    parallaxElements.forEach(element => {
+        element.style.transform = `translateY(${scrolled * 0.5}px)`;
+    });
+}
+
+// مقداردهی اولیه برنامه
+function initApp() {
+    initPreloader();
+    initNavigation();
+    initSearch();
+    initCartAndWishlist();
+    initProducts();
+    initAuthModal();
+    initScrollAnimations();
+    initVisualEffects();
+    initWindowEvents();
+    
+    // اضافه کردن استایل‌های داینامیک
+    addDynamicStyles();
+}
+
+// اضافه کردن استایل‌های داینامیک
+function addDynamicStyles() {
+    if (!document.querySelector('#dynamic-styles')) {
+        const style = document.createElement('style');
+        style.id = 'dynamic-styles';
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+            
+            @keyframes slideInLeft {
+                from {
+                    transform: translateX(-100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            
+            @keyframes slideOutLeft {
+                from {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateX(-100%);
+                    opacity: 0;
+                }
+            }
+            
+            .pulse {
+                animation: pulse 0.5s ease-in-out;
+            }
+            
+            @keyframes pulse {
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.2); }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+}
+
+// راه�اندازی برنامه وقتی DOM لود شد
+document.addEventListener('DOMContentLoaded', initApp);
+
+// مدیریت رویدادهای تاچ برای موبایل
+document.addEventListener('touchstart', function() {}, { passive: true });
+
+// توابع global برای استفاده در HTML
+window.addToCart = addToCart;
+window.toggleWishlist = toggleWishlist;
+window.quickView = quickView;
+
+// بهینه‌سازی عملکرد
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        // در اینجا می‌توانید Service Worker ثبت کنید
+    });
+}
